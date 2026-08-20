@@ -10,11 +10,17 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as DemoAutoserwisKowalskiRouteImport } from './routes/demo.autoserwis-kowalski'
 import { Route as DemoHydroPerfektRouteImport } from './routes/demo.hydro-perfekt'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DemoAutoserwisKowalskiRoute = DemoAutoserwisKowalskiRouteImport.update({
+  id: '/demo/autoserwis-kowalski',
+  path: '/demo/autoserwis-kowalski',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DemoHydroPerfektRoute = DemoHydroPerfektRouteImport.update({
@@ -25,27 +31,31 @@ const DemoHydroPerfektRoute = DemoHydroPerfektRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/demo/autoserwis-kowalski': typeof DemoAutoserwisKowalskiRoute
   '/demo/hydro-perfekt': typeof DemoHydroPerfektRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/demo/autoserwis-kowalski': typeof DemoAutoserwisKowalskiRoute
   '/demo/hydro-perfekt': typeof DemoHydroPerfektRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/demo/autoserwis-kowalski': typeof DemoAutoserwisKowalskiRoute
   '/demo/hydro-perfekt': typeof DemoHydroPerfektRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/demo/hydro-perfekt'
+  fullPaths: '/' | '/demo/autoserwis-kowalski' | '/demo/hydro-perfekt'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/demo/hydro-perfekt'
-  id: '__root__' | '/' | '/demo/hydro-perfekt'
+  to: '/' | '/demo/autoserwis-kowalski' | '/demo/hydro-perfekt'
+  id: '__root__' | '/' | '/demo/autoserwis-kowalski' | '/demo/hydro-perfekt'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  DemoAutoserwisKowalskiRoute: typeof DemoAutoserwisKowalskiRoute
   DemoHydroPerfektRoute: typeof DemoHydroPerfektRoute
 }
 
@@ -56,6 +66,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/demo/autoserwis-kowalski': {
+      id: '/demo/autoserwis-kowalski'
+      path: '/demo/autoserwis-kowalski'
+      fullPath: '/demo/autoserwis-kowalski'
+      preLoaderRoute: typeof DemoAutoserwisKowalskiRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/demo/hydro-perfekt': {
@@ -70,6 +87,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  DemoAutoserwisKowalskiRoute: DemoAutoserwisKowalskiRoute,
   DemoHydroPerfektRoute: DemoHydroPerfektRoute,
 }
 export const routeTree = rootRouteImport
