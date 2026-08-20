@@ -31,37 +31,40 @@ type SiteProps = { accent: string; name: string; tagline: string; cta: string; n
 /** Scaled-down real markup of an example business site. */
 export function MiniSite({ accent, name, tagline, cta, nav }: SiteProps) {
   return (
-    <div className="flex h-full flex-col bg-background text-[4px] leading-tight sm:text-[5px]">
-      <div className="flex items-center justify-between border-b border-hairline px-2 py-1.5">
-        <span className="display text-[6px] font-bold sm:text-[7px]">{name}</span>
-        <div className="flex gap-1.5 text-muted-foreground">
+    <div
+      className="flex h-full flex-col bg-background text-[1.5cqi] leading-tight"
+      style={{ containerType: "inline-size" }}
+    >
+      <div className="flex items-center justify-between border-b border-hairline px-[3%] py-[1.6%]">
+        <span className="display text-[2.2cqi] font-bold">{name}</span>
+        <div className="flex gap-[1.6cqi] text-muted-foreground">
           {nav.map((n) => (
             <span key={n}>{n}</span>
           ))}
-          <span className="px-1 py-[1px] text-background" style={{ background: accent }}>
+          <span className="px-[0.8cqi] py-[0.3cqi] text-background" style={{ background: accent }}>
             {cta}
           </span>
         </div>
       </div>
-      <div className="flex flex-1 flex-col justify-center gap-1 px-2 py-2">
-        <span className="h-[2px] w-6" style={{ background: accent }} />
-        <p className="display max-w-[70%] text-[9px] font-bold sm:text-[11px]">{tagline}</p>
+      <div className="flex flex-1 flex-col justify-center gap-[1.4cqi] px-[3%] py-[3%]">
+        <span className="h-[0.5cqi] w-[6cqi]" style={{ background: accent }} />
+        <p className="display max-w-[62%] text-[4.6cqi] font-bold">{tagline}</p>
         <p className="max-w-[55%] text-muted-foreground">
           Szybko, solidnie i z gwarancją. Dojazd na terenie całego miasta.
         </p>
-        <div className="mt-1 flex gap-1">
-          <span className="px-1.5 py-[2px] text-background" style={{ background: accent }}>
+        <div className="mt-[1cqi] flex gap-[1cqi]">
+          <span className="px-[1.4cqi] py-[0.7cqi] text-background" style={{ background: accent }}>
             {cta}
           </span>
-          <span className="border border-hairline px-1.5 py-[2px]">Cennik</span>
+          <span className="border border-hairline px-[1.4cqi] py-[0.7cqi]">Cennik</span>
         </div>
       </div>
-      <div className="grid grid-cols-3 gap-[3px] border-t border-hairline px-2 py-1.5">
+      <div className="grid grid-cols-3 gap-[1.5cqi] border-t border-hairline px-[3%] py-[2.4%]">
         {[0, 1, 2].map((i) => (
-          <div key={i} className="border border-hairline p-1">
-            <span className="mb-[2px] block h-[3px] w-[3px]" style={{ background: accent }} />
-            <span className="block h-[2px] w-[70%] bg-hairline" />
-            <span className="mt-[2px] block h-[2px] w-[90%] bg-hairline" />
+          <div key={i} className="border border-hairline p-[1.2cqi]">
+            <span className="mb-[0.8cqi] block h-[1cqi] w-[1cqi]" style={{ background: accent }} />
+            <span className="block h-[0.6cqi] w-[70%] bg-hairline" />
+            <span className="mt-[0.8cqi] block h-[0.6cqi] w-[90%] bg-hairline" />
           </div>
         ))}
       </div>
@@ -71,26 +74,32 @@ export function MiniSite({ accent, name, tagline, cta, nav }: SiteProps) {
 
 export function MiniSiteMobile({ accent, name, tagline, cta }: SiteProps) {
   return (
-    <div className="flex h-full flex-col bg-background text-[4px] leading-tight">
-      <div className="flex items-center justify-between border-b border-hairline px-1.5 py-1">
-        <span className="display text-[5px] font-bold">{name}</span>
-        <span className="flex flex-col gap-[1px]">
-          <span className="h-[1px] w-2 bg-foreground" />
-          <span className="h-[1px] w-2 bg-foreground" />
+    <div
+      className="flex h-full flex-col bg-background text-[3.4cqi] leading-tight"
+      style={{ containerType: "inline-size" }}
+    >
+      <div className="flex items-center justify-between border-b border-hairline px-[5%] py-[3%]">
+        <span className="display text-[4.6cqi] font-bold">{name}</span>
+        <span className="flex flex-col gap-[1cqi]">
+          <span className="h-[0.6cqi] w-[5cqi] bg-foreground" />
+          <span className="h-[0.6cqi] w-[5cqi] bg-foreground" />
         </span>
       </div>
-      <div className="flex flex-col gap-1 px-1.5 py-2">
-        <span className="h-[2px] w-4" style={{ background: accent }} />
-        <p className="display text-[7px] font-bold">{tagline}</p>
-        <span className="mt-1 w-fit px-1.5 py-[2px] text-background" style={{ background: accent }}>
+      <div className="flex flex-col gap-[2cqi] px-[5%] py-[6%]">
+        <span className="h-[1cqi] w-[10cqi]" style={{ background: accent }} />
+        <p className="display text-[8cqi] font-bold">{tagline}</p>
+        <span
+          className="mt-[1cqi] w-fit px-[3cqi] py-[1.5cqi] text-background"
+          style={{ background: accent }}
+        >
           {cta}
         </span>
       </div>
-      <div className="flex flex-1 flex-col gap-[3px] border-t border-hairline px-1.5 py-1.5">
+      <div className="flex flex-1 flex-col gap-[3cqi] border-t border-hairline px-[5%] py-[5%]">
         {[0, 1, 2].map((i) => (
-          <div key={i} className="border border-hairline p-1">
-            <span className="block h-[2px] w-[60%] bg-hairline" />
-            <span className="mt-[2px] block h-[2px] w-[85%] bg-hairline" />
+          <div key={i} className="border border-hairline p-[3cqi]">
+            <span className="block h-[1.4cqi] w-[60%] bg-hairline" />
+            <span className="mt-[1.6cqi] block h-[1.4cqi] w-[85%] bg-hairline" />
           </div>
         ))}
       </div>
