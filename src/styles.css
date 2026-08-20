@@ -1,3 +1,5 @@
+@import "../node_modules/@fontsource-variable/inter/index.css";
+@import "../node_modules/@fontsource-variable/schibsted-grotesk/index.css";
 @import "tailwindcss" source(none);
 @source "../src";
 @import "tw-animate-css";
