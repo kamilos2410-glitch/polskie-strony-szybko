@@ -144,3 +144,76 @@
     color: var(--color-foreground);
   }
 }
+
+/* ── SCS Web design system: monochrome editorial ─────────────── */
+@theme inline {
+  --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Schibsted Grotesk Variable", "Inter Variable", sans-serif;
+  --color-hairline: var(--hairline);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+}
+
+:root {
+  --radius: 0px;
+  --ink: oklch(0.145 0 0);
+  --ink-soft: oklch(0.556 0 0);
+  --hairline: oklch(0.918 0 0);
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.145 0 0);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.145 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.145 0 0);
+  --border: oklch(0.918 0 0);
+  --input: oklch(0.918 0 0);
+  --ring: oklch(0.145 0 0);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+  body {
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  ::selection {
+    background: var(--ink);
+    color: #fff;
+  }
+}
+
+@utility display {
+  font-family: var(--font-display);
+  letter-spacing: -0.03em;
+  line-height: 0.98;
+}
+
+@utility eyebrow {
+  font-size: 0.6875rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+@utility reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  &.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+}
