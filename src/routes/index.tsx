@@ -71,30 +71,30 @@ const STEPS = [
 
 const CASES = [
   {
-    accent: "#1f4d3d",
     name: "Hydro-Perfekt",
-    branch: "Hydraulik — Kraków",
-    tagline: "Awaria? Jesteśmy u Ciebie w godzinę.",
-    cta: "Zadzwoń",
-    nav: ["Usługi", "Cennik", "Kontakt"],
+    branch: "Hydraulik — Bielsko-Biała",
+    url: "hydro-perfekt.pl",
+    desc: "Jasny, uporządkowany layout z całodobowym paskiem awaryjnym, siatką usług z widełkami cen i opiniami klientów.",
+    to: "/demo/hydro-perfekt",
+    Preview: HydroPreview,
   },
   {
-    accent: "#7a2d12",
     name: "AutoSerwis Kowalski",
     branch: "Warsztat samochodowy — Radom",
-    tagline: "Serwis, który tłumaczy, za co płacisz.",
-    cta: "Umów wizytę",
-    nav: ["Naprawy", "Opinie", "Kontakt"],
+    url: "autoserwis-kowalski.pl",
+    desc: "Ciemna, warsztatowa estetyka z żółtym akcentem, mocną typografią, godzinami otwarcia i szybkim umawianiem wizyt.",
+    to: "/demo/autoserwis-kowalski",
+    Preview: AutoPreview,
   },
   {
-    accent: "#2a3a5c",
     name: "DachPol",
     branch: "Dekarz — Lublin",
-    tagline: "Dachy, które przetrwają następne 30 lat.",
-    cta: "Wycena",
-    nav: ["Realizacje", "Oferta", "Kontakt"],
+    url: "dachpol.pl",
+    desc: "Ciepła, ziemista paleta z szeryfową typografią, galerią realizacji, przeglądem materiałów i licznikiem doświadczenia.",
+    to: "/demo/dachpol",
+    Preview: DachPreview,
   },
-];
+] as const;
 
 const WHY = [
   {
