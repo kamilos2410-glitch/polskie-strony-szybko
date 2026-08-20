@@ -10,7 +10,12 @@ export function Laptop({ children }: { children: ReactNode }) {
           <span className="h-1.5 w-1.5 border border-ink-soft" />
           <span className="h-1.5 w-1.5 border border-ink-soft" />
         </div>
-        <div className="aspect-[16/10] overflow-hidden bg-background">{children}</div>
+        <div
+          className="aspect-[16/10] overflow-hidden bg-background"
+          style={{ containerType: "inline-size" }}
+        >
+          {children}
+        </div>
       </div>
       <div className="mx-auto h-[6px] w-[62%] border-x border-b border-foreground bg-secondary" />
     </div>
@@ -21,7 +26,12 @@ export function Phone({ children }: { children: ReactNode }) {
   return (
     <div className="w-full select-none border border-foreground bg-background p-[5px]">
       <div className="mx-auto mb-[5px] h-[3px] w-8 bg-hairline" />
-      <div className="aspect-[9/17] overflow-hidden bg-background">{children}</div>
+      <div
+        className="aspect-[9/17] overflow-hidden bg-background"
+        style={{ containerType: "inline-size" }}
+      >
+        {children}
+      </div>
     </div>
   );
 }
@@ -31,10 +41,7 @@ type SiteProps = { accent: string; name: string; tagline: string; cta: string; n
 /** Scaled-down real markup of an example business site. */
 export function MiniSite({ accent, name, tagline, cta, nav }: SiteProps) {
   return (
-    <div
-      className="flex h-full flex-col bg-background text-[1.5cqi] leading-tight"
-      style={{ containerType: "inline-size" }}
-    >
+    <div className="flex h-full flex-col bg-background text-[1.5cqi] leading-tight">
       <div className="flex items-center justify-between border-b border-hairline px-[3%] py-[1.6%]">
         <span className="display text-[2.2cqi] font-bold">{name}</span>
         <div className="flex gap-[1.6cqi] text-muted-foreground">
@@ -74,10 +81,7 @@ export function MiniSite({ accent, name, tagline, cta, nav }: SiteProps) {
 
 export function MiniSiteMobile({ accent, name, tagline, cta }: SiteProps) {
   return (
-    <div
-      className="flex h-full flex-col bg-background text-[3.4cqi] leading-tight"
-      style={{ containerType: "inline-size" }}
-    >
+    <div className="flex h-full flex-col bg-background text-[3.4cqi] leading-tight">
       <div className="flex items-center justify-between border-b border-hairline px-[5%] py-[3%]">
         <span className="display text-[4.6cqi] font-bold">{name}</span>
         <span className="flex flex-col gap-[1cqi]">
