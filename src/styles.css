@@ -156,32 +156,33 @@
 
 :root {
   --radius: 0px;
-  --ink: oklch(0.145 0 0);
-  --ink-soft: oklch(0.556 0 0);
-  --hairline: oklch(0.918 0 0);
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.145 0 0);
-  --primary-foreground: oklch(1 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.145 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.145 0 0);
-  --border: oklch(0.918 0 0);
-  --input: oklch(0.918 0 0);
-  --ring: oklch(0.145 0 0);
+  --ink: oklch(0.985 0 0);
+  --ink-soft: oklch(0.708 0 0);
+  --hairline: oklch(0.245 0 0);
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.175 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.175 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.985 0 0);
+  --primary-foreground: oklch(0.145 0 0);
+  --secondary: oklch(0.205 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.205 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.205 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --border: oklch(0.245 0 0);
+  --input: oklch(0.245 0 0);
+  --ring: oklch(0.985 0 0);
 }
 
 @layer base {
   html {
     scroll-behavior: smooth;
     scroll-padding-top: 5rem;
+    background-color: var(--background);
   }
   body {
     font-family: var(--font-sans);
@@ -189,7 +190,7 @@
   }
   ::selection {
     background: var(--ink);
-    color: #fff;
+    color: #0a0a0a;
   }
 }
 

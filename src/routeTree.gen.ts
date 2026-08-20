@@ -10,33 +10,70 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as DemoAutoserwisKowalskiRouteImport } from './routes/demo.autoserwis-kowalski'
+import { Route as DemoDachpolRouteImport } from './routes/demo.dachpol'
+import { Route as DemoHydroPerfektRouteImport } from './routes/demo.hydro-perfekt'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const DemoAutoserwisKowalskiRoute = DemoAutoserwisKowalskiRouteImport.update({
+  id: '/demo/autoserwis-kowalski',
+  path: '/demo/autoserwis-kowalski',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DemoDachpolRoute = DemoDachpolRouteImport.update({
+  id: '/demo/dachpol',
+  path: '/demo/dachpol',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DemoHydroPerfektRoute = DemoHydroPerfektRouteImport.update({
+  id: '/demo/hydro-perfekt',
+  path: '/demo/hydro-perfekt',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/demo/autoserwis-kowalski': typeof DemoAutoserwisKowalskiRoute
+  '/demo/dachpol': typeof DemoDachpolRoute
+  '/demo/hydro-perfekt': typeof DemoHydroPerfektRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/demo/autoserwis-kowalski': typeof DemoAutoserwisKowalskiRoute
+  '/demo/dachpol': typeof DemoDachpolRoute
+  '/demo/hydro-perfekt': typeof DemoHydroPerfektRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/demo/autoserwis-kowalski': typeof DemoAutoserwisKowalskiRoute
+  '/demo/dachpol': typeof DemoDachpolRoute
+  '/demo/hydro-perfekt': typeof DemoHydroPerfektRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    '/' | '/demo/autoserwis-kowalski' | '/demo/dachpol' | '/demo/hydro-perfekt'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    '/' | '/demo/autoserwis-kowalski' | '/demo/dachpol' | '/demo/hydro-perfekt'
+  id:
+    | '__root__'
+    | '/'
+    | '/demo/autoserwis-kowalski'
+    | '/demo/dachpol'
+    | '/demo/hydro-perfekt'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  DemoAutoserwisKowalskiRoute: typeof DemoAutoserwisKowalskiRoute
+  DemoDachpolRoute: typeof DemoDachpolRoute
+  DemoHydroPerfektRoute: typeof DemoHydroPerfektRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +85,35 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/demo/autoserwis-kowalski': {
+      id: '/demo/autoserwis-kowalski'
+      path: '/demo/autoserwis-kowalski'
+      fullPath: '/demo/autoserwis-kowalski'
+      preLoaderRoute: typeof DemoAutoserwisKowalskiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/demo/dachpol': {
+      id: '/demo/dachpol'
+      path: '/demo/dachpol'
+      fullPath: '/demo/dachpol'
+      preLoaderRoute: typeof DemoDachpolRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/demo/hydro-perfekt': {
+      id: '/demo/hydro-perfekt'
+      path: '/demo/hydro-perfekt'
+      fullPath: '/demo/hydro-perfekt'
+      preLoaderRoute: typeof DemoHydroPerfektRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  DemoAutoserwisKowalskiRoute: DemoAutoserwisKowalskiRoute,
+  DemoDachpolRoute: DemoDachpolRoute,
+  DemoHydroPerfektRoute: DemoHydroPerfektRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
