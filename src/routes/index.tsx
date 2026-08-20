@@ -183,10 +183,10 @@ function Index() {
       <main id="top">
         {/* HERO */}
         <section className="border-b border-hairline">
-          <div className="mx-auto max-w-[1200px] px-6 pt-20 pb-16 md:px-10 md:pt-32 md:pb-24">
+          <div className="mx-auto grid max-w-[1200px] items-center gap-16 px-6 pt-20 pb-20 md:grid-cols-[1.05fr_0.95fr] md:gap-14 md:px-10 md:pt-28 md:pb-28">
             <Reveal>
               <p className="eyebrow mb-8">Strony dla lokalnych firm w Polsce</p>
-              <h1 className="display max-w-5xl text-[clamp(2.5rem,8vw,4.5rem)] font-bold">
+              <h1 className="display text-[clamp(2.5rem,6vw,4.25rem)] font-bold">
                 Profesjonalna strona dla Twojej firmy w 48 godzin
               </h1>
               <p className="mt-8 max-w-xl text-lg leading-relaxed text-muted-foreground">
@@ -202,23 +202,15 @@ function Index() {
                 </a>
                 <a
                   href="#realizacje"
-                  className="text-sm font-medium underline underline-offset-8 transition-opacity hover:opacity-60"
+                  className="border border-foreground/60 px-8 py-4 text-sm font-medium transition-all duration-200 hover:-translate-y-0.5 hover:bg-foreground hover:text-background"
                 >
                   Zobacz przykłady
                 </a>
               </div>
             </Reveal>
 
-            <Reveal delay={120} className="mx-auto mt-20 max-w-3xl md:mt-28">
-              <Laptop>
-                <MiniSite
-                  accent="#0a0a0a"
-                  name="Twoja Firma"
-                  tagline="Strona, która przynosi telefony."
-                  cta="Kontakt"
-                  nav={["Oferta", "O nas", "Opinie"]}
-                />
-              </Laptop>
+            <Reveal delay={140}>
+              <HeroVisual />
             </Reveal>
           </div>
         </section>
@@ -251,28 +243,45 @@ function Index() {
         <section id="realizacje" className="border-b border-hairline">
           <div className="mx-auto max-w-[1200px] px-6 py-20 md:px-10 md:py-32">
             <SectionHead eyebrow="Realizacje" title="Przykładowe projekty" />
-            <div className="space-y-16 md:space-y-24">
+            <div className="space-y-12 md:space-y-16">
               {CASES.map((c, i) => (
                 <Reveal key={c.name} delay={i * 60}>
-                  <article className="border-t border-hairline pt-10">
-                    <div className="mb-8 flex flex-wrap items-baseline justify-between gap-2">
-                      <h3 className="display text-2xl font-semibold md:text-3xl">{c.name}</h3>
-                      <p className="text-sm text-muted-foreground">{c.branch}</p>
+                  <article className="border border-hairline bg-secondary/30">
+                    <div className="border-b border-hairline p-4 md:p-6">
+                      <div className="border border-hairline bg-[#0d0d0d]">
+                        <div className="flex h-7 items-center gap-1.5 border-b border-hairline px-3">
+                          <span className="h-1.5 w-1.5 border border-foreground/35" />
+                          <span className="h-1.5 w-1.5 border border-foreground/25" />
+                          <span className="h-1.5 w-1.5 border border-foreground/25" />
+                          <span className="ml-3 text-[10px] text-muted-foreground">{c.url}</span>
+                        </div>
+                        <div className="aspect-[16/9] overflow-hidden">
+                          <c.Preview />
+                        </div>
+                      </div>
                     </div>
-                    <div className="grid grid-cols-[1fr_88px] items-end gap-4 md:grid-cols-[1fr_140px] md:gap-8">
-                      <Laptop>
-                        <MiniSite {...c} />
-                      </Laptop>
-                      <Phone>
-                        <MiniSiteMobile {...c} />
-                      </Phone>
+                    <div className="flex flex-wrap items-end justify-between gap-6 p-6 md:p-8">
+                      <div>
+                        <p className="eyebrow mb-3">{c.branch}</p>
+                        <h3 className="display text-2xl font-semibold md:text-3xl">{c.name}</h3>
+                        <p className="mt-3 max-w-md leading-relaxed text-muted-foreground">
+                          {c.desc}
+                        </p>
+                      </div>
+                      <Link
+                        to={c.to}
+                        className="bg-foreground px-7 py-3.5 text-sm font-medium tracking-wide text-background transition-all duration-200 hover:-translate-y-0.5 hover:opacity-90"
+                      >
+                        Zobacz demo
+                      </Link>
                     </div>
                   </article>
                 </Reveal>
               ))}
             </div>
             <p className="mt-14 border-t border-hairline pt-6 text-sm text-muted-foreground">
-              Projekty przykładowe — Twoja strona będzie zaprojektowana od zera pod Twoją firmę.
+              Projekty przykładowe dla fikcyjnych firm, zaprojektowane od zera — Twoja strona
+              powstanie tak samo, pod Twoją branżę i Twoich klientów.
             </p>
           </div>
         </section>
