@@ -67,12 +67,12 @@ function HydroPerfekt() {
 
   return (
     <div
-      className="min-h-screen bg-[#f4f7fb] pt-9 text-[#12233d]"
+      className="min-h-screen bg-[#f4f7fb] pt-11 text-[#12233d]"
       style={{ fontFamily: '"Inter Variable", system-ui, sans-serif' }}
     >
       <DemoBar variant="light" />
 
-      <header className="sticky top-9 z-30 border-b border-[#dde5ef] bg-white/95 backdrop-blur">
+      <header className="sticky top-11 z-30 border-b border-[#dde5ef] bg-white/95 backdrop-blur">
         <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5">
           <div className="flex items-center gap-2.5">
             <span

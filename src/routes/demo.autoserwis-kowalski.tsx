@@ -59,10 +59,10 @@ function AutoSerwis() {
   const [sent, setSent] = useState(false);
 
   return (
-    <div className="min-h-screen bg-[#121212] pt-9 text-[#ededed]" style={{ fontFamily: '"Inter Variable", system-ui, sans-serif' }}>
+    <div className="min-h-screen bg-[#121212] pt-11 text-[#ededed]" style={{ fontFamily: '"Inter Variable", system-ui, sans-serif' }}>
       <DemoBar variant="dark" />
 
-      <header className="sticky top-9 z-30 border-b-2 border-[#ffb300] bg-[#161616]">
+      <header className="sticky top-11 z-30 border-b-2 border-[#ffb300] bg-[#161616]">
         <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5">
           <span
             className="text-xl font-extrabold tracking-[0.06em] uppercase"

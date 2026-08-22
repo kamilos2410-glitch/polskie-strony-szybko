@@ -57,12 +57,12 @@ function DachPol() {
 
   return (
     <div
-      className="min-h-screen bg-[#faf5ef] pt-9 text-[#2f2b28]"
+      className="min-h-screen bg-[#faf5ef] pt-11 text-[#2f2b28]"
       style={{ fontFamily: '"Inter Variable", system-ui, sans-serif' }}
     >
       <DemoBar variant="light" />
 
-      <header className="sticky top-9 z-30 border-b border-[#e4d8c9] bg-[#faf5ef]/95 backdrop-blur">
+      <header className="sticky top-11 z-30 border-b border-[#e4d8c9] bg-[#faf5ef]/95 backdrop-blur">
         <div className="mx-auto flex h-16 max-w-5xl items-center justify-between px-5">
           <span className="text-2xl" style={{ fontFamily: SERIF, color: CHAR }}>
             Dach<span style={{ color: TERRA }}>Pol</span>
