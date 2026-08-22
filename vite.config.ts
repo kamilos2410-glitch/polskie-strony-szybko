@@ -7,6 +7,9 @@
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
 export default defineConfig({
+  // Static export: skip the Nitro server build outside Lovable so TanStack Start
+  // emits its own node preview server that the prerenderer can crawl.
+  nitro: process.env["LOVABLE_NITRO_PRESET"] ? undefined : false,
   tanstackStart: {
     // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
     // nitro/vite builds from this
