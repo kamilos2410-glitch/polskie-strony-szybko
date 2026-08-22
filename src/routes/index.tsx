@@ -1,10 +1,11 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
-import { ShieldCheck, Timer, Ban, UserRound, Minus, Plus } from "lucide-react";
+import { ShieldCheck, Timer, Ban, UserRound, Minus, Plus, Phone, Check } from "lucide-react";
 import { Reveal } from "@/components/scs/Reveal";
 import { HeroVisual } from "@/components/scs/HeroVisual";
 import { HydroPreview, AutoPreview, DachPreview } from "@/components/scs/DemoPreviews";
 import { ContactForm } from "@/components/scs/ContactForm";
+import { MobileBar } from "@/components/scs/MobileBar";
 
 const TITLE = "Strona internetowa dla firmy w 48h — SCS Web";
 const DESCRIPTION =
@@ -142,11 +143,20 @@ const FAQ = [
   },
 ];
 
-function SectionHead({ eyebrow, title }: { eyebrow: string; title: string }) {
+function SectionHead({
+  eyebrow,
+  title,
+  lead,
+}: {
+  eyebrow: string;
+  title: string;
+  lead?: string;
+}) {
   return (
     <div className="mb-14 max-w-3xl md:mb-20">
       <p className="eyebrow mb-5">{eyebrow}</p>
       <h2 className="display text-[clamp(2rem,5vw,3.5rem)] font-semibold">{title}</h2>
+      {lead ? <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground">{lead}</p> : null}
     </div>
   );
 }
@@ -155,7 +165,7 @@ function Index() {
   const [open, setOpen] = useState<number | null>(0);
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-background pb-24 text-foreground md:pb-0">
       <header className="sticky top-0 z-50 border-b border-hairline bg-background/90 backdrop-blur-sm">
         <div className="mx-auto flex h-16 max-w-[1200px] items-center justify-between px-6 md:px-10">
           <a href="#top" className="display text-lg font-bold tracking-tight">
@@ -166,18 +176,29 @@ function Index() {
               <a
                 key={item.href}
                 href={item.href}
-                className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+                className="text-base text-muted-foreground transition-colors hover:text-foreground"
               >
                 {item.label}
               </a>
             ))}
           </nav>
-          <a
-            href="#kontakt"
-            className="bg-foreground px-5 py-2.5 text-xs font-medium tracking-wide text-background transition-all duration-200 hover:-translate-y-0.5 hover:opacity-90"
-          >
-            Darmowe demo
-          </a>
+          <div className="flex items-center gap-3 md:gap-5">
+            <a
+              href="tel:+48664013998"
+              aria-label="Zadzwoń: 664 013 998"
+              className="inline-flex min-h-[44px] items-center gap-2 px-1 text-base font-medium transition-opacity hover:opacity-70"
+            >
+              <Phone strokeWidth={1.5} className="h-5 w-5 shrink-0" aria-hidden="true" />
+              <span className="hidden sm:inline">664 013 998</span>
+            </a>
+            <a
+              href="#kontakt"
+              className="inline-flex min-h-[44px] items-center gap-2 bg-foreground px-5 py-3 text-sm font-medium tracking-wide text-background transition-all duration-200 hover:-translate-y-0.5 hover:opacity-90"
+            >
+              Darmowe demo
+              <span aria-hidden="true">→</span>
+            </a>
+          </div>
         </div>
       </header>
 
@@ -197,15 +218,17 @@ function Index() {
               <div className="mt-10 flex flex-wrap items-center gap-6">
                 <a
                   href="#kontakt"
-                  className="bg-foreground px-8 py-4 text-sm font-medium tracking-wide text-background transition-all duration-200 hover:-translate-y-0.5 hover:opacity-90"
+                  className="inline-flex min-h-[56px] items-center gap-3 bg-foreground px-10 py-4 text-base font-medium tracking-wide text-background transition-all duration-200 hover:-translate-y-0.5 hover:opacity-90"
                 >
                   Zamów darmowe demo
+                  <span aria-hidden="true">→</span>
                 </a>
                 <a
                   href="#realizacje"
-                  className="border border-foreground/60 px-8 py-4 text-sm font-medium transition-all duration-200 hover:-translate-y-0.5 hover:bg-foreground hover:text-background"
+                  className="inline-flex min-h-[56px] items-center gap-3 border border-foreground px-10 py-4 text-base font-medium transition-all duration-200 hover:-translate-y-0.5 hover:bg-foreground hover:text-background"
                 >
                   Zobacz przykłady
+                  <span aria-hidden="true">→</span>
                 </a>
               </div>
             </Reveal>
@@ -219,7 +242,11 @@ function Index() {
         {/* JAK TO DZIAŁA */}
         <section id="jak-to-dziala" className="border-b border-hairline">
           <div className="mx-auto max-w-[1200px] px-6 py-20 md:px-10 md:py-32">
-            <SectionHead eyebrow="Proces" title="Jak to działa" />
+            <SectionHead
+              eyebrow="Proces"
+              title="Jak to działa"
+              lead="Trzy proste kroki od pierwszej rozmowy do gotowej strony."
+            />
             <ol>
               {STEPS.map((step, i) => (
                 <Reveal as="li" key={step.n} delay={i * 90}>
@@ -243,11 +270,15 @@ function Index() {
         {/* REALIZACJE */}
         <section id="realizacje" className="border-b border-hairline">
           <div className="mx-auto max-w-[1200px] px-6 py-20 md:px-10 md:py-32">
-            <SectionHead eyebrow="Realizacje" title="Przykładowe projekty" />
+            <SectionHead
+              eyebrow="Realizacje"
+              title="Przykładowe projekty"
+              lead="Kliknij dowolny projekt, żeby zobaczyć przykładową stronę w całości."
+            />
             <div className="space-y-12 md:space-y-16">
               {CASES.map((c, i) => (
                 <Reveal key={c.name} delay={i * 60}>
-                  <article className="border border-hairline bg-secondary/30">
+                  <article className="group relative border border-hairline bg-secondary/30 transition-colors hover:border-foreground/50">
                     <div className="border-b border-hairline p-4 md:p-6">
                       <div className="border border-hairline bg-[#0d0d0d]">
                         <div className="flex h-7 items-center gap-1.5 border-b border-hairline px-3">
@@ -262,19 +293,25 @@ function Index() {
                       </div>
                     </div>
                     <div className="flex flex-wrap items-end justify-between gap-6 p-6 md:p-8">
-                      <div>
+                      <div className="min-w-0">
                         <p className="eyebrow mb-3">{c.branch}</p>
                         <h3 className="display text-2xl font-semibold md:text-3xl">{c.name}</h3>
                         <p className="mt-3 max-w-md leading-relaxed text-muted-foreground">
                           {c.desc}
                         </p>
                       </div>
-                      <Link
-                        to={c.to}
-                        className="bg-foreground px-7 py-3.5 text-sm font-medium tracking-wide text-background transition-all duration-200 hover:-translate-y-0.5 hover:opacity-90"
-                      >
-                        Zobacz demo
-                      </Link>
+                      <div className="flex flex-col gap-2">
+                        <Link
+                          to={c.to}
+                          className="inline-flex min-h-[52px] items-center justify-center gap-3 bg-foreground px-8 py-4 text-base font-medium tracking-wide text-background transition-all duration-200 hover:-translate-y-0.5 hover:opacity-90 after:absolute after:inset-0 after:content-['']"
+                        >
+                          Zobacz przykładową stronę
+                          <span aria-hidden="true">→</span>
+                        </Link>
+                        <span className="text-sm text-muted-foreground">
+                          Otworzy się pełna strona przykładowa
+                        </span>
+                      </div>
                     </div>
                   </article>
                 </Reveal>
@@ -290,62 +327,94 @@ function Index() {
         {/* CENNIK */}
         <section id="cennik" className="border-b border-hairline">
           <div className="mx-auto max-w-[1200px] px-6 py-20 md:px-10 md:py-32">
-            <SectionHead eyebrow="Cennik" title="Dwa sposoby na start" />
+            <SectionHead
+              eyebrow="Cennik"
+              title="Dwa sposoby na start"
+              lead="Dwie proste opcje — wybierz, jak wolisz płacić."
+            />
             <div className="grid gap-px bg-hairline md:grid-cols-2">
               <Reveal className="bg-background">
                 <div className="flex h-full flex-col border border-hairline p-8 md:p-12">
-                  <p className="eyebrow mb-6">Jednorazowo</p>
+                  <p className="eyebrow mb-3">Jednorazowo</p>
+                  <p className="display mb-6 text-xl font-semibold">Płacisz raz</p>
                   <p className="display text-[clamp(2.25rem,5vw,3.25rem)] font-bold">1500 zł</p>
                   <ul className="mt-8 space-y-4 text-muted-foreground">
-                    <li className="border-t border-hairline pt-4">
-                      Strona na własność — bez ukrytych warunków
+                    <li className="flex gap-3 border-t border-hairline pt-4">
+                      <Check strokeWidth={1.25} className="mt-1 h-5 w-5 shrink-0 text-foreground" aria-hidden="true" />
+                      <span>Strona na własność — bez ukrytych warunków</span>
                     </li>
-                    <li className="border-t border-hairline pt-4">Publikacja pod Twoją domeną</li>
-                    <li className="border-t border-hairline pt-4">
-                      Potem jedyny stały koszt to domena, ok. 100–150 zł rocznie, rejestrowana na
-                      Twoje dane
+                    <li className="flex gap-3 border-t border-hairline pt-4">
+                      <Check strokeWidth={1.25} className="mt-1 h-5 w-5 shrink-0 text-foreground" aria-hidden="true" />
+                      <span>Publikacja pod Twoją domeną</span>
                     </li>
-                    <li className="border-t border-hairline pt-4">Żadnego abonamentu za stronę</li>
+                    <li className="flex gap-3 border-t border-hairline pt-4">
+                      <Check strokeWidth={1.25} className="mt-1 h-5 w-5 shrink-0 text-foreground" aria-hidden="true" />
+                      <span>Potem jedyny stały koszt to domena, ok. 100–150 zł rocznie, rejestrowana na
+                      Twoje dane</span>
+                    </li>
+                    <li className="flex gap-3 border-t border-hairline pt-4">
+                      <Check strokeWidth={1.25} className="mt-1 h-5 w-5 shrink-0 text-foreground" aria-hidden="true" />
+                      <span>Żadnego abonamentu za stronę</span>
+                    </li>
                   </ul>
                   <a
                     href="#kontakt"
-                    className="mt-10 w-fit border border-foreground px-7 py-3.5 text-sm font-medium transition-all duration-200 hover:-translate-y-0.5 hover:bg-foreground hover:text-background"
+                    className="mt-10 inline-flex min-h-[52px] w-fit items-center gap-3 border border-foreground px-8 py-4 text-base font-medium transition-all duration-200 hover:-translate-y-0.5 hover:bg-foreground hover:text-background"
                   >
                     Zamów darmowe demo
+                    <span aria-hidden="true">→</span>
                   </a>
                 </div>
               </Reveal>
 
               <Reveal delay={90} className="bg-background">
                 <div className="flex h-full flex-col border border-foreground p-8 md:p-12">
-                  <div className="mb-6 flex items-center justify-between gap-4">
+                  <div className="mb-3 flex items-center justify-between gap-4">
                     <p className="eyebrow">Abonament</p>
                     <span className="border border-foreground px-3 py-1 text-[10px] tracking-widest uppercase">
                       Bez kosztów na start
                     </span>
                   </div>
+                  <p className="display mb-6 text-xl font-semibold">Płacisz miesięcznie</p>
                   <p className="display text-[clamp(2.25rem,5vw,3.25rem)] font-bold">
                     199 zł<span className="text-xl font-normal">/mies.</span>
                   </p>
                   <ul className="mt-8 space-y-4 text-muted-foreground">
-                    <li className="border-t border-hairline pt-4">0 zł na start</li>
-                    <li className="border-t border-hairline pt-4">Domena i hosting w cenie</li>
-                    <li className="border-t border-hairline pt-4">
-                      Drobne zmiany na stronie i opieka techniczna
+                    <li className="flex gap-3 border-t border-hairline pt-4">
+                      <Check strokeWidth={1.25} className="mt-1 h-5 w-5 shrink-0 text-foreground" aria-hidden="true" />
+                      <span>0 zł na start</span>
                     </li>
-                    <li className="border-t border-hairline pt-4">
-                      Monitoring działania strony przez całą dobę
+                    <li className="flex gap-3 border-t border-hairline pt-4">
+                      <Check strokeWidth={1.25} className="mt-1 h-5 w-5 shrink-0 text-foreground" aria-hidden="true" />
+                      <span>Domena i hosting w cenie</span>
+                    </li>
+                    <li className="flex gap-3 border-t border-hairline pt-4">
+                      <Check strokeWidth={1.25} className="mt-1 h-5 w-5 shrink-0 text-foreground" aria-hidden="true" />
+                      <span>Drobne zmiany na stronie i opieka techniczna</span>
+                    </li>
+                    <li className="flex gap-3 border-t border-hairline pt-4">
+                      <Check strokeWidth={1.25} className="mt-1 h-5 w-5 shrink-0 text-foreground" aria-hidden="true" />
+                      <span>Monitoring działania strony przez całą dobę</span>
                     </li>
                   </ul>
                   <a
                     href="#kontakt"
-                    className="mt-10 w-fit bg-foreground px-7 py-3.5 text-sm font-medium text-background transition-all duration-200 hover:-translate-y-0.5 hover:opacity-90"
+                    className="mt-10 inline-flex min-h-[52px] w-fit items-center gap-3 bg-foreground px-8 py-4 text-base font-medium text-background transition-all duration-200 hover:-translate-y-0.5 hover:opacity-90"
                   >
                     Zamów darmowe demo
+                    <span aria-hidden="true">→</span>
                   </a>
                 </div>
               </Reveal>
             </div>
+
+            <p className="mt-8 leading-relaxed text-muted-foreground">
+              Nie wiesz, co wybrać? Zadzwoń — doradzę bez zobowiązań:{" "}
+              <a href="tel:+48664013998" className="font-medium text-foreground underline underline-offset-8">
+                664 013 998
+              </a>
+              .
+            </p>
 
             <Reveal delay={120}>
               <div className="mt-8 flex flex-col gap-6 border border-hairline p-8 md:flex-row md:items-center md:justify-between md:p-10">
@@ -360,9 +429,10 @@ function Index() {
                 </div>
                 <a
                   href="#kontakt"
-                  className="w-fit text-sm font-medium underline underline-offset-8 transition-opacity hover:opacity-60"
+                  className="inline-flex min-h-[52px] w-fit items-center gap-3 border border-foreground px-8 py-4 text-base font-medium transition-all duration-200 hover:-translate-y-0.5 hover:bg-foreground hover:text-background"
                 >
                   Dopytaj o pakiet
+                  <span aria-hidden="true">→</span>
                 </a>
               </div>
             </Reveal>
@@ -372,7 +442,11 @@ function Index() {
         {/* DLACZEGO */}
         <section className="border-b border-hairline">
           <div className="mx-auto max-w-[1200px] px-6 py-20 md:px-10 md:py-32">
-            <SectionHead eyebrow="Dlaczego SCS Web" title="Cztery powody, żeby zacząć" />
+            <SectionHead
+              eyebrow="Dlaczego SCS Web"
+              title="Cztery powody, żeby zacząć"
+              lead="Krótko: bez ryzyka, bez czekania i bez ukrytych kosztów."
+            />
             <div className="grid gap-px bg-hairline sm:grid-cols-2">
               {WHY.map((item, i) => (
                 <Reveal key={item.title} delay={i * 70} className="bg-background">
@@ -390,7 +464,11 @@ function Index() {
         {/* FAQ */}
         <section id="faq" className="border-b border-hairline">
           <div className="mx-auto max-w-[1200px] px-6 py-20 md:px-10 md:py-32">
-            <SectionHead eyebrow="FAQ" title="Najczęstsze pytania" />
+            <SectionHead
+              eyebrow="FAQ"
+              title="Najczęstsze pytania"
+              lead="Odpowiedzi na to, o co pytają najczęściej właściciele małych firm."
+            />
             <div className="max-w-3xl">
               {FAQ.map((item, i) => {
                 const isOpen = open === i;
@@ -400,9 +478,9 @@ function Index() {
                       type="button"
                       onClick={() => setOpen(isOpen ? null : i)}
                       aria-expanded={isOpen}
-                      className="flex w-full items-center justify-between gap-6 py-7 text-left transition-opacity hover:opacity-60"
+                      className="flex min-h-[56px] w-full items-center justify-between gap-6 py-7 text-left transition-opacity hover:opacity-60"
                     >
-                      <span className="display text-lg font-semibold md:text-xl">{item.q}</span>
+                      <span className="display text-xl font-semibold md:text-2xl">{item.q}</span>
                       {isOpen ? (
                         <Minus strokeWidth={1.25} className="h-5 w-5 shrink-0" aria-hidden="true" />
                       ) : (
@@ -414,7 +492,7 @@ function Index() {
                       style={{ gridTemplateRows: isOpen ? "1fr" : "0fr" }}
                     >
                       <div className="overflow-hidden">
-                        <p className="max-w-2xl pb-8 leading-relaxed text-muted-foreground">
+                        <p className="max-w-2xl pb-8 text-lg leading-relaxed text-muted-foreground">
                           {item.a}
                         </p>
                       </div>
@@ -439,16 +517,16 @@ function Index() {
                   Napisz kilka zdań o swojej firmie. W 48 godzin dostaniesz link do gotowego projektu
                   strony — bez zaliczki i bez zobowiązań.
                 </p>
-                <div className="mt-10 space-y-3 text-sm">
+                <div className="mt-10 space-y-3 text-lg">
                   <p>
-                    <a href="tel:+48664013998" className="underline underline-offset-8">
+                    <a href="tel:+48664013998" className="inline-flex min-h-[44px] items-center font-medium underline underline-offset-8 hover:opacity-70">
                       664 013 998
                     </a>
                   </p>
                   <p>
                     <a
                       href="mailto:kamil.pietraszko@onet.pl"
-                      className="underline underline-offset-8"
+                      className="inline-flex min-h-[44px] items-center underline underline-offset-8 hover:opacity-70"
                     >
                       kamil.pietraszko@onet.pl
                     </a>
@@ -477,6 +555,8 @@ function Index() {
           </div>
         </div>
       </footer>
+
+      <MobileBar />
     </div>
   );
 }
