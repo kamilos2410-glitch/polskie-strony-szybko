@@ -37,13 +37,13 @@ export function ContactForm() {
         setStatus("error");
         setMessage(
           result.message ??
-            "Nie udało się wysłać wiadomości. Zadzwoń: 664 013 998 lub napisz na kamil.pietraszko@onet.pl.",
+            "Nie udało się wysłać wiadomości. Zadzwoń: +48 664 013 998 lub napisz na kamil.pietraszko@onet.pl.",
         );
       }
     } catch {
       setStatus("error");
       setMessage(
-        "Brak połączenia z serwerem formularza. Zadzwoń: 664 013 998 lub napisz na kamil.pietraszko@onet.pl.",
+        "Brak połączenia z serwerem formularza. Zadzwoń: +48 664 013 998 lub napisz na kamil.pietraszko@onet.pl.",
       );
     }
   }
