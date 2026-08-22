@@ -185,11 +185,11 @@ function Index() {
           <div className="flex items-center gap-3 md:gap-5">
             <a
               href="tel:+48664013998"
-              aria-label="Zadzwoń: 664 013 998"
+              aria-label="Zadzwoń: +48 664 013 998"
               className="inline-flex min-h-[44px] items-center gap-2 px-1 text-base font-medium transition-opacity hover:opacity-70"
             >
               <Phone strokeWidth={1.5} className="h-5 w-5 shrink-0" aria-hidden="true" />
-              <span className="hidden sm:inline">664 013 998</span>
+              <span className="hidden sm:inline">+48 664 013 998</span>
             </a>
             <a
               href="#kontakt"
@@ -394,7 +394,7 @@ function Index() {
                     </li>
                     <li className="flex gap-3 border-t border-hairline pt-4">
                       <Check strokeWidth={1.25} className="mt-1 h-5 w-5 shrink-0 text-foreground" aria-hidden="true" />
-                      <span>Monitoring działania strony przez całą dobę</span>
+                      <span>Żadnych dodatkowych kosztów — domena i serwer po naszej stronie</span>
                     </li>
                   </ul>
                   <a
@@ -411,7 +411,7 @@ function Index() {
             <p className="mt-8 leading-relaxed text-muted-foreground">
               Nie wiesz, co wybrać? Zadzwoń — doradzę bez zobowiązań:{" "}
               <a href="tel:+48664013998" className="font-medium text-foreground underline underline-offset-8">
-                664 013 998
+                +48 664 013 998
               </a>
               .
             </p>
@@ -520,7 +520,7 @@ function Index() {
                 <div className="mt-10 space-y-3 text-lg">
                   <p>
                     <a href="tel:+48664013998" className="inline-flex min-h-[44px] items-center font-medium underline underline-offset-8 hover:opacity-70">
-                      664 013 998
+                      +48 664 013 998
                     </a>
                   </p>
                   <p>
@@ -549,7 +549,7 @@ function Index() {
           </div>
           <div className="space-y-1 md:text-right">
             <p className="text-foreground">Kamil Pietraszko</p>
-            <p>tel. 664 013 998</p>
+            <p>tel. +48 664 013 998</p>
             <p>kamil.pietraszko@onet.pl</p>
             <p className="pt-2">© 2026 SCS Web</p>
           </div>
