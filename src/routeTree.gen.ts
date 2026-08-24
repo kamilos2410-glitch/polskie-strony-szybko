@@ -13,6 +13,16 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as DemoAutoserwisKowalskiRouteImport } from './routes/demo.autoserwis-kowalski'
 import { Route as DemoDachpolRouteImport } from './routes/demo.dachpol'
 import { Route as DemoHydroPerfektRouteImport } from './routes/demo.hydro-perfekt'
+import { Route as PakietyFirmaKompletnaRouteImport } from './routes/pakiety.firma-kompletna'
+import { Route as PakietyStartOnlineRouteImport } from './routes/pakiety.start-online'
+import { Route as PakietyWizerunekRouteImport } from './routes/pakiety.wizerunek'
+import { Route as UslugiOznakowanieAutaRouteImport } from './routes/uslugi.oznakowanie-auta'
+import { Route as UslugiPakietStartGoogleRouteImport } from './routes/uslugi.pakiet-start-google'
+import { Route as UslugiPocztaFirmowaRouteImport } from './routes/uslugi.poczta-firmowa'
+import { Route as UslugiProjektLogoRouteImport } from './routes/uslugi.projekt-logo'
+import { Route as UslugiProjektUlotkiRouteImport } from './routes/uslugi.projekt-ulotki'
+import { Route as UslugiProjektWizytowkiRouteImport } from './routes/uslugi.projekt-wizytowki'
+import { Route as UslugiStronaInternetowaRouteImport } from './routes/uslugi.strona-internetowa'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -34,18 +44,88 @@ const DemoHydroPerfektRoute = DemoHydroPerfektRouteImport.update({
   path: '/demo/hydro-perfekt',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PakietyFirmaKompletnaRoute = PakietyFirmaKompletnaRouteImport.update({
+  id: '/pakiety/firma-kompletna',
+  path: '/pakiety/firma-kompletna',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PakietyStartOnlineRoute = PakietyStartOnlineRouteImport.update({
+  id: '/pakiety/start-online',
+  path: '/pakiety/start-online',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PakietyWizerunekRoute = PakietyWizerunekRouteImport.update({
+  id: '/pakiety/wizerunek',
+  path: '/pakiety/wizerunek',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const UslugiOznakowanieAutaRoute = UslugiOznakowanieAutaRouteImport.update({
+  id: '/uslugi/oznakowanie-auta',
+  path: '/uslugi/oznakowanie-auta',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const UslugiPakietStartGoogleRoute = UslugiPakietStartGoogleRouteImport.update({
+  id: '/uslugi/pakiet-start-google',
+  path: '/uslugi/pakiet-start-google',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const UslugiPocztaFirmowaRoute = UslugiPocztaFirmowaRouteImport.update({
+  id: '/uslugi/poczta-firmowa',
+  path: '/uslugi/poczta-firmowa',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const UslugiProjektLogoRoute = UslugiProjektLogoRouteImport.update({
+  id: '/uslugi/projekt-logo',
+  path: '/uslugi/projekt-logo',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const UslugiProjektUlotkiRoute = UslugiProjektUlotkiRouteImport.update({
+  id: '/uslugi/projekt-ulotki',
+  path: '/uslugi/projekt-ulotki',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const UslugiProjektWizytowkiRoute = UslugiProjektWizytowkiRouteImport.update({
+  id: '/uslugi/projekt-wizytowki',
+  path: '/uslugi/projekt-wizytowki',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const UslugiStronaInternetowaRoute = UslugiStronaInternetowaRouteImport.update({
+  id: '/uslugi/strona-internetowa',
+  path: '/uslugi/strona-internetowa',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/demo/autoserwis-kowalski': typeof DemoAutoserwisKowalskiRoute
   '/demo/dachpol': typeof DemoDachpolRoute
   '/demo/hydro-perfekt': typeof DemoHydroPerfektRoute
+  '/pakiety/firma-kompletna': typeof PakietyFirmaKompletnaRoute
+  '/pakiety/start-online': typeof PakietyStartOnlineRoute
+  '/pakiety/wizerunek': typeof PakietyWizerunekRoute
+  '/uslugi/oznakowanie-auta': typeof UslugiOznakowanieAutaRoute
+  '/uslugi/pakiet-start-google': typeof UslugiPakietStartGoogleRoute
+  '/uslugi/poczta-firmowa': typeof UslugiPocztaFirmowaRoute
+  '/uslugi/projekt-logo': typeof UslugiProjektLogoRoute
+  '/uslugi/projekt-ulotki': typeof UslugiProjektUlotkiRoute
+  '/uslugi/projekt-wizytowki': typeof UslugiProjektWizytowkiRoute
+  '/uslugi/strona-internetowa': typeof UslugiStronaInternetowaRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/demo/autoserwis-kowalski': typeof DemoAutoserwisKowalskiRoute
   '/demo/dachpol': typeof DemoDachpolRoute
   '/demo/hydro-perfekt': typeof DemoHydroPerfektRoute
+  '/pakiety/firma-kompletna': typeof PakietyFirmaKompletnaRoute
+  '/pakiety/start-online': typeof PakietyStartOnlineRoute
+  '/pakiety/wizerunek': typeof PakietyWizerunekRoute
+  '/uslugi/oznakowanie-auta': typeof UslugiOznakowanieAutaRoute
+  '/uslugi/pakiet-start-google': typeof UslugiPakietStartGoogleRoute
+  '/uslugi/poczta-firmowa': typeof UslugiPocztaFirmowaRoute
+  '/uslugi/projekt-logo': typeof UslugiProjektLogoRoute
+  '/uslugi/projekt-ulotki': typeof UslugiProjektUlotkiRoute
+  '/uslugi/projekt-wizytowki': typeof UslugiProjektWizytowkiRoute
+  '/uslugi/strona-internetowa': typeof UslugiStronaInternetowaRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -53,20 +133,66 @@ export interface FileRoutesById {
   '/demo/autoserwis-kowalski': typeof DemoAutoserwisKowalskiRoute
   '/demo/dachpol': typeof DemoDachpolRoute
   '/demo/hydro-perfekt': typeof DemoHydroPerfektRoute
+  '/pakiety/firma-kompletna': typeof PakietyFirmaKompletnaRoute
+  '/pakiety/start-online': typeof PakietyStartOnlineRoute
+  '/pakiety/wizerunek': typeof PakietyWizerunekRoute
+  '/uslugi/oznakowanie-auta': typeof UslugiOznakowanieAutaRoute
+  '/uslugi/pakiet-start-google': typeof UslugiPakietStartGoogleRoute
+  '/uslugi/poczta-firmowa': typeof UslugiPocztaFirmowaRoute
+  '/uslugi/projekt-logo': typeof UslugiProjektLogoRoute
+  '/uslugi/projekt-ulotki': typeof UslugiProjektUlotkiRoute
+  '/uslugi/projekt-wizytowki': typeof UslugiProjektWizytowkiRoute
+  '/uslugi/strona-internetowa': typeof UslugiStronaInternetowaRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
-    '/' | '/demo/autoserwis-kowalski' | '/demo/dachpol' | '/demo/hydro-perfekt'
+    | '/'
+    | '/demo/autoserwis-kowalski'
+    | '/demo/dachpol'
+    | '/demo/hydro-perfekt'
+    | '/pakiety/firma-kompletna'
+    | '/pakiety/start-online'
+    | '/pakiety/wizerunek'
+    | '/uslugi/oznakowanie-auta'
+    | '/uslugi/pakiet-start-google'
+    | '/uslugi/poczta-firmowa'
+    | '/uslugi/projekt-logo'
+    | '/uslugi/projekt-ulotki'
+    | '/uslugi/projekt-wizytowki'
+    | '/uslugi/strona-internetowa'
   fileRoutesByTo: FileRoutesByTo
   to:
-    '/' | '/demo/autoserwis-kowalski' | '/demo/dachpol' | '/demo/hydro-perfekt'
+    | '/'
+    | '/demo/autoserwis-kowalski'
+    | '/demo/dachpol'
+    | '/demo/hydro-perfekt'
+    | '/pakiety/firma-kompletna'
+    | '/pakiety/start-online'
+    | '/pakiety/wizerunek'
+    | '/uslugi/oznakowanie-auta'
+    | '/uslugi/pakiet-start-google'
+    | '/uslugi/poczta-firmowa'
+    | '/uslugi/projekt-logo'
+    | '/uslugi/projekt-ulotki'
+    | '/uslugi/projekt-wizytowki'
+    | '/uslugi/strona-internetowa'
   id:
     | '__root__'
     | '/'
     | '/demo/autoserwis-kowalski'
     | '/demo/dachpol'
     | '/demo/hydro-perfekt'
+    | '/pakiety/firma-kompletna'
+    | '/pakiety/start-online'
+    | '/pakiety/wizerunek'
+    | '/uslugi/oznakowanie-auta'
+    | '/uslugi/pakiet-start-google'
+    | '/uslugi/poczta-firmowa'
+    | '/uslugi/projekt-logo'
+    | '/uslugi/projekt-ulotki'
+    | '/uslugi/projekt-wizytowki'
+    | '/uslugi/strona-internetowa'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -74,6 +200,16 @@ export interface RootRouteChildren {
   DemoAutoserwisKowalskiRoute: typeof DemoAutoserwisKowalskiRoute
   DemoDachpolRoute: typeof DemoDachpolRoute
   DemoHydroPerfektRoute: typeof DemoHydroPerfektRoute
+  PakietyFirmaKompletnaRoute: typeof PakietyFirmaKompletnaRoute
+  PakietyStartOnlineRoute: typeof PakietyStartOnlineRoute
+  PakietyWizerunekRoute: typeof PakietyWizerunekRoute
+  UslugiOznakowanieAutaRoute: typeof UslugiOznakowanieAutaRoute
+  UslugiPakietStartGoogleRoute: typeof UslugiPakietStartGoogleRoute
+  UslugiPocztaFirmowaRoute: typeof UslugiPocztaFirmowaRoute
+  UslugiProjektLogoRoute: typeof UslugiProjektLogoRoute
+  UslugiProjektUlotkiRoute: typeof UslugiProjektUlotkiRoute
+  UslugiProjektWizytowkiRoute: typeof UslugiProjektWizytowkiRoute
+  UslugiStronaInternetowaRoute: typeof UslugiStronaInternetowaRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -106,6 +242,76 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DemoHydroPerfektRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/pakiety/firma-kompletna': {
+      id: '/pakiety/firma-kompletna'
+      path: '/pakiety/firma-kompletna'
+      fullPath: '/pakiety/firma-kompletna'
+      preLoaderRoute: typeof PakietyFirmaKompletnaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pakiety/start-online': {
+      id: '/pakiety/start-online'
+      path: '/pakiety/start-online'
+      fullPath: '/pakiety/start-online'
+      preLoaderRoute: typeof PakietyStartOnlineRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pakiety/wizerunek': {
+      id: '/pakiety/wizerunek'
+      path: '/pakiety/wizerunek'
+      fullPath: '/pakiety/wizerunek'
+      preLoaderRoute: typeof PakietyWizerunekRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/uslugi/oznakowanie-auta': {
+      id: '/uslugi/oznakowanie-auta'
+      path: '/uslugi/oznakowanie-auta'
+      fullPath: '/uslugi/oznakowanie-auta'
+      preLoaderRoute: typeof UslugiOznakowanieAutaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/uslugi/pakiet-start-google': {
+      id: '/uslugi/pakiet-start-google'
+      path: '/uslugi/pakiet-start-google'
+      fullPath: '/uslugi/pakiet-start-google'
+      preLoaderRoute: typeof UslugiPakietStartGoogleRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/uslugi/poczta-firmowa': {
+      id: '/uslugi/poczta-firmowa'
+      path: '/uslugi/poczta-firmowa'
+      fullPath: '/uslugi/poczta-firmowa'
+      preLoaderRoute: typeof UslugiPocztaFirmowaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/uslugi/projekt-logo': {
+      id: '/uslugi/projekt-logo'
+      path: '/uslugi/projekt-logo'
+      fullPath: '/uslugi/projekt-logo'
+      preLoaderRoute: typeof UslugiProjektLogoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/uslugi/projekt-ulotki': {
+      id: '/uslugi/projekt-ulotki'
+      path: '/uslugi/projekt-ulotki'
+      fullPath: '/uslugi/projekt-ulotki'
+      preLoaderRoute: typeof UslugiProjektUlotkiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/uslugi/projekt-wizytowki': {
+      id: '/uslugi/projekt-wizytowki'
+      path: '/uslugi/projekt-wizytowki'
+      fullPath: '/uslugi/projekt-wizytowki'
+      preLoaderRoute: typeof UslugiProjektWizytowkiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/uslugi/strona-internetowa': {
+      id: '/uslugi/strona-internetowa'
+      path: '/uslugi/strona-internetowa'
+      fullPath: '/uslugi/strona-internetowa'
+      preLoaderRoute: typeof UslugiStronaInternetowaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -114,6 +320,16 @@ const rootRouteChildren: RootRouteChildren = {
   DemoAutoserwisKowalskiRoute: DemoAutoserwisKowalskiRoute,
   DemoDachpolRoute: DemoDachpolRoute,
   DemoHydroPerfektRoute: DemoHydroPerfektRoute,
+  PakietyFirmaKompletnaRoute: PakietyFirmaKompletnaRoute,
+  PakietyStartOnlineRoute: PakietyStartOnlineRoute,
+  PakietyWizerunekRoute: PakietyWizerunekRoute,
+  UslugiOznakowanieAutaRoute: UslugiOznakowanieAutaRoute,
+  UslugiPakietStartGoogleRoute: UslugiPakietStartGoogleRoute,
+  UslugiPocztaFirmowaRoute: UslugiPocztaFirmowaRoute,
+  UslugiProjektLogoRoute: UslugiProjektLogoRoute,
+  UslugiProjektUlotkiRoute: UslugiProjektUlotkiRoute,
+  UslugiProjektWizytowkiRoute: UslugiProjektWizytowkiRoute,
+  UslugiStronaInternetowaRoute: UslugiStronaInternetowaRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
