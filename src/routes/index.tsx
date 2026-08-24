@@ -329,9 +329,10 @@ function Index() {
           <div className="mx-auto max-w-[1200px] px-6 py-20 md:px-10 md:py-32">
             <SectionHead
               eyebrow="Cennik"
-              title="Dwa sposoby na start"
-              lead="Dwie proste opcje — wybierz, jak wolisz płacić."
+              title="Cennik"
+              lead="Zacznij od samej strony albo złóż większy pakiet — wszystko z jasną ceną z góry."
             />
+            <h3 className="display mb-8 text-2xl font-semibold md:text-3xl">Sama strona</h3>
             <div className="grid gap-px bg-hairline md:grid-cols-2">
               <Reveal className="bg-background">
                 <div className="flex h-full flex-col border border-hairline p-8 md:p-12">

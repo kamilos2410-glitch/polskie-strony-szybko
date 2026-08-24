@@ -15,6 +15,7 @@ import { Route as DemoDachpolRouteImport } from './routes/demo.dachpol'
 import { Route as DemoHydroPerfektRouteImport } from './routes/demo.hydro-perfekt'
 import { Route as PakietyFirmaKompletnaRouteImport } from './routes/pakiety.firma-kompletna'
 import { Route as PakietyStartOnlineRouteImport } from './routes/pakiety.start-online'
+import { Route as PakietyWizerunekRouteImport } from './routes/pakiety.wizerunek'
 import { Route as UslugiOznakowanieAutaRouteImport } from './routes/uslugi.oznakowanie-auta'
 import { Route as UslugiPakietStartGoogleRouteImport } from './routes/uslugi.pakiet-start-google'
 import { Route as UslugiPocztaFirmowaRouteImport } from './routes/uslugi.poczta-firmowa'
@@ -51,6 +52,11 @@ const PakietyFirmaKompletnaRoute = PakietyFirmaKompletnaRouteImport.update({
 const PakietyStartOnlineRoute = PakietyStartOnlineRouteImport.update({
   id: '/pakiety/start-online',
   path: '/pakiety/start-online',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PakietyWizerunekRoute = PakietyWizerunekRouteImport.update({
+  id: '/pakiety/wizerunek',
+  path: '/pakiety/wizerunek',
   getParentRoute: () => rootRouteImport,
 } as any)
 const UslugiOznakowanieAutaRoute = UslugiOznakowanieAutaRouteImport.update({
@@ -96,6 +102,7 @@ export interface FileRoutesByFullPath {
   '/demo/hydro-perfekt': typeof DemoHydroPerfektRoute
   '/pakiety/firma-kompletna': typeof PakietyFirmaKompletnaRoute
   '/pakiety/start-online': typeof PakietyStartOnlineRoute
+  '/pakiety/wizerunek': typeof PakietyWizerunekRoute
   '/uslugi/oznakowanie-auta': typeof UslugiOznakowanieAutaRoute
   '/uslugi/pakiet-start-google': typeof UslugiPakietStartGoogleRoute
   '/uslugi/poczta-firmowa': typeof UslugiPocztaFirmowaRoute
@@ -111,6 +118,7 @@ export interface FileRoutesByTo {
   '/demo/hydro-perfekt': typeof DemoHydroPerfektRoute
   '/pakiety/firma-kompletna': typeof PakietyFirmaKompletnaRoute
   '/pakiety/start-online': typeof PakietyStartOnlineRoute
+  '/pakiety/wizerunek': typeof PakietyWizerunekRoute
   '/uslugi/oznakowanie-auta': typeof UslugiOznakowanieAutaRoute
   '/uslugi/pakiet-start-google': typeof UslugiPakietStartGoogleRoute
   '/uslugi/poczta-firmowa': typeof UslugiPocztaFirmowaRoute
@@ -127,6 +135,7 @@ export interface FileRoutesById {
   '/demo/hydro-perfekt': typeof DemoHydroPerfektRoute
   '/pakiety/firma-kompletna': typeof PakietyFirmaKompletnaRoute
   '/pakiety/start-online': typeof PakietyStartOnlineRoute
+  '/pakiety/wizerunek': typeof PakietyWizerunekRoute
   '/uslugi/oznakowanie-auta': typeof UslugiOznakowanieAutaRoute
   '/uslugi/pakiet-start-google': typeof UslugiPakietStartGoogleRoute
   '/uslugi/poczta-firmowa': typeof UslugiPocztaFirmowaRoute
@@ -144,6 +153,7 @@ export interface FileRouteTypes {
     | '/demo/hydro-perfekt'
     | '/pakiety/firma-kompletna'
     | '/pakiety/start-online'
+    | '/pakiety/wizerunek'
     | '/uslugi/oznakowanie-auta'
     | '/uslugi/pakiet-start-google'
     | '/uslugi/poczta-firmowa'
@@ -159,6 +169,7 @@ export interface FileRouteTypes {
     | '/demo/hydro-perfekt'
     | '/pakiety/firma-kompletna'
     | '/pakiety/start-online'
+    | '/pakiety/wizerunek'
     | '/uslugi/oznakowanie-auta'
     | '/uslugi/pakiet-start-google'
     | '/uslugi/poczta-firmowa'
@@ -174,6 +185,7 @@ export interface FileRouteTypes {
     | '/demo/hydro-perfekt'
     | '/pakiety/firma-kompletna'
     | '/pakiety/start-online'
+    | '/pakiety/wizerunek'
     | '/uslugi/oznakowanie-auta'
     | '/uslugi/pakiet-start-google'
     | '/uslugi/poczta-firmowa'
@@ -190,6 +202,7 @@ export interface RootRouteChildren {
   DemoHydroPerfektRoute: typeof DemoHydroPerfektRoute
   PakietyFirmaKompletnaRoute: typeof PakietyFirmaKompletnaRoute
   PakietyStartOnlineRoute: typeof PakietyStartOnlineRoute
+  PakietyWizerunekRoute: typeof PakietyWizerunekRoute
   UslugiOznakowanieAutaRoute: typeof UslugiOznakowanieAutaRoute
   UslugiPakietStartGoogleRoute: typeof UslugiPakietStartGoogleRoute
   UslugiPocztaFirmowaRoute: typeof UslugiPocztaFirmowaRoute
@@ -241,6 +254,13 @@ declare module '@tanstack/react-router' {
       path: '/pakiety/start-online'
       fullPath: '/pakiety/start-online'
       preLoaderRoute: typeof PakietyStartOnlineRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pakiety/wizerunek': {
+      id: '/pakiety/wizerunek'
+      path: '/pakiety/wizerunek'
+      fullPath: '/pakiety/wizerunek'
+      preLoaderRoute: typeof PakietyWizerunekRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/uslugi/oznakowanie-auta': {
@@ -302,6 +322,7 @@ const rootRouteChildren: RootRouteChildren = {
   DemoHydroPerfektRoute: DemoHydroPerfektRoute,
   PakietyFirmaKompletnaRoute: PakietyFirmaKompletnaRoute,
   PakietyStartOnlineRoute: PakietyStartOnlineRoute,
+  PakietyWizerunekRoute: PakietyWizerunekRoute,
   UslugiOznakowanieAutaRoute: UslugiOznakowanieAutaRoute,
   UslugiPakietStartGoogleRoute: UslugiPakietStartGoogleRoute,
   UslugiPocztaFirmowaRoute: UslugiPocztaFirmowaRoute,
