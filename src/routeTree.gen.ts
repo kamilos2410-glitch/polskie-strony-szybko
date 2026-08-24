@@ -13,6 +13,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as DemoAutoserwisKowalskiRouteImport } from './routes/demo.autoserwis-kowalski'
 import { Route as DemoDachpolRouteImport } from './routes/demo.dachpol'
 import { Route as DemoHydroPerfektRouteImport } from './routes/demo.hydro-perfekt'
+import { Route as PakietyFirmaKompletnaRouteImport } from './routes/pakiety.firma-kompletna'
 import { Route as PakietyStartOnlineRouteImport } from './routes/pakiety.start-online'
 import { Route as UslugiOznakowanieAutaRouteImport } from './routes/uslugi.oznakowanie-auta'
 import { Route as UslugiPakietStartGoogleRouteImport } from './routes/uslugi.pakiet-start-google'
@@ -40,6 +41,11 @@ const DemoDachpolRoute = DemoDachpolRouteImport.update({
 const DemoHydroPerfektRoute = DemoHydroPerfektRouteImport.update({
   id: '/demo/hydro-perfekt',
   path: '/demo/hydro-perfekt',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PakietyFirmaKompletnaRoute = PakietyFirmaKompletnaRouteImport.update({
+  id: '/pakiety/firma-kompletna',
+  path: '/pakiety/firma-kompletna',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PakietyStartOnlineRoute = PakietyStartOnlineRouteImport.update({
@@ -88,6 +94,7 @@ export interface FileRoutesByFullPath {
   '/demo/autoserwis-kowalski': typeof DemoAutoserwisKowalskiRoute
   '/demo/dachpol': typeof DemoDachpolRoute
   '/demo/hydro-perfekt': typeof DemoHydroPerfektRoute
+  '/pakiety/firma-kompletna': typeof PakietyFirmaKompletnaRoute
   '/pakiety/start-online': typeof PakietyStartOnlineRoute
   '/uslugi/oznakowanie-auta': typeof UslugiOznakowanieAutaRoute
   '/uslugi/pakiet-start-google': typeof UslugiPakietStartGoogleRoute
@@ -102,6 +109,7 @@ export interface FileRoutesByTo {
   '/demo/autoserwis-kowalski': typeof DemoAutoserwisKowalskiRoute
   '/demo/dachpol': typeof DemoDachpolRoute
   '/demo/hydro-perfekt': typeof DemoHydroPerfektRoute
+  '/pakiety/firma-kompletna': typeof PakietyFirmaKompletnaRoute
   '/pakiety/start-online': typeof PakietyStartOnlineRoute
   '/uslugi/oznakowanie-auta': typeof UslugiOznakowanieAutaRoute
   '/uslugi/pakiet-start-google': typeof UslugiPakietStartGoogleRoute
@@ -117,6 +125,7 @@ export interface FileRoutesById {
   '/demo/autoserwis-kowalski': typeof DemoAutoserwisKowalskiRoute
   '/demo/dachpol': typeof DemoDachpolRoute
   '/demo/hydro-perfekt': typeof DemoHydroPerfektRoute
+  '/pakiety/firma-kompletna': typeof PakietyFirmaKompletnaRoute
   '/pakiety/start-online': typeof PakietyStartOnlineRoute
   '/uslugi/oznakowanie-auta': typeof UslugiOznakowanieAutaRoute
   '/uslugi/pakiet-start-google': typeof UslugiPakietStartGoogleRoute
@@ -133,6 +142,7 @@ export interface FileRouteTypes {
     | '/demo/autoserwis-kowalski'
     | '/demo/dachpol'
     | '/demo/hydro-perfekt'
+    | '/pakiety/firma-kompletna'
     | '/pakiety/start-online'
     | '/uslugi/oznakowanie-auta'
     | '/uslugi/pakiet-start-google'
@@ -147,6 +157,7 @@ export interface FileRouteTypes {
     | '/demo/autoserwis-kowalski'
     | '/demo/dachpol'
     | '/demo/hydro-perfekt'
+    | '/pakiety/firma-kompletna'
     | '/pakiety/start-online'
     | '/uslugi/oznakowanie-auta'
     | '/uslugi/pakiet-start-google'
@@ -161,6 +172,7 @@ export interface FileRouteTypes {
     | '/demo/autoserwis-kowalski'
     | '/demo/dachpol'
     | '/demo/hydro-perfekt'
+    | '/pakiety/firma-kompletna'
     | '/pakiety/start-online'
     | '/uslugi/oznakowanie-auta'
     | '/uslugi/pakiet-start-google'
@@ -176,6 +188,7 @@ export interface RootRouteChildren {
   DemoAutoserwisKowalskiRoute: typeof DemoAutoserwisKowalskiRoute
   DemoDachpolRoute: typeof DemoDachpolRoute
   DemoHydroPerfektRoute: typeof DemoHydroPerfektRoute
+  PakietyFirmaKompletnaRoute: typeof PakietyFirmaKompletnaRoute
   PakietyStartOnlineRoute: typeof PakietyStartOnlineRoute
   UslugiOznakowanieAutaRoute: typeof UslugiOznakowanieAutaRoute
   UslugiPakietStartGoogleRoute: typeof UslugiPakietStartGoogleRoute
@@ -214,6 +227,13 @@ declare module '@tanstack/react-router' {
       path: '/demo/hydro-perfekt'
       fullPath: '/demo/hydro-perfekt'
       preLoaderRoute: typeof DemoHydroPerfektRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pakiety/firma-kompletna': {
+      id: '/pakiety/firma-kompletna'
+      path: '/pakiety/firma-kompletna'
+      fullPath: '/pakiety/firma-kompletna'
+      preLoaderRoute: typeof PakietyFirmaKompletnaRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/pakiety/start-online': {
@@ -280,6 +300,7 @@ const rootRouteChildren: RootRouteChildren = {
   DemoAutoserwisKowalskiRoute: DemoAutoserwisKowalskiRoute,
   DemoDachpolRoute: DemoDachpolRoute,
   DemoHydroPerfektRoute: DemoHydroPerfektRoute,
+  PakietyFirmaKompletnaRoute: PakietyFirmaKompletnaRoute,
   PakietyStartOnlineRoute: PakietyStartOnlineRoute,
   UslugiOznakowanieAutaRoute: UslugiOznakowanieAutaRoute,
   UslugiPakietStartGoogleRoute: UslugiPakietStartGoogleRoute,
