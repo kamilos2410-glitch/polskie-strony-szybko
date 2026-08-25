@@ -171,28 +171,29 @@ export function calculate(sel: Selection): CalcResult {
   let remaining = [...selected];
   const applied: AppliedPackage[] = [];
 
-  if (!abonament) {
-    // greedily apply the package with the biggest saving that fully fits the remainder
-    for (;;) {
-      let best: { pkg: Pkg; saving: number; separate: number; price: number } | null = null;
-      for (const pkg of PACKAGES) {
-        if (!pkg.items.every((i) => remaining.includes(i))) continue;
-        const separate = pkg.items.reduce((s, i) => s + unitPrice(i, sel), 0);
-        const price = pkg.price(sel.google);
-        const saving = separate - price;
-        if (saving > 0 && (!best || saving > best.saving)) {
-          best = { pkg, saving, separate, price };
-        }
+  // greedily apply the package with the biggest saving that fully fits the remainder.
+  // With abonament the strona costs 0 zł one-time, so its 1500 zł is removed from the
+  // package price too — the absolute package discount stays the same.
+  for (;;) {
+    let best: { pkg: Pkg; saving: number; separate: number; price: number } | null = null;
+    for (const pkg of PACKAGES) {
+      if (!pkg.items.every((i) => remaining.includes(i))) continue;
+      const separate = pkg.items.reduce((s, i) => s + unitPrice(i, sel), 0);
+      const price =
+        pkg.price(sel.google) - (abonament && pkg.items.includes("strona") ? 1500 : 0);
+      const saving = separate - price;
+      if (saving > 0 && (!best || saving > best.saving)) {
+        best = { pkg, saving, separate, price };
       }
-      if (!best) break;
-      applied.push({
-        id: best.pkg.id,
-        name: best.pkg.name,
-        price: best.price,
-        separate: best.separate,
-      });
-      remaining = remaining.filter((i) => !best!.pkg.items.includes(i));
     }
+    if (!best) break;
+    applied.push({
+      id: best.pkg.id,
+      name: best.pkg.name,
+      price: best.price,
+      separate: best.separate,
+    });
+    remaining = remaining.filter((i) => !best!.pkg.items.includes(i));
   }
 
   const singles = remaining.map((k) => ({

@@ -51,6 +51,7 @@ const NAV = [
   { href: "#cennik", label: "Cennik" },
   { href: "/kalkulator", label: "Kalkulator" },
   { href: "#faq", label: "FAQ" },
+  { href: "#kontakt", label: "Kontakt" },
 ];
 
 const STEPS = [
@@ -303,19 +304,26 @@ function Index() {
                 Zobaczysz projekt, zanim zapłacisz. Bez ryzyka, bez zaliczek, bez abonamentu za samą
                 stronę.
               </p>
-              <div className="mt-7 flex flex-wrap items-center gap-5">
+              <div className="mt-7 flex flex-col items-stretch gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
                 <a
                   href="#kontakt"
-                  className="inline-flex min-h-[56px] items-center gap-3 bg-foreground px-10 py-4 text-base font-medium tracking-wide text-background transition-all duration-200 hover:-translate-y-0.5 hover:opacity-90"
+                  className="inline-flex min-h-[56px] items-center justify-center gap-3 bg-foreground px-10 py-4 text-base font-medium tracking-wide text-background transition-all duration-200 hover:-translate-y-0.5 hover:opacity-90"
                 >
                   Zamów darmowe demo
                   <span aria-hidden="true">→</span>
                 </a>
                 <a
                   href="#realizacje"
-                  className="inline-flex min-h-[56px] items-center gap-3 border border-foreground px-10 py-4 text-base font-medium transition-all duration-200 hover:-translate-y-0.5 hover:bg-foreground hover:text-background"
+                  className="inline-flex min-h-[56px] items-center justify-center gap-3 border border-foreground px-10 py-4 text-base font-medium transition-all duration-200 hover:-translate-y-0.5 hover:bg-foreground hover:text-background"
                 >
                   Zobacz przykłady
+                  <span aria-hidden="true">→</span>
+                </a>
+                <a
+                  href="/kalkulator"
+                  className="inline-flex min-h-[56px] items-center justify-center gap-3 border border-foreground px-10 py-4 text-base font-medium transition-all duration-200 hover:-translate-y-0.5 hover:bg-foreground hover:text-background"
+                >
+                  Policz swoją wycenę
                   <span aria-hidden="true">→</span>
                 </a>
               </div>
@@ -369,7 +377,7 @@ function Index() {
                 <Reveal key={c.name} delay={i * 60}>
                   <Link
                     to={c.to}
-                    className="group block border border-[#262626] bg-secondary/20 transition-colors duration-200 hover:border-foreground/45 hover:bg-secondary/40 focus-visible:border-foreground/45"
+                    className="group block border border-hairline-strong bg-secondary/20 transition-colors duration-200 hover:border-foreground/45 hover:bg-secondary/40 focus-visible:border-foreground/45"
                   >
                     <article className="grid gap-0 md:grid-cols-[1.05fr_0.95fr]">
                       <div className="p-3 md:border-r md:border-hairline md:p-4">
@@ -432,7 +440,7 @@ function Index() {
             <h3 className="display mb-5 text-xl font-semibold md:text-2xl">Sama strona</h3>
             <div className="grid gap-px bg-hairline md:grid-cols-2">
               <Reveal className="bg-background">
-                <div className="flex h-full flex-col border border-hairline p-6 md:p-8">
+                <div className="flex h-full flex-col border border-hairline-strong p-6 md:p-8">
                   <p className="eyebrow mb-3">Jednorazowo</p>
                   <p className="display mb-4 text-lg font-semibold">Płacisz raz</p>
                   <p className="display text-[clamp(1.9rem,4vw,2.6rem)] font-bold">1500 zł</p>
@@ -455,7 +463,7 @@ function Index() {
                       <span>Żadnego abonamentu za stronę</span>
                     </li>
                   </ul>
-                  <div className="mt-7 flex flex-wrap items-center gap-5">
+                  <div className="mt-7 flex flex-col items-stretch gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
                     <a
                       href="#kontakt"
                       className="inline-flex min-h-[46px] w-fit items-center gap-3 border border-foreground px-7 py-3 text-base font-medium transition-all duration-200 hover:-translate-y-0.5 hover:bg-foreground hover:text-background"
@@ -504,7 +512,7 @@ function Index() {
                       <span>Żadnych dodatkowych kosztów — domena i serwer po naszej stronie</span>
                     </li>
                   </ul>
-                  <div className="mt-7 flex flex-wrap items-center gap-5">
+                  <div className="mt-7 flex flex-col items-stretch gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
                     <a
                       href="#kontakt"
                       className="inline-flex min-h-[46px] w-fit items-center gap-3 bg-foreground px-7 py-3 text-base font-medium text-background transition-all duration-200 hover:-translate-y-0.5 hover:opacity-90"
@@ -560,12 +568,12 @@ function Index() {
             <p className="mb-5 max-w-2xl leading-relaxed text-muted-foreground">
               Kilka usług razem taniej niż osobno.
             </p>
-            <div className="grid gap-px bg-hairline sm:grid-cols-2 lg:grid-cols-3">
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {PACKAGES.map((p) => (
                 <Link
                   key={p.to}
                   to={p.to}
-                  className="group flex min-h-[44px] flex-col justify-between gap-4 bg-background p-6 transition-colors hover:bg-foreground/5"
+                  className="group flex min-h-[44px] flex-col justify-between gap-4 border border-hairline-strong bg-background p-6 transition-colors hover:border-[oklch(0.5_0_0)] hover:bg-foreground/5"
                 >
                   <div>
                     <p className="display text-xl font-semibold">{p.name}</p>
@@ -587,17 +595,22 @@ function Index() {
               ))}
             </div>
 
-            <div className="mt-10 border-t border-hairline pt-6">
+            <div className="mt-16 mb-16 flex flex-col items-start gap-6 border border-hairline-strong bg-secondary/25 p-7 md:flex-row md:items-center md:justify-between md:p-10">
+              <div>
+                <p className="display text-xl font-semibold md:text-2xl">
+                  Nie wiesz, ile to wyjdzie u Ciebie? Policz w minutę.
+                </p>
+                <p className="mt-2 leading-relaxed text-muted-foreground">
+                  Zaznaczasz, czego potrzebujesz — cena i rabat pakietowy liczą się od razu.
+                </p>
+              </div>
               <a
                 href="/kalkulator"
-                className="inline-flex min-h-[48px] items-center gap-3 bg-foreground px-6 py-3 text-base font-medium tracking-wide text-background transition-all duration-200 hover:-translate-y-0.5 hover:opacity-90"
+                className="inline-flex min-h-[56px] shrink-0 items-center justify-center gap-3 bg-foreground px-8 py-4 text-base font-medium tracking-wide text-background transition-all duration-200 hover:-translate-y-0.5 hover:opacity-90"
               >
                 Policz swoją wycenę
                 <span aria-hidden="true">→</span>
               </a>
-              <p className="mt-3 text-sm text-muted-foreground">
-                Zaznaczasz, czego potrzebujesz — cena i rabat pakietowy liczą się od razu.
-              </p>
             </div>
 
             <p className="mt-8 leading-relaxed text-muted-foreground">
@@ -692,16 +705,16 @@ function Index() {
                   Napisz kilka zdań o swojej firmie. W 48 godzin dostaniesz link do gotowego projektu
                   strony — bez zaliczki i bez zobowiązań.
                 </p>
-                <div className="mt-10 space-y-3 text-lg">
+                <div className="mt-10 space-y-2 text-2xl md:text-3xl">
                   <p>
-                    <a href="tel:+48664013998" className="inline-flex min-h-[44px] items-center font-medium underline underline-offset-8 hover:opacity-70">
+                    <a href="tel:+48664013998" className="display inline-flex min-h-[48px] items-center font-semibold underline underline-offset-8 hover:opacity-70">
                       +48 664 013 998
                     </a>
                   </p>
                   <p>
                     <a
                       href="mailto:kamil.pietraszko@onet.pl"
-                      className="inline-flex min-h-[44px] items-center underline underline-offset-8 hover:opacity-70"
+                      className="display inline-flex min-h-[48px] items-center break-all font-semibold underline underline-offset-8 hover:opacity-70"
                     >
                       kamil.pietraszko@onet.pl
                     </a>

@@ -6,7 +6,7 @@ const WEB3FORMS_ACCESS_KEY = "PLACEHOLDER_KEY";
 type Status = "idle" | "sending" | "success" | "error";
 
 const fieldClass =
-  "min-h-[48px] w-full rounded-none border border-hairline bg-background px-4 py-3 text-base text-foreground outline-none transition-colors placeholder:italic placeholder:text-[oklch(0.62_0_0)] focus:border-foreground";
+  "min-h-[48px] w-full rounded-none border border-hairline-strong bg-field px-4 py-3 text-base text-foreground outline-none transition-colors placeholder:italic placeholder:text-[oklch(0.62_0_0)] hover:border-[oklch(0.45_0_0)] focus:border-foreground";
 
 const labelClass = "mb-2 block text-[0.95rem] font-medium text-foreground";
 
@@ -57,7 +57,7 @@ export function ContactForm({
   }
 
   return (
-    <form onSubmit={onSubmit} className="space-y-5 border border-hairline bg-secondary/25 p-6 md:p-8">
+    <form onSubmit={onSubmit} className="space-y-5 border border-hairline-strong bg-secondary/25 p-6 md:p-8">
       <p className="border-l-2 border-hairline pl-4 leading-relaxed text-muted-foreground">
         Wypełnienie zajmuje minutę. Niczego nie instalujesz, do niczego się nie zobowiązujesz.
       </p>

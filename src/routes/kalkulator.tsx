@@ -35,7 +35,7 @@ export const Route = createFileRoute("/kalkulator")({
 });
 
 const radioClass =
-  "inline-flex min-h-[44px] flex-1 cursor-pointer items-center gap-2.5 border border-hairline px-3 py-2 text-sm transition-colors hover:border-foreground/50";
+  "inline-flex min-h-[44px] flex-1 cursor-pointer items-center gap-2.5 border border-hairline-strong bg-field px-3 py-2 text-sm transition-colors hover:border-[oklch(0.45_0_0)]";
 
 function KalkulatorPage() {
   const [sel, setSel] = useState<Selection>(EMPTY_SELECTION);
@@ -44,17 +44,18 @@ function KalkulatorPage() {
   const toggle = (key: ItemKey) =>
     setSel((s) => ({ ...s, items: { ...s.items, [key]: !s.items[key] } }));
 
-  const abonament = sel.pay === "abonament" && sel.items.strona;
-
   const panel = (
-    <div className="border border-hairline bg-secondary/25 p-6">
+    <div className="border border-hairline-strong bg-secondary/25 p-6">
       <p className="eyebrow mb-3">Twoja wycena</p>
       <p className="display text-[clamp(2rem,4.5vw,2.9rem)] font-bold leading-none">
         Płacisz raz: {zl(result.oneTime)}
       </p>
       {result.monthly > 0 && (
         <p className="display mt-2 text-xl font-semibold">
-          + {result.monthly} zł/mies. za stronę
+          Miesięcznie: {result.monthly} zł{" "}
+          <span className="text-base font-medium text-muted-foreground">
+            (domena i hosting w cenie)
+          </span>
         </p>
       )}
 
@@ -69,11 +70,6 @@ function KalkulatorPage() {
         </div>
       )}
 
-      {abonament && (
-        <p className="mt-4 border-t border-hairline pt-4 text-sm text-muted-foreground">
-          Przy abonamencie za stronę rabaty pakietowe nie obowiązują — każdą usługę liczę osobno.
-        </p>
-      )}
 
       <div className="mt-5 border-t border-hairline pt-4">
         <p className="mb-2 font-medium">Koszty cykliczne (nie do nas):</p>
@@ -121,7 +117,7 @@ function KalkulatorPage() {
         <div className="mt-10 grid gap-10 lg:grid-cols-[1fr_380px] lg:gap-14">
           <div>
             {/* payment mode */}
-            <div className="border border-hairline p-5">
+            <div className="border border-hairline-strong p-5">
               <p className="display mb-3 text-lg font-semibold">Jak wolisz płacić za stronę?</p>
               <div className="flex flex-col gap-2 sm:flex-row">
                 {(
@@ -148,7 +144,7 @@ function KalkulatorPage() {
               {ITEMS.map((item) => {
                 const checked = sel.items[item.key];
                 return (
-                  <li key={item.key} className="border-t border-hairline last:border-b">
+                  <li key={item.key} className="border-t border-hairline transition-colors last:border-b hover:bg-foreground/5">
                     <label className="flex min-h-[64px] cursor-pointer items-center gap-4 py-4">
                       <input
                         type="checkbox"
