@@ -705,16 +705,16 @@ function Index() {
                   Napisz kilka zdań o swojej firmie. W 48 godzin dostaniesz link do gotowego projektu
                   strony — bez zaliczki i bez zobowiązań.
                 </p>
-                <div className="mt-10 space-y-3 text-lg">
+                <div className="mt-10 space-y-2 text-2xl md:text-3xl">
                   <p>
-                    <a href="tel:+48664013998" className="inline-flex min-h-[44px] items-center font-medium underline underline-offset-8 hover:opacity-70">
+                    <a href="tel:+48664013998" className="display inline-flex min-h-[48px] items-center font-semibold underline underline-offset-8 hover:opacity-70">
                       +48 664 013 998
                     </a>
                   </p>
                   <p>
                     <a
                       href="mailto:kamil.pietraszko@onet.pl"
-                      className="inline-flex min-h-[44px] items-center underline underline-offset-8 hover:opacity-70"
+                      className="display inline-flex min-h-[48px] items-center break-all font-semibold underline underline-offset-8 hover:opacity-70"
                     >
                       kamil.pietraszko@onet.pl
                     </a>

@@ -8,6 +8,7 @@ const NAV = [
   { href: "/#realizacje", label: "Realizacje" },
   { href: "/#cennik", label: "Cennik" },
   { href: "/#faq", label: "FAQ" },
+  { href: "/#kontakt", label: "Kontakt" },
 ];
 
 export function PageShell({ children }: { children: ReactNode }) {
@@ -18,7 +19,7 @@ export function PageShell({ children }: { children: ReactNode }) {
           <Link to="/" className="display text-lg font-bold tracking-tight">
             SCS Web
           </Link>
-          <nav className="hidden items-center gap-9 md:flex">
+          <nav className="hidden items-center gap-7 md:flex">
             {NAV.map((item) => (
               <a
                 key={item.href}
