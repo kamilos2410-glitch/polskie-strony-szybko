@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { DemoBar } from "@/components/scs/DemoBar";
+import { RoofCalculator } from "@/components/scs/RoofCalculator";
 
 export const Route = createFileRoute("/demo/dachpol")({
   component: DachPol,
@@ -176,6 +177,8 @@ function DachPol() {
             </div>
           </div>
         </section>
+
+        <RoofCalculator />
 
         <section id="materialy" className="mx-auto max-w-5xl px-5 py-16 md:py-24">
           <h2 className="text-3xl md:text-4xl" style={{ fontFamily: SERIF }}>

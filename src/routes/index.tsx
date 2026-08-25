@@ -49,6 +49,7 @@ const NAV = [
   { href: "#jak-to-dziala", label: "Jak to działa" },
   { href: "#realizacje", label: "Realizacje" },
   { href: "#cennik", label: "Cennik" },
+  { href: "/kalkulator", label: "Kalkulator" },
   { href: "#faq", label: "FAQ" },
 ];
 
@@ -94,6 +95,7 @@ const CASES = [
     url: "dachpol.pl",
     desc: "Ciepła, ziemista paleta z szeryfową typografią, galerią realizacji, przeglądem materiałów i licznikiem doświadczenia.",
     to: "/demo/dachpol",
+    hint: "Zawiera działający kalkulator wyceny",
     Preview: DachPreview,
   },
 ] as const;
@@ -390,6 +392,11 @@ function Index() {
                           <p className="mt-2 max-w-md text-[0.95rem] leading-relaxed text-muted-foreground">
                             {c.desc}
                           </p>
+                          {"hint" in c && (
+                            <p className="mt-2 text-sm font-medium text-foreground">
+                              {c.hint}
+                            </p>
+                          )}
                         </div>
                         <div className="flex flex-col gap-1.5">
                           <span className="inline-flex min-h-[46px] w-fit items-center justify-center gap-3 bg-foreground px-6 py-3 text-base font-medium tracking-wide text-background transition-all duration-200 group-hover:-translate-y-0.5 group-hover:opacity-90">
@@ -580,7 +587,20 @@ function Index() {
               ))}
             </div>
 
-            <p className="mt-10 leading-relaxed text-muted-foreground">
+            <div className="mt-10 border-t border-hairline pt-6">
+              <a
+                href="/kalkulator"
+                className="inline-flex min-h-[48px] items-center gap-3 bg-foreground px-6 py-3 text-base font-medium tracking-wide text-background transition-all duration-200 hover:-translate-y-0.5 hover:opacity-90"
+              >
+                Policz swoją wycenę
+                <span aria-hidden="true">→</span>
+              </a>
+              <p className="mt-3 text-sm text-muted-foreground">
+                Zaznaczasz, czego potrzebujesz — cena i rabat pakietowy liczą się od razu.
+              </p>
+            </div>
+
+            <p className="mt-8 leading-relaxed text-muted-foreground">
               Nie wiesz, co wybrać? Zadzwoń — doradzę bez zobowiązań:{" "}
               <a
                 href="tel:+48664013998"
