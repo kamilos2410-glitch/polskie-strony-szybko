@@ -356,58 +356,61 @@ function Index() {
 
         {/* REALIZACJE */}
         <section id="realizacje" className="border-b border-hairline">
-          <div className="mx-auto max-w-[1200px] px-6 py-20 md:px-10 md:py-32">
+          <div className="mx-auto max-w-[1200px] px-6 py-14 md:px-10 md:py-20">
             <SectionHead
               eyebrow="Realizacje"
               title="Przykładowe projekty"
               lead="Kliknij dowolny projekt, żeby zobaczyć przykładową stronę w całości."
             />
-            <div className="space-y-12 md:space-y-16">
+            <div className="space-y-8 md:space-y-10">
               {CASES.map((c, i) => (
                 <Reveal key={c.name} delay={i * 60}>
-                  <article className="group relative border border-hairline bg-secondary/30 transition-colors hover:border-foreground/50">
-                    <div className="border-b border-hairline p-4 md:p-6">
-                      <div className="border border-hairline bg-[#0d0d0d]">
-                        <div className="flex h-7 items-center gap-1.5 border-b border-hairline px-3">
-                          <span className="h-1.5 w-1.5 border border-foreground/35" />
-                          <span className="h-1.5 w-1.5 border border-foreground/25" />
-                          <span className="h-1.5 w-1.5 border border-foreground/25" />
-                          <span className="ml-3 text-[10px] text-muted-foreground">{c.url}</span>
+                  <Link
+                    to={c.to}
+                    className="group block border border-[#262626] bg-secondary/20 transition-colors duration-200 hover:border-foreground/45 hover:bg-secondary/40 focus-visible:border-foreground/45"
+                  >
+                    <article className="grid gap-0 md:grid-cols-[1.05fr_0.95fr]">
+                      <div className="p-3 md:border-r md:border-hairline md:p-4">
+                        <div className="border border-hairline bg-[#0d0d0d]">
+                          <div className="flex h-6 items-center gap-1.5 border-b border-hairline px-2.5">
+                            <span className="h-1.5 w-1.5 border border-foreground/35" />
+                            <span className="h-1.5 w-1.5 border border-foreground/25" />
+                            <span className="h-1.5 w-1.5 border border-foreground/25" />
+                            <span className="ml-3 text-[10px] text-muted-foreground">{c.url}</span>
+                          </div>
+                          <div className="aspect-[16/9] overflow-hidden">
+                            <c.Preview />
+                          </div>
                         </div>
-                        <div className="aspect-[16/9] overflow-hidden">
-                          <c.Preview />
+                      </div>
+                      <div className="flex flex-col justify-center gap-4 border-t border-hairline p-5 md:border-t-0 md:p-7">
+                        <div className="min-w-0">
+                          <p className="eyebrow mb-2">{c.branch}</p>
+                          <h3 className="display text-xl font-semibold md:text-2xl">{c.name}</h3>
+                          <p className="mt-2 max-w-md text-[0.95rem] leading-relaxed text-muted-foreground">
+                            {c.desc}
+                          </p>
+                        </div>
+                        <div className="flex flex-col gap-1.5">
+                          <span className="inline-flex min-h-[46px] w-fit items-center justify-center gap-3 bg-foreground px-6 py-3 text-base font-medium tracking-wide text-background transition-all duration-200 group-hover:-translate-y-0.5 group-hover:opacity-90">
+                            Zobacz przykładową stronę
+                            <span aria-hidden="true">→</span>
+                          </span>
+                          <span className="text-sm text-muted-foreground">
+                            Otworzy się pełna strona przykładowa
+                          </span>
                         </div>
                       </div>
-                    </div>
-                    <div className="flex flex-wrap items-end justify-between gap-6 p-6 md:p-8">
-                      <div className="min-w-0">
-                        <p className="eyebrow mb-3">{c.branch}</p>
-                        <h3 className="display text-2xl font-semibold md:text-3xl">{c.name}</h3>
-                        <p className="mt-3 max-w-md leading-relaxed text-muted-foreground">
-                          {c.desc}
-                        </p>
-                      </div>
-                      <div className="flex flex-col gap-2">
-                        <Link
-                          to={c.to}
-                          className="inline-flex min-h-[52px] items-center justify-center gap-3 bg-foreground px-8 py-4 text-base font-medium tracking-wide text-background transition-all duration-200 hover:-translate-y-0.5 hover:opacity-90 after:absolute after:inset-0 after:content-['']"
-                        >
-                          Zobacz przykładową stronę
-                          <span aria-hidden="true">→</span>
-                        </Link>
-                        <span className="text-sm text-muted-foreground">
-                          Otworzy się pełna strona przykładowa
-                        </span>
-                      </div>
-                    </div>
-                  </article>
+                    </article>
+                  </Link>
                 </Reveal>
               ))}
             </div>
-            <p className="mt-14 border-t border-hairline pt-6 text-sm text-muted-foreground">
+            <p className="mt-10 border-t border-hairline pt-5 text-sm text-muted-foreground">
               Projekty przykładowe dla fikcyjnych firm, zaprojektowane od zera — Twoja strona
               powstanie tak samo, pod Twoją branżę i Twoich klientów.
             </p>
+
           </div>
         </section>
 
