@@ -238,12 +238,13 @@ function SectionHead({
   lead?: string;
 }) {
   return (
-    <div className="mb-14 max-w-3xl md:mb-20">
-      <p className="eyebrow mb-5">{eyebrow}</p>
-      <h2 className="display text-[clamp(2rem,5vw,3.5rem)] font-semibold">{title}</h2>
-      {lead ? <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground">{lead}</p> : null}
+    <div className="mb-9 max-w-3xl md:mb-12">
+      <p className="eyebrow mb-3">{eyebrow}</p>
+      <h2 className="display text-[clamp(1.7rem,3.6vw,2.6rem)] font-semibold">{title}</h2>
+      {lead ? <p className="mt-4 max-w-2xl leading-relaxed text-muted-foreground">{lead}</p> : null}
     </div>
   );
+
 }
 
 function Index() {
