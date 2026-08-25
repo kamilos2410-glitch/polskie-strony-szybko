@@ -409,35 +409,79 @@ function Index() {
               </Reveal>
             </div>
 
-            <p className="mt-8 leading-relaxed text-muted-foreground">
+            <h3 className="display mt-20 mb-3 text-2xl font-semibold md:text-3xl">
+              Usługi pojedynczo
+            </h3>
+            <p className="mb-8 max-w-2xl leading-relaxed text-muted-foreground">
+              Wybierz tylko to, czego naprawdę potrzebujesz. Kliknij, żeby zobaczyć szczegóły.
+            </p>
+            <div className="grid gap-px bg-hairline sm:grid-cols-2 lg:grid-cols-3">
+              {SINGLE_SERVICES.map((s) => (
+                <Link
+                  key={s.to}
+                  to={s.to}
+                  className="group flex min-h-[44px] flex-col justify-between gap-6 bg-background p-8 transition-colors hover:bg-foreground/5"
+                >
+                  <div>
+                    <p className="display text-xl font-semibold">{s.name}</p>
+                    <p className="mt-3 leading-relaxed text-muted-foreground">{s.benefit}</p>
+                  </div>
+                  <p className="display flex items-center justify-between gap-4 border-t border-hairline pt-5 text-lg font-bold">
+                    {s.price}
+                    <span
+                      aria-hidden="true"
+                      className="transition-transform duration-200 group-hover:translate-x-1"
+                    >
+                      →
+                    </span>
+                  </p>
+                </Link>
+              ))}
+            </div>
+
+            <h3 className="display mt-20 mb-3 text-2xl font-semibold md:text-3xl">Pakiety</h3>
+            <p className="mb-8 max-w-2xl leading-relaxed text-muted-foreground">
+              Kilka usług razem taniej niż osobno.
+            </p>
+            <div className="grid gap-px bg-hairline md:grid-cols-3">
+              {PACKAGES.map((p) => (
+                <Link
+                  key={p.to}
+                  to={p.to}
+                  className="group flex min-h-[44px] flex-col justify-between gap-6 bg-background p-8 transition-colors hover:bg-foreground/5 md:p-10"
+                >
+                  <div>
+                    <p className="display text-xl font-semibold">{p.name}</p>
+                    <p className="mt-3 leading-relaxed text-muted-foreground">{p.desc}</p>
+                  </div>
+                  <div className="border-t border-hairline pt-5">
+                    <p className="text-muted-foreground line-through">osobno {p.separate}</p>
+                    <p className="display mt-2 flex items-center justify-between gap-4 text-[clamp(1.75rem,4vw,2.5rem)] font-bold">
+                      {p.bundle}
+                      <span
+                        aria-hidden="true"
+                        className="text-lg transition-transform duration-200 group-hover:translate-x-1"
+                      >
+                        →
+                      </span>
+                    </p>
+                  </div>
+                </Link>
+              ))}
+            </div>
+
+            <p className="mt-12 leading-relaxed text-muted-foreground">
               Nie wiesz, co wybrać? Zadzwoń — doradzę bez zobowiązań:{" "}
-              <a href="tel:+48664013998" className="font-medium text-foreground underline underline-offset-8">
+              <a
+                href="tel:+48664013998"
+                className="font-medium text-foreground underline underline-offset-8"
+              >
                 +48 664 013 998
               </a>
               .
             </p>
-
-            <Reveal delay={120}>
-              <div className="mt-8 flex flex-col gap-6 border border-hairline p-8 md:flex-row md:items-center md:justify-between md:p-10">
-                <div className="max-w-2xl">
-                  <h3 className="display text-xl font-semibold md:text-2xl">
-                    Pakiet Start Google — 500 zł
-                  </h3>
-                  <p className="mt-3 leading-relaxed text-muted-foreground">
-                    Założenie lub optymalizacja wizytówki Google Maps, podpięcie strony, uzupełnienie
-                    danych i zdjęć oraz instrukcja zbierania opinii od klientów.
-                  </p>
-                </div>
-                <a
-                  href="#kontakt"
-                  className="inline-flex min-h-[52px] w-fit items-center gap-3 border border-foreground px-8 py-4 text-base font-medium transition-all duration-200 hover:-translate-y-0.5 hover:bg-foreground hover:text-background"
-                >
-                  Dopytaj o pakiet
-                  <span aria-hidden="true">→</span>
-                </a>
-              </div>
-            </Reveal>
           </div>
+
         </section>
 
         {/* DLACZEGO */}
