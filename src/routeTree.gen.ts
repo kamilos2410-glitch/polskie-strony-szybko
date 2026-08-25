@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as KalkulatorRouteImport } from './routes/kalkulator'
 import { Route as DemoAutoserwisKowalskiRouteImport } from './routes/demo.autoserwis-kowalski'
 import { Route as DemoDachpolRouteImport } from './routes/demo.dachpol'
 import { Route as DemoHydroPerfektRouteImport } from './routes/demo.hydro-perfekt'
@@ -29,6 +30,11 @@ import { Route as UslugiStronaInternetowaRouteImport } from './routes/uslugi.str
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const KalkulatorRoute = KalkulatorRouteImport.update({
+  id: '/kalkulator',
+  path: '/kalkulator',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DemoAutoserwisKowalskiRoute = DemoAutoserwisKowalskiRouteImport.update({
@@ -109,6 +115,7 @@ const UslugiStronaInternetowaRoute = UslugiStronaInternetowaRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/kalkulator': typeof KalkulatorRoute
   '/demo/autoserwis-kowalski': typeof DemoAutoserwisKowalskiRoute
   '/demo/dachpol': typeof DemoDachpolRoute
   '/demo/hydro-perfekt': typeof DemoHydroPerfektRoute
@@ -127,6 +134,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/kalkulator': typeof KalkulatorRoute
   '/demo/autoserwis-kowalski': typeof DemoAutoserwisKowalskiRoute
   '/demo/dachpol': typeof DemoDachpolRoute
   '/demo/hydro-perfekt': typeof DemoHydroPerfektRoute
@@ -146,6 +154,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/kalkulator': typeof KalkulatorRoute
   '/demo/autoserwis-kowalski': typeof DemoAutoserwisKowalskiRoute
   '/demo/dachpol': typeof DemoDachpolRoute
   '/demo/hydro-perfekt': typeof DemoHydroPerfektRoute
@@ -166,6 +175,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/kalkulator'
     | '/demo/autoserwis-kowalski'
     | '/demo/dachpol'
     | '/demo/hydro-perfekt'
@@ -184,6 +194,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/kalkulator'
     | '/demo/autoserwis-kowalski'
     | '/demo/dachpol'
     | '/demo/hydro-perfekt'
@@ -202,6 +213,7 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/kalkulator'
     | '/demo/autoserwis-kowalski'
     | '/demo/dachpol'
     | '/demo/hydro-perfekt'
@@ -221,6 +233,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  KalkulatorRoute: typeof KalkulatorRoute
   DemoAutoserwisKowalskiRoute: typeof DemoAutoserwisKowalskiRoute
   DemoDachpolRoute: typeof DemoDachpolRoute
   DemoHydroPerfektRoute: typeof DemoHydroPerfektRoute
@@ -245,6 +258,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/kalkulator': {
+      id: '/kalkulator'
+      path: '/kalkulator'
+      fullPath: '/kalkulator'
+      preLoaderRoute: typeof KalkulatorRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/demo/autoserwis-kowalski': {
@@ -357,6 +377,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  KalkulatorRoute: KalkulatorRoute,
   DemoAutoserwisKowalskiRoute: DemoAutoserwisKowalskiRoute,
   DemoDachpolRoute: DemoDachpolRoute,
   DemoHydroPerfektRoute: DemoHydroPerfektRoute,

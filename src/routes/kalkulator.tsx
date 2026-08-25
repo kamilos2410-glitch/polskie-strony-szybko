@@ -167,9 +167,7 @@ function KalkulatorPage() {
                       <span className="display shrink-0 text-base font-semibold md:text-lg">
                         {item.key === "strona" && sel.pay === "abonament"
                           ? "199 zł/mies."
-                          : zl(unitPrice(item.key, sel)) === "0 zł"
-                            ? item.priceLabel
-                            : item.priceLabel}
+                          : item.priceLabel}
                       </span>
                     </label>
 
