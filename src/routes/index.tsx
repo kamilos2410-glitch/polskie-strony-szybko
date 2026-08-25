@@ -336,11 +336,11 @@ function Index() {
             <ol>
               {STEPS.map((step, i) => (
                 <Reveal as="li" key={step.n} delay={i * 90}>
-                  <div className="grid gap-6 border-t border-hairline py-10 md:grid-cols-12 md:py-14">
-                    <span className="display col-span-2 text-4xl font-semibold text-muted-foreground md:text-5xl">
+                  <div className="grid gap-3 border-t border-hairline py-6 md:grid-cols-12 md:gap-6 md:py-8">
+                    <span className="display col-span-2 text-2xl font-semibold text-muted-foreground md:text-3xl">
                       {step.n}
                     </span>
-                    <h3 className="display col-span-4 text-2xl font-semibold md:text-3xl">
+                    <h3 className="display col-span-4 text-xl font-semibold md:text-2xl">
                       {step.title}
                     </h3>
                     <p className="col-span-6 max-w-xl leading-relaxed text-muted-foreground">
@@ -350,6 +350,7 @@ function Index() {
                 </Reveal>
               ))}
             </ol>
+
           </div>
         </section>
 
