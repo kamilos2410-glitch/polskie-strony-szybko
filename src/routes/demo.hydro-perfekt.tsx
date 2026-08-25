@@ -93,13 +93,13 @@ function HydroPerfekt() {
             className="rounded-full px-5 py-2.5 text-sm font-semibold text-white"
             style={{ background: BLUE }}
           >
-            600 000 000
+            +48 664 013 998
           </a>
         </div>
       </header>
 
       <div className="px-5 py-2.5 text-center text-sm font-semibold text-white" style={{ background: BLUE }}>
-        Awaria? Jesteśmy dostępni 24/7 — zadzwoń: 600 000 000
+        Awaria? Jesteśmy dostępni 24/7 — zadzwoń: +48 664 013 998
       </div>
 
       <main>
@@ -119,11 +119,11 @@ function HydroPerfekt() {
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <a
-                href="tel:600000000"
+                href="tel:+48664013998"
                 className="rounded-full px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-[#0b3d91]/20"
                 style={{ background: BLUE }}
               >
-                Zadzwoń: 600 000 000
+                Zadzwoń: +48 664 013 998
               </a>
               <a
                 href="#uslugi"
@@ -228,7 +228,7 @@ function HydroPerfekt() {
               <dl className="mt-8 space-y-3 text-[#e6f0ff]">
                 <div>
                   <dt className="text-xs tracking-widest text-[#a9c6ee] uppercase">Telefon</dt>
-                  <dd className="text-xl font-bold">600 000 000</dd>
+                  <dd className="text-xl font-bold">+48 664 013 998</dd>
                 </div>
                 <div>
                   <dt className="text-xs tracking-widest text-[#a9c6ee] uppercase">Adres</dt>
@@ -290,7 +290,7 @@ function HydroPerfekt() {
       </main>
 
       <footer className="bg-[#08284f] px-5 py-8 text-center text-sm text-[#9dbbe2]">
-        Hydro-Perfekt · ul. Przykładowa 1, Bielsko-Biała · 600 000 000 — firma fikcyjna, projekt
+        Hydro-Perfekt · ul. Przykładowa 1, Bielsko-Biała · +48 664 013 998 — firma fikcyjna, projekt
         przykładowy SCS Web
       </footer>
     </div>

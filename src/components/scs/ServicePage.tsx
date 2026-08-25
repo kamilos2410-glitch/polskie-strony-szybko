@@ -6,7 +6,7 @@ import type { Service } from "@/lib/services";
 
 function H2({ children }: { children: React.ReactNode }) {
   return (
-    <h2 className="display text-[clamp(1.75rem,4vw,2.75rem)] font-semibold">{children}</h2>
+    <h2 className="display text-[clamp(1.5rem,3.2vw,2.15rem)] font-semibold">{children}</h2>
   );
 }
 
@@ -21,7 +21,7 @@ function Section({
 }) {
   return (
     <section className="border-b border-hairline">
-      <div className="mx-auto max-w-[1200px] px-6 py-16 md:px-10 md:py-24">
+      <div className="mx-auto max-w-[1200px] px-6 py-12 md:px-10 md:py-16">
         <p className="eyebrow mb-4">{eyebrow}</p>
         <H2>{title}</H2>
         <div className="mt-8 max-w-3xl">{children}</div>
@@ -37,14 +37,14 @@ export function ServicePage({ service }: { service: Service }) {
     <PageShell>
       {/* HERO */}
       <section className="border-b border-hairline">
-        <div className="mx-auto max-w-[1200px] px-6 pt-14 pb-16 md:px-10 md:pt-20 md:pb-24">
+        <div className="mx-auto max-w-[1200px] px-6 pt-10 pb-12 md:px-10 md:pt-14 md:pb-16">
           <a
             href="/#cennik"
             className="inline-flex min-h-[44px] items-center text-base text-muted-foreground underline underline-offset-8 transition-colors hover:text-foreground"
           >
             ← Wróć do oferty
           </a>
-          <h1 className="display mt-8 max-w-4xl text-[clamp(2.25rem,5.5vw,4rem)] font-bold">
+          <h1 className="display mt-8 max-w-4xl text-[clamp(1.9rem,4.4vw,3rem)] font-bold">
             {service.h1}
           </h1>
           <p className="mt-7 max-w-2xl text-lg leading-relaxed text-muted-foreground">
@@ -53,14 +53,14 @@ export function ServicePage({ service }: { service: Service }) {
           <div className="mt-10 flex flex-wrap items-center gap-6">
             <a
               href="/#kontakt"
-              className="inline-flex min-h-[56px] items-center gap-3 bg-foreground px-10 py-4 text-base font-medium tracking-wide text-background transition-all duration-200 hover:-translate-y-0.5 hover:opacity-90"
+              className="inline-flex min-h-[48px] items-center gap-3 bg-foreground px-8 py-3 text-base font-medium tracking-wide text-background transition-all duration-200 hover:-translate-y-0.5 hover:opacity-90"
             >
               Zamów darmowe demo
               <span aria-hidden="true">→</span>
             </a>
             <a
               href="tel:+48664013998"
-              className="inline-flex min-h-[56px] items-center gap-3 border border-foreground px-10 py-4 text-base font-medium transition-all duration-200 hover:-translate-y-0.5 hover:bg-foreground hover:text-background"
+              className="inline-flex min-h-[48px] items-center gap-3 border border-foreground px-8 py-3 text-base font-medium transition-all duration-200 hover:-translate-y-0.5 hover:bg-foreground hover:text-background"
             >
               Zadzwoń: +48 664 013 998
             </a>
@@ -110,7 +110,7 @@ export function ServicePage({ service }: { service: Service }) {
       </Section>
 
       <section className="border-b border-hairline">
-        <div className="mx-auto max-w-[1200px] px-6 py-16 md:px-10 md:py-24">
+        <div className="mx-auto max-w-[1200px] px-6 py-12 md:px-10 md:py-16">
           <p className="eyebrow mb-4">Przebieg</p>
           <H2>Jak to wygląda krok po kroku</H2>
           <ol className="mt-10">
@@ -134,7 +134,7 @@ export function ServicePage({ service }: { service: Service }) {
       </section>
 
       <section className="border-b border-hairline">
-        <div className="mx-auto max-w-[1200px] px-6 py-16 md:px-10 md:py-24">
+        <div className="mx-auto max-w-[1200px] px-6 py-12 md:px-10 md:py-16">
           <p className="eyebrow mb-4">Cena</p>
           <H2>Cena</H2>
           <div className="mt-10 grid gap-px bg-hairline md:grid-cols-2">
@@ -177,7 +177,7 @@ export function ServicePage({ service }: { service: Service }) {
       </section>
 
       <section className="border-b border-hairline">
-        <div className="mx-auto max-w-[1200px] px-6 py-16 md:px-10 md:py-24">
+        <div className="mx-auto max-w-[1200px] px-6 py-12 md:px-10 md:py-16">
           <p className="eyebrow mb-4">FAQ</p>
           <H2>Najczęstsze pytania</H2>
           <div className="mt-10 max-w-3xl">
@@ -216,9 +216,9 @@ export function ServicePage({ service }: { service: Service }) {
       </section>
 
       <section>
-        <div className="mx-auto max-w-[1200px] px-6 py-16 md:px-10 md:py-24">
+        <div className="mx-auto max-w-[1200px] px-6 py-12 md:px-10 md:py-16">
           <div className="border border-hairline p-8 md:p-12">
-            <h2 className="display text-[clamp(1.75rem,4vw,2.75rem)] font-semibold">
+            <h2 className="display text-[clamp(1.5rem,3.2vw,2.15rem)] font-semibold">
               Zamów darmowe demo albo po prostu porozmawiajmy
             </h2>
             <p className="mt-5 max-w-2xl text-lg leading-relaxed text-muted-foreground">
@@ -228,14 +228,14 @@ export function ServicePage({ service }: { service: Service }) {
             <div className="mt-9 flex flex-wrap items-center gap-6">
               <a
                 href="/#kontakt"
-                className="inline-flex min-h-[56px] items-center gap-3 bg-foreground px-10 py-4 text-base font-medium tracking-wide text-background transition-all duration-200 hover:-translate-y-0.5 hover:opacity-90"
+                className="inline-flex min-h-[48px] items-center gap-3 bg-foreground px-8 py-3 text-base font-medium tracking-wide text-background transition-all duration-200 hover:-translate-y-0.5 hover:opacity-90"
               >
                 Zamów darmowe demo
                 <span aria-hidden="true">→</span>
               </a>
               <a
                 href="tel:+48664013998"
-                className="inline-flex min-h-[56px] items-center gap-3 border border-foreground px-10 py-4 text-base font-medium transition-all duration-200 hover:-translate-y-0.5 hover:bg-foreground hover:text-background"
+                className="inline-flex min-h-[48px] items-center gap-3 border border-foreground px-8 py-3 text-base font-medium transition-all duration-200 hover:-translate-y-0.5 hover:bg-foreground hover:text-background"
               >
                 Zadzwoń: +48 664 013 998
               </a>
