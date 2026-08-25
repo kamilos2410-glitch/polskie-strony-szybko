@@ -18,7 +18,7 @@ export function HydroPreview() {
           <span>Usługi</span>
           <span>Opinie</span>
           <span className="rounded-full bg-[#0b3d91] px-[1.4cqi] py-[0.5cqi] text-white">
-            600 000 000
+            664 013 998
           </span>
         </span>
       </div>
@@ -119,7 +119,7 @@ export function DachPreview() {
         <span className="flex gap-[1.8cqi] text-[#6b615a]">
           <span>Realizacje</span>
           <span>Materiały</span>
-          <span className="font-semibold text-[#b4532a]">600 000 000</span>
+          <span className="font-semibold text-[#b4532a]">664 013 998</span>
         </span>
       </div>
       <div className="flex flex-1 items-center gap-[5%] px-[5%]">
