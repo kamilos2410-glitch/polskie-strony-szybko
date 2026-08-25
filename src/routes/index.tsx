@@ -55,20 +55,21 @@ const NAV = [
 const STEPS = [
   {
     n: "01",
-    title: "Darmowe demo",
-    body: "Opowiadasz o swojej firmie. W 48 godzin dostajesz link do gotowego projektu strony — nie makiety, tylko działającej witryny.",
+    title: "Rozmowa i ustalenia",
+    body: "Dzwonisz albo wysyłasz formularz. Pytam o Twoją firmę, klientów i to, co ma Ci dawać strona. Kilka minut rozmowy — bez zobowiązań i bez zaliczki.",
   },
   {
     n: "02",
-    title: "Akceptacja",
-    body: "Zgłaszasz poprawki. Płacisz dopiero wtedy, gdy projekt Ci się podoba. Wcześniej nie wydajesz ani złotówki.",
+    title: "Darmowy projekt strony",
+    body: "Buduję gotową, działającą stronę Twojej firmy i wysyłam Ci link. Oglądasz ją na spokojnie, mówisz co zmienić — poprawiam. Cały czas za darmo; płacisz dopiero, gdy powiesz „to jest to”.",
   },
   {
     n: "03",
-    title: "Publikacja",
-    body: "Strona działa pod Twoją domeną w 48 godzin od akceptacji. Domenę rejestruję na Twoje dane.",
+    title: "Uruchomienie",
+    body: "Rejestruję domenę na Twoje dane, publikuję stronę i zgłaszam ją do Google. W 48 godzin od akceptacji Twoja firma jest w internecie — strona jest Twoją własnością.",
   },
 ];
+
 
 const CASES = [
   {
