@@ -14,6 +14,8 @@ import { Route as DemoAutoserwisKowalskiRouteImport } from './routes/demo.autose
 import { Route as DemoDachpolRouteImport } from './routes/demo.dachpol'
 import { Route as DemoHydroPerfektRouteImport } from './routes/demo.hydro-perfekt'
 import { Route as PakietyFirmaKompletnaRouteImport } from './routes/pakiety.firma-kompletna'
+import { Route as PakietyIdentyfikacjaRouteImport } from './routes/pakiety.identyfikacja'
+import { Route as PakietyMaterialyFirmoweRouteImport } from './routes/pakiety.materialy-firmowe'
 import { Route as PakietyStartOnlineRouteImport } from './routes/pakiety.start-online'
 import { Route as PakietyWizerunekRouteImport } from './routes/pakiety.wizerunek'
 import { Route as UslugiOznakowanieAutaRouteImport } from './routes/uslugi.oznakowanie-auta'
@@ -47,6 +49,16 @@ const DemoHydroPerfektRoute = DemoHydroPerfektRouteImport.update({
 const PakietyFirmaKompletnaRoute = PakietyFirmaKompletnaRouteImport.update({
   id: '/pakiety/firma-kompletna',
   path: '/pakiety/firma-kompletna',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PakietyIdentyfikacjaRoute = PakietyIdentyfikacjaRouteImport.update({
+  id: '/pakiety/identyfikacja',
+  path: '/pakiety/identyfikacja',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PakietyMaterialyFirmoweRoute = PakietyMaterialyFirmoweRouteImport.update({
+  id: '/pakiety/materialy-firmowe',
+  path: '/pakiety/materialy-firmowe',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PakietyStartOnlineRoute = PakietyStartOnlineRouteImport.update({
@@ -101,6 +113,8 @@ export interface FileRoutesByFullPath {
   '/demo/dachpol': typeof DemoDachpolRoute
   '/demo/hydro-perfekt': typeof DemoHydroPerfektRoute
   '/pakiety/firma-kompletna': typeof PakietyFirmaKompletnaRoute
+  '/pakiety/identyfikacja': typeof PakietyIdentyfikacjaRoute
+  '/pakiety/materialy-firmowe': typeof PakietyMaterialyFirmoweRoute
   '/pakiety/start-online': typeof PakietyStartOnlineRoute
   '/pakiety/wizerunek': typeof PakietyWizerunekRoute
   '/uslugi/oznakowanie-auta': typeof UslugiOznakowanieAutaRoute
@@ -117,6 +131,8 @@ export interface FileRoutesByTo {
   '/demo/dachpol': typeof DemoDachpolRoute
   '/demo/hydro-perfekt': typeof DemoHydroPerfektRoute
   '/pakiety/firma-kompletna': typeof PakietyFirmaKompletnaRoute
+  '/pakiety/identyfikacja': typeof PakietyIdentyfikacjaRoute
+  '/pakiety/materialy-firmowe': typeof PakietyMaterialyFirmoweRoute
   '/pakiety/start-online': typeof PakietyStartOnlineRoute
   '/pakiety/wizerunek': typeof PakietyWizerunekRoute
   '/uslugi/oznakowanie-auta': typeof UslugiOznakowanieAutaRoute
@@ -134,6 +150,8 @@ export interface FileRoutesById {
   '/demo/dachpol': typeof DemoDachpolRoute
   '/demo/hydro-perfekt': typeof DemoHydroPerfektRoute
   '/pakiety/firma-kompletna': typeof PakietyFirmaKompletnaRoute
+  '/pakiety/identyfikacja': typeof PakietyIdentyfikacjaRoute
+  '/pakiety/materialy-firmowe': typeof PakietyMaterialyFirmoweRoute
   '/pakiety/start-online': typeof PakietyStartOnlineRoute
   '/pakiety/wizerunek': typeof PakietyWizerunekRoute
   '/uslugi/oznakowanie-auta': typeof UslugiOznakowanieAutaRoute
@@ -152,6 +170,8 @@ export interface FileRouteTypes {
     | '/demo/dachpol'
     | '/demo/hydro-perfekt'
     | '/pakiety/firma-kompletna'
+    | '/pakiety/identyfikacja'
+    | '/pakiety/materialy-firmowe'
     | '/pakiety/start-online'
     | '/pakiety/wizerunek'
     | '/uslugi/oznakowanie-auta'
@@ -168,6 +188,8 @@ export interface FileRouteTypes {
     | '/demo/dachpol'
     | '/demo/hydro-perfekt'
     | '/pakiety/firma-kompletna'
+    | '/pakiety/identyfikacja'
+    | '/pakiety/materialy-firmowe'
     | '/pakiety/start-online'
     | '/pakiety/wizerunek'
     | '/uslugi/oznakowanie-auta'
@@ -184,6 +206,8 @@ export interface FileRouteTypes {
     | '/demo/dachpol'
     | '/demo/hydro-perfekt'
     | '/pakiety/firma-kompletna'
+    | '/pakiety/identyfikacja'
+    | '/pakiety/materialy-firmowe'
     | '/pakiety/start-online'
     | '/pakiety/wizerunek'
     | '/uslugi/oznakowanie-auta'
@@ -201,6 +225,8 @@ export interface RootRouteChildren {
   DemoDachpolRoute: typeof DemoDachpolRoute
   DemoHydroPerfektRoute: typeof DemoHydroPerfektRoute
   PakietyFirmaKompletnaRoute: typeof PakietyFirmaKompletnaRoute
+  PakietyIdentyfikacjaRoute: typeof PakietyIdentyfikacjaRoute
+  PakietyMaterialyFirmoweRoute: typeof PakietyMaterialyFirmoweRoute
   PakietyStartOnlineRoute: typeof PakietyStartOnlineRoute
   PakietyWizerunekRoute: typeof PakietyWizerunekRoute
   UslugiOznakowanieAutaRoute: typeof UslugiOznakowanieAutaRoute
@@ -247,6 +273,20 @@ declare module '@tanstack/react-router' {
       path: '/pakiety/firma-kompletna'
       fullPath: '/pakiety/firma-kompletna'
       preLoaderRoute: typeof PakietyFirmaKompletnaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pakiety/identyfikacja': {
+      id: '/pakiety/identyfikacja'
+      path: '/pakiety/identyfikacja'
+      fullPath: '/pakiety/identyfikacja'
+      preLoaderRoute: typeof PakietyIdentyfikacjaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pakiety/materialy-firmowe': {
+      id: '/pakiety/materialy-firmowe'
+      path: '/pakiety/materialy-firmowe'
+      fullPath: '/pakiety/materialy-firmowe'
+      preLoaderRoute: typeof PakietyMaterialyFirmoweRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/pakiety/start-online': {
@@ -321,6 +361,8 @@ const rootRouteChildren: RootRouteChildren = {
   DemoDachpolRoute: DemoDachpolRoute,
   DemoHydroPerfektRoute: DemoHydroPerfektRoute,
   PakietyFirmaKompletnaRoute: PakietyFirmaKompletnaRoute,
+  PakietyIdentyfikacjaRoute: PakietyIdentyfikacjaRoute,
+  PakietyMaterialyFirmoweRoute: PakietyMaterialyFirmoweRoute,
   PakietyStartOnlineRoute: PakietyStartOnlineRoute,
   PakietyWizerunekRoute: PakietyWizerunekRoute,
   UslugiOznakowanieAutaRoute: UslugiOznakowanieAutaRoute,

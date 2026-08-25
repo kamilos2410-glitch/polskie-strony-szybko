@@ -191,24 +191,38 @@ const SINGLE_SERVICES = [
 const PACKAGES = [
   {
     name: "Start Online",
-    desc: "Strona internetowa i Pakiet Start Google — komplet na dobry początek.",
+    desc: "Strona internetowa, firmowy e-mail na domenie i wizytówka Google.",
     separate: "2300 zł",
     bundle: "1990 zł",
     to: "/pakiety/start-online",
   },
   {
     name: "Firma Kompletna",
-    desc: "Strona, firmowa poczta na domenie i Pakiet Start Google.",
+    desc: "Strona, poczta, wizytówka Google oraz projekty wizytówki i ulotki.",
     separate: "2850 zł",
     bundle: "2390 zł",
     to: "/pakiety/firma-kompletna",
   },
   {
     name: "Wizerunek",
-    desc: "Projekt logo i materiały firmowe — spójny wygląd wszędzie.",
+    desc: "Wizytówka Google, projekt wizytówki i ulotki — dla firm, które mają już stronę.",
     separate: "950 zł",
     bundle: "820 zł",
     to: "/pakiety/wizerunek",
+  },
+  {
+    name: "Materiały firmowe",
+    desc: "Projekt wizytówki i ulotki gotowe do druku.",
+    separate: "550 zł",
+    bundle: "480 zł",
+    to: "/pakiety/materialy-firmowe",
+  },
+  {
+    name: "Identyfikacja",
+    desc: "Logo, wizytówka i ulotka — spójny wygląd firmy.",
+    separate: "1350 zł",
+    bundle: "1200 zł",
+    to: "/pakiety/identyfikacja",
   },
 ] as const;
 
@@ -531,7 +545,7 @@ function Index() {
             <p className="mb-8 max-w-2xl leading-relaxed text-muted-foreground">
               Kilka usług razem taniej niż osobno.
             </p>
-            <div className="grid gap-px bg-hairline md:grid-cols-3">
+            <div className="grid gap-px bg-hairline sm:grid-cols-2 lg:grid-cols-3">
               {PACKAGES.map((p) => (
                 <Link
                   key={p.to}
