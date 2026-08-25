@@ -6,7 +6,7 @@ const WEB3FORMS_ACCESS_KEY = "PLACEHOLDER_KEY";
 type Status = "idle" | "sending" | "success" | "error";
 
 const fieldClass =
-  "min-h-[48px] w-full rounded-none border border-hairline bg-background px-4 py-3 text-base text-foreground outline-none transition-colors placeholder:italic placeholder:text-[oklch(0.62_0_0)] focus:border-foreground";
+  "min-h-[48px] w-full rounded-none border border-hairline-strong bg-field px-4 py-3 text-base text-foreground outline-none transition-colors placeholder:italic placeholder:text-[oklch(0.62_0_0)] hover:border-[oklch(0.45_0_0)] focus:border-foreground";
 
 const labelClass = "mb-2 block text-[0.95rem] font-medium text-foreground";
 
