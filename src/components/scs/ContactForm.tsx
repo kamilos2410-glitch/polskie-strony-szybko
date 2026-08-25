@@ -10,7 +10,13 @@ const fieldClass =
 
 const labelClass = "mb-2 block text-[0.95rem] font-medium text-foreground";
 
-export function ContactForm() {
+export function ContactForm({
+  hiddenFields,
+  subject,
+}: {
+  hiddenFields?: Record<string, string>;
+  subject?: string;
+} = {}) {
   const [status, setStatus] = useState<Status>("idle");
   const [message, setMessage] = useState("");
 
@@ -23,7 +29,7 @@ export function ContactForm() {
     try {
       const payload = new FormData(form);
       payload.append("access_key", WEB3FORMS_ACCESS_KEY);
-      payload.append("subject", "Nowe zgłoszenie — darmowe demo (SCS Web)");
+      payload.append("subject", subject ?? "Nowe zgłoszenie — darmowe demo (SCS Web)");
 
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
@@ -101,6 +107,11 @@ export function ContactForm() {
           className={fieldClass}
         />
       </div>
+
+      {hiddenFields &&
+        Object.entries(hiddenFields).map(([name, value]) => (
+          <input key={name} type="hidden" name={name} value={value} />
+        ))}
 
       <input type="checkbox" name="botcheck" className="hidden" tabIndex={-1} autoComplete="off" />
 
