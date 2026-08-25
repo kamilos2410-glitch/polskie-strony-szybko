@@ -301,7 +301,7 @@ function Index() {
                 Zobaczysz projekt, zanim zapłacisz. Bez ryzyka, bez zaliczek, bez abonamentu za samą
                 stronę.
               </p>
-              <div className="mt-10 flex flex-wrap items-center gap-6">
+              <div className="mt-7 flex flex-wrap items-center gap-5">
                 <a
                   href="#kontakt"
                   className="inline-flex min-h-[56px] items-center gap-3 bg-foreground px-10 py-4 text-base font-medium tracking-wide text-background transition-all duration-200 hover:-translate-y-0.5 hover:opacity-90"
@@ -422,14 +422,14 @@ function Index() {
               title="Cennik"
               lead="Zacznij od samej strony albo złóż większy pakiet — wszystko z jasną ceną z góry."
             />
-            <h3 className="display mb-8 text-2xl font-semibold md:text-3xl">Sama strona</h3>
+            <h3 className="display mb-5 text-xl font-semibold md:text-2xl">Sama strona</h3>
             <div className="grid gap-px bg-hairline md:grid-cols-2">
               <Reveal className="bg-background">
-                <div className="flex h-full flex-col border border-hairline p-8 md:p-12">
+                <div className="flex h-full flex-col border border-hairline p-6 md:p-8">
                   <p className="eyebrow mb-3">Jednorazowo</p>
-                  <p className="display mb-6 text-xl font-semibold">Płacisz raz</p>
-                  <p className="display text-[clamp(2.25rem,5vw,3.25rem)] font-bold">1500 zł</p>
-                  <ul className="mt-8 space-y-4 text-muted-foreground">
+                  <p className="display mb-4 text-lg font-semibold">Płacisz raz</p>
+                  <p className="display text-[clamp(1.9rem,4vw,2.6rem)] font-bold">1500 zł</p>
+                  <ul className="mt-6 space-y-3 text-muted-foreground">
                     <li className="flex gap-3 border-t border-hairline pt-4">
                       <Check strokeWidth={1.25} className="mt-1 h-5 w-5 shrink-0 text-foreground" aria-hidden="true" />
                       <span>Strona na własność — bez ukrytych warunków</span>
@@ -448,10 +448,10 @@ function Index() {
                       <span>Żadnego abonamentu za stronę</span>
                     </li>
                   </ul>
-                  <div className="mt-10 flex flex-wrap items-center gap-6">
+                  <div className="mt-7 flex flex-wrap items-center gap-5">
                     <a
                       href="#kontakt"
-                      className="inline-flex min-h-[52px] w-fit items-center gap-3 border border-foreground px-8 py-4 text-base font-medium transition-all duration-200 hover:-translate-y-0.5 hover:bg-foreground hover:text-background"
+                      className="inline-flex min-h-[46px] w-fit items-center gap-3 border border-foreground px-7 py-3 text-base font-medium transition-all duration-200 hover:-translate-y-0.5 hover:bg-foreground hover:text-background"
                     >
                       Zamów darmowe demo
                       <span aria-hidden="true">→</span>
@@ -468,18 +468,18 @@ function Index() {
               </Reveal>
 
               <Reveal delay={90} className="bg-background">
-                <div className="flex h-full flex-col border border-foreground p-8 md:p-12">
+                <div className="flex h-full flex-col border border-foreground p-6 md:p-8">
                   <div className="mb-3 flex items-center justify-between gap-4">
                     <p className="eyebrow">Abonament</p>
                     <span className="border border-foreground px-3 py-1 text-[10px] tracking-widest uppercase">
                       Bez kosztów na start
                     </span>
                   </div>
-                  <p className="display mb-6 text-xl font-semibold">Płacisz miesięcznie</p>
-                  <p className="display text-[clamp(2.25rem,5vw,3.25rem)] font-bold">
+                  <p className="display mb-4 text-lg font-semibold">Płacisz miesięcznie</p>
+                  <p className="display text-[clamp(1.9rem,4vw,2.6rem)] font-bold">
                     199 zł<span className="text-xl font-normal">/mies.</span>
                   </p>
-                  <ul className="mt-8 space-y-4 text-muted-foreground">
+                  <ul className="mt-6 space-y-3 text-muted-foreground">
                     <li className="flex gap-3 border-t border-hairline pt-4">
                       <Check strokeWidth={1.25} className="mt-1 h-5 w-5 shrink-0 text-foreground" aria-hidden="true" />
                       <span>0 zł na start</span>
@@ -497,10 +497,10 @@ function Index() {
                       <span>Żadnych dodatkowych kosztów — domena i serwer po naszej stronie</span>
                     </li>
                   </ul>
-                  <div className="mt-10 flex flex-wrap items-center gap-6">
+                  <div className="mt-7 flex flex-wrap items-center gap-5">
                     <a
                       href="#kontakt"
-                      className="inline-flex min-h-[52px] w-fit items-center gap-3 bg-foreground px-8 py-4 text-base font-medium text-background transition-all duration-200 hover:-translate-y-0.5 hover:opacity-90"
+                      className="inline-flex min-h-[46px] w-fit items-center gap-3 bg-foreground px-7 py-3 text-base font-medium text-background transition-all duration-200 hover:-translate-y-0.5 hover:opacity-90"
                     >
                       Zamów darmowe demo
                       <span aria-hidden="true">→</span>
@@ -517,24 +517,26 @@ function Index() {
               </Reveal>
             </div>
 
-            <h3 className="display mt-20 mb-3 text-2xl font-semibold md:text-3xl">
+            <h3 className="display mt-14 mb-2 text-xl font-semibold md:text-2xl">
               Usługi pojedynczo
             </h3>
-            <p className="mb-8 max-w-2xl leading-relaxed text-muted-foreground">
+            <p className="mb-5 max-w-2xl leading-relaxed text-muted-foreground">
               Wybierz tylko to, czego naprawdę potrzebujesz. Kliknij, żeby zobaczyć szczegóły.
             </p>
-            <div className="grid gap-px bg-hairline sm:grid-cols-2 lg:grid-cols-3">
+            <div className="border-t border-hairline">
               {SINGLE_SERVICES.map((s) => (
                 <Link
                   key={s.to}
                   to={s.to}
-                  className="group flex min-h-[44px] flex-col justify-between gap-6 bg-background p-8 transition-colors hover:bg-foreground/5"
+                  className="group flex min-h-[56px] flex-col gap-2 border-b border-hairline py-4 transition-colors hover:bg-foreground/5 sm:flex-row sm:items-center sm:justify-between sm:gap-8 sm:py-3.5"
                 >
-                  <div>
-                    <p className="display text-xl font-semibold">{s.name}</p>
-                    <p className="mt-3 leading-relaxed text-muted-foreground">{s.benefit}</p>
-                  </div>
-                  <p className="display flex items-center justify-between gap-4 border-t border-hairline pt-5 text-lg font-bold">
+                  <span className="min-w-0">
+                    <span className="display block text-lg font-semibold">{s.name}</span>
+                    <span className="mt-0.5 block text-[0.95rem] leading-relaxed text-muted-foreground">
+                      {s.benefit}
+                    </span>
+                  </span>
+                  <span className="display flex shrink-0 items-center gap-4 text-lg font-bold">
                     {s.price}
                     <span
                       aria-hidden="true"
@@ -542,13 +544,13 @@ function Index() {
                     >
                       →
                     </span>
-                  </p>
+                  </span>
                 </Link>
               ))}
             </div>
 
-            <h3 className="display mt-20 mb-3 text-2xl font-semibold md:text-3xl">Pakiety</h3>
-            <p className="mb-8 max-w-2xl leading-relaxed text-muted-foreground">
+            <h3 className="display mt-14 mb-2 text-xl font-semibold md:text-2xl">Pakiety</h3>
+            <p className="mb-5 max-w-2xl leading-relaxed text-muted-foreground">
               Kilka usług razem taniej niż osobno.
             </p>
             <div className="grid gap-px bg-hairline sm:grid-cols-2 lg:grid-cols-3">
@@ -556,15 +558,15 @@ function Index() {
                 <Link
                   key={p.to}
                   to={p.to}
-                  className="group flex min-h-[44px] flex-col justify-between gap-6 bg-background p-8 transition-colors hover:bg-foreground/5 md:p-10"
+                  className="group flex min-h-[44px] flex-col justify-between gap-4 bg-background p-6 transition-colors hover:bg-foreground/5"
                 >
                   <div>
                     <p className="display text-xl font-semibold">{p.name}</p>
                     <p className="mt-3 leading-relaxed text-muted-foreground">{p.desc}</p>
                   </div>
-                  <div className="border-t border-hairline pt-5">
+                  <div className="border-t border-hairline pt-4">
                     <p className="text-muted-foreground line-through">osobno {p.separate}</p>
-                    <p className="display mt-2 flex items-center justify-between gap-4 text-[clamp(1.75rem,4vw,2.5rem)] font-bold">
+                    <p className="display mt-1 flex items-center justify-between gap-4 text-[clamp(1.5rem,3vw,2rem)] font-bold">
                       {p.bundle}
                       <span
                         aria-hidden="true"
@@ -578,7 +580,7 @@ function Index() {
               ))}
             </div>
 
-            <p className="mt-12 leading-relaxed text-muted-foreground">
+            <p className="mt-10 leading-relaxed text-muted-foreground">
               Nie wiesz, co wybrać? Zadzwoń — doradzę bez zobowiązań:{" "}
               <a
                 href="tel:+48664013998"
