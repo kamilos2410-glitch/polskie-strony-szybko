@@ -468,13 +468,22 @@ function Index() {
                       <span>Żadnych dodatkowych kosztów — domena i serwer po naszej stronie</span>
                     </li>
                   </ul>
-                  <a
-                    href="#kontakt"
-                    className="mt-10 inline-flex min-h-[52px] w-fit items-center gap-3 bg-foreground px-8 py-4 text-base font-medium text-background transition-all duration-200 hover:-translate-y-0.5 hover:opacity-90"
-                  >
-                    Zamów darmowe demo
-                    <span aria-hidden="true">→</span>
-                  </a>
+                  <div className="mt-10 flex flex-wrap items-center gap-6">
+                    <a
+                      href="#kontakt"
+                      className="inline-flex min-h-[52px] w-fit items-center gap-3 bg-foreground px-8 py-4 text-base font-medium text-background transition-all duration-200 hover:-translate-y-0.5 hover:opacity-90"
+                    >
+                      Zamów darmowe demo
+                      <span aria-hidden="true">→</span>
+                    </a>
+                    <Link
+                      to="/uslugi/strona-internetowa"
+                      className="inline-flex min-h-[44px] items-center text-base text-muted-foreground underline underline-offset-8 transition-colors hover:text-foreground"
+                    >
+                      Co dokładnie zawiera strona →
+                    </Link>
+                  </div>
+
                 </div>
               </Reveal>
             </div>
