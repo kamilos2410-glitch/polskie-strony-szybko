@@ -180,7 +180,7 @@ export function PackagePage({ pkg }: { pkg: Pkg }) {
               </div>
             </div>
             <div className="bg-background">
-              <div className="h-full border border-hairline p-8 md:p-10">
+              <div className="h-full border border-hairline-strong p-8 md:p-10">
                 <p className="display text-xl font-semibold">Koszty cykliczne (nie do nas)</p>
                 <ul className="mt-6 space-y-4">
                   {pkg.priceRecurring.map((p) => (
@@ -245,7 +245,7 @@ export function PackagePage({ pkg }: { pkg: Pkg }) {
 
       <section>
         <div className="mx-auto max-w-[1200px] px-6 py-12 md:px-10 md:py-16">
-          <div className="border border-hairline p-8 md:p-12">
+          <div className="border border-hairline-strong p-8 md:p-12">
             <h2 className="display text-[clamp(1.5rem,3.2vw,2.15rem)] font-semibold">
               Zamów darmowe demo albo po prostu porozmawiajmy
             </h2>
