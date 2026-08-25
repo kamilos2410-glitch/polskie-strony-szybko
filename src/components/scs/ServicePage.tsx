@@ -24,7 +24,7 @@ function Section({
       <div className="mx-auto max-w-[1200px] px-6 py-12 md:px-10 md:py-16">
         <p className="eyebrow mb-4">{eyebrow}</p>
         <H2>{title}</H2>
-        <div className="mt-8 max-w-3xl">{children}</div>
+        <div className="mt-6 max-w-3xl">{children}</div>
       </div>
     </section>
   );
@@ -137,7 +137,7 @@ export function ServicePage({ service }: { service: Service }) {
         <div className="mx-auto max-w-[1200px] px-6 py-12 md:px-10 md:py-16">
           <p className="eyebrow mb-4">Cena</p>
           <H2>Cena</H2>
-          <div className="mt-10 grid gap-px bg-hairline md:grid-cols-2">
+          <div className="mt-8 grid gap-px bg-hairline md:grid-cols-2">
             <div className="bg-background">
               <div className="h-full border border-foreground p-8 md:p-10">
                 <p className="display text-xl font-semibold">Płacisz raz</p>
@@ -180,7 +180,7 @@ export function ServicePage({ service }: { service: Service }) {
         <div className="mx-auto max-w-[1200px] px-6 py-12 md:px-10 md:py-16">
           <p className="eyebrow mb-4">FAQ</p>
           <H2>Najczęstsze pytania</H2>
-          <div className="mt-10 max-w-3xl">
+          <div className="mt-8 max-w-3xl">
             {service.faq.map((item, i) => {
               const isOpen = open === i;
               return (
@@ -189,7 +189,7 @@ export function ServicePage({ service }: { service: Service }) {
                     type="button"
                     onClick={() => setOpen(isOpen ? null : i)}
                     aria-expanded={isOpen}
-                    className="flex min-h-[56px] w-full items-center justify-between gap-6 py-7 text-left transition-opacity hover:opacity-60"
+                    className="flex min-h-[56px] w-full items-center justify-between gap-6 py-5 text-left transition-opacity hover:opacity-60"
                   >
                     <span className="display text-xl font-semibold md:text-2xl">{item.q}</span>
                     {isOpen ? (
