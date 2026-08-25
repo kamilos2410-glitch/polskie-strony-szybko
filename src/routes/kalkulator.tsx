@@ -44,8 +44,6 @@ function KalkulatorPage() {
   const toggle = (key: ItemKey) =>
     setSel((s) => ({ ...s, items: { ...s.items, [key]: !s.items[key] } }));
 
-  const abonament = sel.pay === "abonament" && sel.items.strona;
-
   const panel = (
     <div className="border border-hairline-strong bg-secondary/25 p-6">
       <p className="eyebrow mb-3">Twoja wycena</p>
@@ -119,7 +117,7 @@ function KalkulatorPage() {
         <div className="mt-10 grid gap-10 lg:grid-cols-[1fr_380px] lg:gap-14">
           <div>
             {/* payment mode */}
-            <div className="border border-hairline p-5">
+            <div className="border border-hairline-strong p-5">
               <p className="display mb-3 text-lg font-semibold">Jak wolisz płacić za stronę?</p>
               <div className="flex flex-col gap-2 sm:flex-row">
                 {(
@@ -146,7 +144,7 @@ function KalkulatorPage() {
               {ITEMS.map((item) => {
                 const checked = sel.items[item.key];
                 return (
-                  <li key={item.key} className="border-t border-hairline last:border-b">
+                  <li key={item.key} className="border-t border-hairline transition-colors last:border-b hover:bg-foreground/5">
                     <label className="flex min-h-[64px] cursor-pointer items-center gap-4 py-4">
                       <input
                         type="checkbox"
