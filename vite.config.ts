@@ -33,6 +33,8 @@ export default defineConfig({
       { path: "/pakiety/start-online", prerender: { enabled: true } },
       { path: "/pakiety/firma-kompletna", prerender: { enabled: true } },
       { path: "/pakiety/wizerunek", prerender: { enabled: true } },
+      { path: "/pakiety/materialy-firmowe", prerender: { enabled: true } },
+      { path: "/pakiety/identyfikacja", prerender: { enabled: true } },
     ],
 
   },
