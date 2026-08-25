@@ -57,7 +57,7 @@ export function ContactForm({
   }
 
   return (
-    <form onSubmit={onSubmit} className="space-y-5 border border-hairline bg-secondary/25 p-6 md:p-8">
+    <form onSubmit={onSubmit} className="space-y-5 border border-hairline-strong bg-secondary/25 p-6 md:p-8">
       <p className="border-l-2 border-hairline pl-4 leading-relaxed text-muted-foreground">
         Wypełnienie zajmuje minutę. Niczego nie instalujesz, do niczego się nie zobowiązujesz.
       </p>
