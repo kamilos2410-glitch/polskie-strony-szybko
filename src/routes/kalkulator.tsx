@@ -35,7 +35,7 @@ export const Route = createFileRoute("/kalkulator")({
 });
 
 const radioClass =
-  "inline-flex min-h-[44px] flex-1 cursor-pointer items-center gap-2.5 border border-hairline px-3 py-2 text-sm transition-colors hover:border-foreground/50";
+  "inline-flex min-h-[44px] flex-1 cursor-pointer items-center gap-2.5 border border-hairline-strong bg-field px-3 py-2 text-sm transition-colors hover:border-[oklch(0.45_0_0)]";
 
 function KalkulatorPage() {
   const [sel, setSel] = useState<Selection>(EMPTY_SELECTION);
