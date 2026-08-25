@@ -51,6 +51,7 @@ const NAV = [
   { href: "#cennik", label: "Cennik" },
   { href: "/kalkulator", label: "Kalkulator" },
   { href: "#faq", label: "FAQ" },
+  { href: "#kontakt", label: "Kontakt" },
 ];
 
 const STEPS = [
@@ -303,19 +304,26 @@ function Index() {
                 Zobaczysz projekt, zanim zapłacisz. Bez ryzyka, bez zaliczek, bez abonamentu za samą
                 stronę.
               </p>
-              <div className="mt-7 flex flex-wrap items-center gap-5">
+              <div className="mt-7 flex flex-col items-stretch gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
                 <a
                   href="#kontakt"
-                  className="inline-flex min-h-[56px] items-center gap-3 bg-foreground px-10 py-4 text-base font-medium tracking-wide text-background transition-all duration-200 hover:-translate-y-0.5 hover:opacity-90"
+                  className="inline-flex min-h-[56px] items-center justify-center gap-3 bg-foreground px-10 py-4 text-base font-medium tracking-wide text-background transition-all duration-200 hover:-translate-y-0.5 hover:opacity-90"
                 >
                   Zamów darmowe demo
                   <span aria-hidden="true">→</span>
                 </a>
                 <a
                   href="#realizacje"
-                  className="inline-flex min-h-[56px] items-center gap-3 border border-foreground px-10 py-4 text-base font-medium transition-all duration-200 hover:-translate-y-0.5 hover:bg-foreground hover:text-background"
+                  className="inline-flex min-h-[56px] items-center justify-center gap-3 border border-foreground px-10 py-4 text-base font-medium transition-all duration-200 hover:-translate-y-0.5 hover:bg-foreground hover:text-background"
                 >
                   Zobacz przykłady
+                  <span aria-hidden="true">→</span>
+                </a>
+                <a
+                  href="/kalkulator"
+                  className="inline-flex min-h-[56px] items-center justify-center gap-3 border border-foreground px-10 py-4 text-base font-medium transition-all duration-200 hover:-translate-y-0.5 hover:bg-foreground hover:text-background"
+                >
+                  Policz swoją wycenę
                   <span aria-hidden="true">→</span>
                 </a>
               </div>
@@ -432,7 +440,7 @@ function Index() {
             <h3 className="display mb-5 text-xl font-semibold md:text-2xl">Sama strona</h3>
             <div className="grid gap-px bg-hairline md:grid-cols-2">
               <Reveal className="bg-background">
-                <div className="flex h-full flex-col border border-hairline p-6 md:p-8">
+                <div className="flex h-full flex-col border border-hairline-strong p-6 md:p-8">
                   <p className="eyebrow mb-3">Jednorazowo</p>
                   <p className="display mb-4 text-lg font-semibold">Płacisz raz</p>
                   <p className="display text-[clamp(1.9rem,4vw,2.6rem)] font-bold">1500 zł</p>
@@ -455,7 +463,7 @@ function Index() {
                       <span>Żadnego abonamentu za stronę</span>
                     </li>
                   </ul>
-                  <div className="mt-7 flex flex-wrap items-center gap-5">
+                  <div className="mt-7 flex flex-col items-stretch gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
                     <a
                       href="#kontakt"
                       className="inline-flex min-h-[46px] w-fit items-center gap-3 border border-foreground px-7 py-3 text-base font-medium transition-all duration-200 hover:-translate-y-0.5 hover:bg-foreground hover:text-background"
@@ -504,7 +512,7 @@ function Index() {
                       <span>Żadnych dodatkowych kosztów — domena i serwer po naszej stronie</span>
                     </li>
                   </ul>
-                  <div className="mt-7 flex flex-wrap items-center gap-5">
+                  <div className="mt-7 flex flex-col items-stretch gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
                     <a
                       href="#kontakt"
                       className="inline-flex min-h-[46px] w-fit items-center gap-3 bg-foreground px-7 py-3 text-base font-medium text-background transition-all duration-200 hover:-translate-y-0.5 hover:opacity-90"
@@ -560,12 +568,12 @@ function Index() {
             <p className="mb-5 max-w-2xl leading-relaxed text-muted-foreground">
               Kilka usług razem taniej niż osobno.
             </p>
-            <div className="grid gap-px bg-hairline sm:grid-cols-2 lg:grid-cols-3">
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {PACKAGES.map((p) => (
                 <Link
                   key={p.to}
                   to={p.to}
-                  className="group flex min-h-[44px] flex-col justify-between gap-4 bg-background p-6 transition-colors hover:bg-foreground/5"
+                  className="group flex min-h-[44px] flex-col justify-between gap-4 border border-hairline-strong bg-background p-6 transition-colors hover:border-[oklch(0.5_0_0)] hover:bg-foreground/5"
                 >
                   <div>
                     <p className="display text-xl font-semibold">{p.name}</p>
@@ -587,17 +595,22 @@ function Index() {
               ))}
             </div>
 
-            <div className="mt-10 border-t border-hairline pt-6">
+            <div className="mt-16 mb-16 flex flex-col items-start gap-6 border border-hairline-strong bg-secondary/25 p-7 md:flex-row md:items-center md:justify-between md:p-10">
+              <div>
+                <p className="display text-xl font-semibold md:text-2xl">
+                  Nie wiesz, ile to wyjdzie u Ciebie? Policz w minutę.
+                </p>
+                <p className="mt-2 leading-relaxed text-muted-foreground">
+                  Zaznaczasz, czego potrzebujesz — cena i rabat pakietowy liczą się od razu.
+                </p>
+              </div>
               <a
                 href="/kalkulator"
-                className="inline-flex min-h-[48px] items-center gap-3 bg-foreground px-6 py-3 text-base font-medium tracking-wide text-background transition-all duration-200 hover:-translate-y-0.5 hover:opacity-90"
+                className="inline-flex min-h-[56px] shrink-0 items-center justify-center gap-3 bg-foreground px-8 py-4 text-base font-medium tracking-wide text-background transition-all duration-200 hover:-translate-y-0.5 hover:opacity-90"
               >
                 Policz swoją wycenę
                 <span aria-hidden="true">→</span>
               </a>
-              <p className="mt-3 text-sm text-muted-foreground">
-                Zaznaczasz, czego potrzebujesz — cena i rabat pakietowy liczą się od razu.
-              </p>
             </div>
 
             <p className="mt-8 leading-relaxed text-muted-foreground">
