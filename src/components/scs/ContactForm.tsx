@@ -6,7 +6,9 @@ const WEB3FORMS_ACCESS_KEY = "PLACEHOLDER_KEY";
 type Status = "idle" | "sending" | "success" | "error";
 
 const fieldClass =
-  "min-h-[52px] w-full rounded-none border border-hairline bg-background px-4 py-3.5 text-base text-foreground outline-none transition-colors placeholder:text-muted-foreground focus:border-foreground";
+  "min-h-[48px] w-full rounded-none border border-hairline bg-background px-4 py-3 text-base text-foreground outline-none transition-colors placeholder:italic placeholder:text-[oklch(0.62_0_0)] focus:border-foreground";
+
+const labelClass = "mb-2 block text-[0.95rem] font-medium text-foreground";
 
 export function ContactForm() {
   const [status, setStatus] = useState<Status>("idle");
@@ -49,19 +51,19 @@ export function ContactForm() {
   }
 
   return (
-    <form onSubmit={onSubmit} className="space-y-5">
+    <form onSubmit={onSubmit} className="space-y-5 border border-hairline bg-secondary/25 p-6 md:p-8">
       <p className="border-l-2 border-hairline pl-4 leading-relaxed text-muted-foreground">
         Wypełnienie zajmuje minutę. Niczego nie instalujesz, do niczego się nie zobowiązujesz.
       </p>
       <div className="grid gap-4 sm:grid-cols-2">
         <div>
-          <label htmlFor="imie" className="eyebrow mb-2 block">
+          <label htmlFor="imie" className={labelClass}>
             Imię <span aria-hidden="true">*</span>
           </label>
           <input id="imie" name="Imię" required placeholder="Jan" className={fieldClass} />
         </div>
         <div>
-          <label htmlFor="kontakt" className="eyebrow mb-2 block">
+          <label htmlFor="kontakt" className={labelClass}>
             Telefon lub e-mail <span aria-hidden="true">*</span>
           </label>
           <input
@@ -75,7 +77,7 @@ export function ContactForm() {
       </div>
 
       <div>
-        <label htmlFor="firma" className="eyebrow mb-2 block">
+        <label htmlFor="firma" className={labelClass}>
           Nazwa firmy i branża <span aria-hidden="true">*</span>
         </label>
         <input
@@ -88,8 +90,8 @@ export function ContactForm() {
       </div>
 
       <div>
-        <label htmlFor="opis" className="eyebrow mb-2 block">
-          Krótko o Twojej firmie <span className="normal-case">(opcjonalnie)</span>
+        <label htmlFor="opis" className={labelClass}>
+          Krótko o Twojej firmie <span className="text-muted-foreground">(opcjonalnie)</span>
         </label>
         <textarea
           id="opis"
@@ -105,7 +107,7 @@ export function ContactForm() {
       <button
         type="submit"
         disabled={status === "sending"}
-        className="inline-flex min-h-[52px] w-full items-center justify-center gap-3 bg-foreground px-9 py-4 text-base font-medium tracking-wide text-background transition-all duration-200 hover:-translate-y-0.5 hover:opacity-90 disabled:opacity-50 sm:w-auto"
+        className="inline-flex min-h-[48px] w-full items-center justify-center gap-3 bg-foreground px-8 py-3.5 text-base font-medium tracking-wide text-background transition-all duration-200 hover:-translate-y-0.5 hover:opacity-90 disabled:opacity-50 sm:w-auto"
       >
         {status === "sending" ? "Wysyłam…" : "Wyślij — odezwę się w 24 h"}
         {status !== "sending" && <span aria-hidden="true">→</span>}
