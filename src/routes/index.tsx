@@ -327,7 +327,7 @@ function Index() {
 
         {/* JAK TO DZIAŁA */}
         <section id="jak-to-dziala" className="border-b border-hairline">
-          <div className="mx-auto max-w-[1200px] px-6 py-20 md:px-10 md:py-32">
+          <div className="mx-auto max-w-[1200px] px-6 py-14 md:px-10 md:py-20">
             <SectionHead
               eyebrow="Proces"
               title="Jak to działa"
@@ -416,7 +416,7 @@ function Index() {
 
         {/* CENNIK */}
         <section id="cennik" className="border-b border-hairline">
-          <div className="mx-auto max-w-[1200px] px-6 py-20 md:px-10 md:py-32">
+          <div className="mx-auto max-w-[1200px] px-6 py-14 md:px-10 md:py-20">
             <SectionHead
               eyebrow="Cennik"
               title="Cennik"
@@ -594,7 +594,7 @@ function Index() {
 
         {/* DLACZEGO */}
         <section className="border-b border-hairline">
-          <div className="mx-auto max-w-[1200px] px-6 py-20 md:px-10 md:py-32">
+          <div className="mx-auto max-w-[1200px] px-6 py-14 md:px-10 md:py-20">
             <SectionHead
               eyebrow="Dlaczego SCS Web"
               title="Cztery powody, żeby zacząć"
@@ -616,7 +616,7 @@ function Index() {
 
         {/* FAQ */}
         <section id="faq" className="border-b border-hairline">
-          <div className="mx-auto max-w-[1200px] px-6 py-20 md:px-10 md:py-32">
+          <div className="mx-auto max-w-[1200px] px-6 py-14 md:px-10 md:py-20">
             <SectionHead
               eyebrow="FAQ"
               title="Najczęstsze pytania"
@@ -659,7 +659,7 @@ function Index() {
 
         {/* KONTAKT */}
         <section id="kontakt">
-          <div className="mx-auto max-w-[1200px] px-6 py-20 md:px-10 md:py-32">
+          <div className="mx-auto max-w-[1200px] px-6 py-14 md:px-10 md:py-20">
             <div className="grid gap-14 md:grid-cols-2 md:gap-24">
               <Reveal>
                 <p className="eyebrow mb-5">Kontakt</p>
