@@ -186,13 +186,13 @@
   }
   body {
     font-family: var(--font-sans);
-    font-size: 17px;
-    line-height: 1.65;
+    font-size: 16px;
+    line-height: 1.6;
     -webkit-font-smoothing: antialiased;
   }
   @media (min-width: 768px) {
     body {
-      font-size: 18px;
+      font-size: 17px;
     }
   }
   :focus-visible {
@@ -212,7 +212,7 @@
 }
 
 @utility eyebrow {
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--ink-soft);
@@ -228,4 +228,10 @@
     opacity: 1;
     transform: none;
   }
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: oklch(0.62 0 0);
+  font-style: italic;
 }

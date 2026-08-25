@@ -55,20 +55,21 @@ const NAV = [
 const STEPS = [
   {
     n: "01",
-    title: "Darmowe demo",
-    body: "Opowiadasz o swojej firmie. W 48 godzin dostajesz link do gotowego projektu strony — nie makiety, tylko działającej witryny.",
+    title: "Rozmowa i ustalenia",
+    body: "Dzwonisz albo wysyłasz formularz. Pytam o Twoją firmę, klientów i to, co ma Ci dawać strona. Kilka minut rozmowy — bez zobowiązań i bez zaliczki.",
   },
   {
     n: "02",
-    title: "Akceptacja",
-    body: "Zgłaszasz poprawki. Płacisz dopiero wtedy, gdy projekt Ci się podoba. Wcześniej nie wydajesz ani złotówki.",
+    title: "Darmowy projekt strony",
+    body: "Buduję gotową, działającą stronę Twojej firmy i wysyłam Ci link. Oglądasz ją na spokojnie, mówisz co zmienić — poprawiam. Cały czas za darmo; płacisz dopiero, gdy powiesz „to jest to”.",
   },
   {
     n: "03",
-    title: "Publikacja",
-    body: "Strona działa pod Twoją domeną w 48 godzin od akceptacji. Domenę rejestruję na Twoje dane.",
+    title: "Uruchomienie",
+    body: "Rejestruję domenę na Twoje dane, publikuję stronę i zgłaszam ją do Google. W 48 godzin od akceptacji Twoja firma jest w internecie — strona jest Twoją własnością.",
   },
 ];
+
 
 const CASES = [
   {
@@ -237,12 +238,13 @@ function SectionHead({
   lead?: string;
 }) {
   return (
-    <div className="mb-14 max-w-3xl md:mb-20">
-      <p className="eyebrow mb-5">{eyebrow}</p>
-      <h2 className="display text-[clamp(2rem,5vw,3.5rem)] font-semibold">{title}</h2>
-      {lead ? <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground">{lead}</p> : null}
+    <div className="mb-9 max-w-3xl md:mb-12">
+      <p className="eyebrow mb-3">{eyebrow}</p>
+      <h2 className="display text-[clamp(1.7rem,3.6vw,2.6rem)] font-semibold">{title}</h2>
+      {lead ? <p className="mt-4 max-w-2xl leading-relaxed text-muted-foreground">{lead}</p> : null}
     </div>
   );
+
 }
 
 function Index() {
@@ -299,7 +301,7 @@ function Index() {
                 Zobaczysz projekt, zanim zapłacisz. Bez ryzyka, bez zaliczek, bez abonamentu za samą
                 stronę.
               </p>
-              <div className="mt-10 flex flex-wrap items-center gap-6">
+              <div className="mt-7 flex flex-wrap items-center gap-5">
                 <a
                   href="#kontakt"
                   className="inline-flex min-h-[56px] items-center gap-3 bg-foreground px-10 py-4 text-base font-medium tracking-wide text-background transition-all duration-200 hover:-translate-y-0.5 hover:opacity-90"
@@ -325,7 +327,7 @@ function Index() {
 
         {/* JAK TO DZIAŁA */}
         <section id="jak-to-dziala" className="border-b border-hairline">
-          <div className="mx-auto max-w-[1200px] px-6 py-20 md:px-10 md:py-32">
+          <div className="mx-auto max-w-[1200px] px-6 py-14 md:px-10 md:py-20">
             <SectionHead
               eyebrow="Proces"
               title="Jak to działa"
@@ -334,11 +336,11 @@ function Index() {
             <ol>
               {STEPS.map((step, i) => (
                 <Reveal as="li" key={step.n} delay={i * 90}>
-                  <div className="grid gap-6 border-t border-hairline py-10 md:grid-cols-12 md:py-14">
-                    <span className="display col-span-2 text-4xl font-semibold text-muted-foreground md:text-5xl">
+                  <div className="grid gap-3 border-t border-hairline py-6 md:grid-cols-12 md:gap-6 md:py-8">
+                    <span className="display col-span-2 text-2xl font-semibold text-muted-foreground md:text-3xl">
                       {step.n}
                     </span>
-                    <h3 className="display col-span-4 text-2xl font-semibold md:text-3xl">
+                    <h3 className="display col-span-4 text-xl font-semibold md:text-2xl">
                       {step.title}
                     </h3>
                     <p className="col-span-6 max-w-xl leading-relaxed text-muted-foreground">
@@ -348,82 +350,86 @@ function Index() {
                 </Reveal>
               ))}
             </ol>
+
           </div>
         </section>
 
         {/* REALIZACJE */}
         <section id="realizacje" className="border-b border-hairline">
-          <div className="mx-auto max-w-[1200px] px-6 py-20 md:px-10 md:py-32">
+          <div className="mx-auto max-w-[1200px] px-6 py-14 md:px-10 md:py-20">
             <SectionHead
               eyebrow="Realizacje"
               title="Przykładowe projekty"
               lead="Kliknij dowolny projekt, żeby zobaczyć przykładową stronę w całości."
             />
-            <div className="space-y-12 md:space-y-16">
+            <div className="space-y-8 md:space-y-10">
               {CASES.map((c, i) => (
                 <Reveal key={c.name} delay={i * 60}>
-                  <article className="group relative border border-hairline bg-secondary/30 transition-colors hover:border-foreground/50">
-                    <div className="border-b border-hairline p-4 md:p-6">
-                      <div className="border border-hairline bg-[#0d0d0d]">
-                        <div className="flex h-7 items-center gap-1.5 border-b border-hairline px-3">
-                          <span className="h-1.5 w-1.5 border border-foreground/35" />
-                          <span className="h-1.5 w-1.5 border border-foreground/25" />
-                          <span className="h-1.5 w-1.5 border border-foreground/25" />
-                          <span className="ml-3 text-[10px] text-muted-foreground">{c.url}</span>
+                  <Link
+                    to={c.to}
+                    className="group block border border-[#262626] bg-secondary/20 transition-colors duration-200 hover:border-foreground/45 hover:bg-secondary/40 focus-visible:border-foreground/45"
+                  >
+                    <article className="grid gap-0 md:grid-cols-[1.05fr_0.95fr]">
+                      <div className="p-3 md:border-r md:border-hairline md:p-4">
+                        <div className="border border-hairline bg-[#0d0d0d]">
+                          <div className="flex h-6 items-center gap-1.5 border-b border-hairline px-2.5">
+                            <span className="h-1.5 w-1.5 border border-foreground/35" />
+                            <span className="h-1.5 w-1.5 border border-foreground/25" />
+                            <span className="h-1.5 w-1.5 border border-foreground/25" />
+                            <span className="ml-3 text-[10px] text-muted-foreground">{c.url}</span>
+                          </div>
+                          <div className="aspect-[16/9] overflow-hidden">
+                            <c.Preview />
+                          </div>
                         </div>
-                        <div className="aspect-[16/9] overflow-hidden">
-                          <c.Preview />
+                      </div>
+                      <div className="flex flex-col justify-center gap-4 border-t border-hairline p-5 md:border-t-0 md:p-7">
+                        <div className="min-w-0">
+                          <p className="eyebrow mb-2">{c.branch}</p>
+                          <h3 className="display text-xl font-semibold md:text-2xl">{c.name}</h3>
+                          <p className="mt-2 max-w-md text-[0.95rem] leading-relaxed text-muted-foreground">
+                            {c.desc}
+                          </p>
+                        </div>
+                        <div className="flex flex-col gap-1.5">
+                          <span className="inline-flex min-h-[46px] w-fit items-center justify-center gap-3 bg-foreground px-6 py-3 text-base font-medium tracking-wide text-background transition-all duration-200 group-hover:-translate-y-0.5 group-hover:opacity-90">
+                            Zobacz przykładową stronę
+                            <span aria-hidden="true">→</span>
+                          </span>
+                          <span className="text-sm text-muted-foreground">
+                            Otworzy się pełna strona przykładowa
+                          </span>
                         </div>
                       </div>
-                    </div>
-                    <div className="flex flex-wrap items-end justify-between gap-6 p-6 md:p-8">
-                      <div className="min-w-0">
-                        <p className="eyebrow mb-3">{c.branch}</p>
-                        <h3 className="display text-2xl font-semibold md:text-3xl">{c.name}</h3>
-                        <p className="mt-3 max-w-md leading-relaxed text-muted-foreground">
-                          {c.desc}
-                        </p>
-                      </div>
-                      <div className="flex flex-col gap-2">
-                        <Link
-                          to={c.to}
-                          className="inline-flex min-h-[52px] items-center justify-center gap-3 bg-foreground px-8 py-4 text-base font-medium tracking-wide text-background transition-all duration-200 hover:-translate-y-0.5 hover:opacity-90 after:absolute after:inset-0 after:content-['']"
-                        >
-                          Zobacz przykładową stronę
-                          <span aria-hidden="true">→</span>
-                        </Link>
-                        <span className="text-sm text-muted-foreground">
-                          Otworzy się pełna strona przykładowa
-                        </span>
-                      </div>
-                    </div>
-                  </article>
+                    </article>
+                  </Link>
                 </Reveal>
               ))}
             </div>
-            <p className="mt-14 border-t border-hairline pt-6 text-sm text-muted-foreground">
+            <p className="mt-10 border-t border-hairline pt-5 text-sm text-muted-foreground">
               Projekty przykładowe dla fikcyjnych firm, zaprojektowane od zera — Twoja strona
               powstanie tak samo, pod Twoją branżę i Twoich klientów.
             </p>
+
           </div>
         </section>
 
         {/* CENNIK */}
         <section id="cennik" className="border-b border-hairline">
-          <div className="mx-auto max-w-[1200px] px-6 py-20 md:px-10 md:py-32">
+          <div className="mx-auto max-w-[1200px] px-6 py-14 md:px-10 md:py-20">
             <SectionHead
               eyebrow="Cennik"
               title="Cennik"
               lead="Zacznij od samej strony albo złóż większy pakiet — wszystko z jasną ceną z góry."
             />
-            <h3 className="display mb-8 text-2xl font-semibold md:text-3xl">Sama strona</h3>
+            <h3 className="display mb-5 text-xl font-semibold md:text-2xl">Sama strona</h3>
             <div className="grid gap-px bg-hairline md:grid-cols-2">
               <Reveal className="bg-background">
-                <div className="flex h-full flex-col border border-hairline p-8 md:p-12">
+                <div className="flex h-full flex-col border border-hairline p-6 md:p-8">
                   <p className="eyebrow mb-3">Jednorazowo</p>
-                  <p className="display mb-6 text-xl font-semibold">Płacisz raz</p>
-                  <p className="display text-[clamp(2.25rem,5vw,3.25rem)] font-bold">1500 zł</p>
-                  <ul className="mt-8 space-y-4 text-muted-foreground">
+                  <p className="display mb-4 text-lg font-semibold">Płacisz raz</p>
+                  <p className="display text-[clamp(1.9rem,4vw,2.6rem)] font-bold">1500 zł</p>
+                  <ul className="mt-6 space-y-3 text-muted-foreground">
                     <li className="flex gap-3 border-t border-hairline pt-4">
                       <Check strokeWidth={1.25} className="mt-1 h-5 w-5 shrink-0 text-foreground" aria-hidden="true" />
                       <span>Strona na własność — bez ukrytych warunków</span>
@@ -442,10 +448,10 @@ function Index() {
                       <span>Żadnego abonamentu za stronę</span>
                     </li>
                   </ul>
-                  <div className="mt-10 flex flex-wrap items-center gap-6">
+                  <div className="mt-7 flex flex-wrap items-center gap-5">
                     <a
                       href="#kontakt"
-                      className="inline-flex min-h-[52px] w-fit items-center gap-3 border border-foreground px-8 py-4 text-base font-medium transition-all duration-200 hover:-translate-y-0.5 hover:bg-foreground hover:text-background"
+                      className="inline-flex min-h-[46px] w-fit items-center gap-3 border border-foreground px-7 py-3 text-base font-medium transition-all duration-200 hover:-translate-y-0.5 hover:bg-foreground hover:text-background"
                     >
                       Zamów darmowe demo
                       <span aria-hidden="true">→</span>
@@ -462,18 +468,18 @@ function Index() {
               </Reveal>
 
               <Reveal delay={90} className="bg-background">
-                <div className="flex h-full flex-col border border-foreground p-8 md:p-12">
+                <div className="flex h-full flex-col border border-foreground p-6 md:p-8">
                   <div className="mb-3 flex items-center justify-between gap-4">
                     <p className="eyebrow">Abonament</p>
                     <span className="border border-foreground px-3 py-1 text-[10px] tracking-widest uppercase">
                       Bez kosztów na start
                     </span>
                   </div>
-                  <p className="display mb-6 text-xl font-semibold">Płacisz miesięcznie</p>
-                  <p className="display text-[clamp(2.25rem,5vw,3.25rem)] font-bold">
+                  <p className="display mb-4 text-lg font-semibold">Płacisz miesięcznie</p>
+                  <p className="display text-[clamp(1.9rem,4vw,2.6rem)] font-bold">
                     199 zł<span className="text-xl font-normal">/mies.</span>
                   </p>
-                  <ul className="mt-8 space-y-4 text-muted-foreground">
+                  <ul className="mt-6 space-y-3 text-muted-foreground">
                     <li className="flex gap-3 border-t border-hairline pt-4">
                       <Check strokeWidth={1.25} className="mt-1 h-5 w-5 shrink-0 text-foreground" aria-hidden="true" />
                       <span>0 zł na start</span>
@@ -491,10 +497,10 @@ function Index() {
                       <span>Żadnych dodatkowych kosztów — domena i serwer po naszej stronie</span>
                     </li>
                   </ul>
-                  <div className="mt-10 flex flex-wrap items-center gap-6">
+                  <div className="mt-7 flex flex-wrap items-center gap-5">
                     <a
                       href="#kontakt"
-                      className="inline-flex min-h-[52px] w-fit items-center gap-3 bg-foreground px-8 py-4 text-base font-medium text-background transition-all duration-200 hover:-translate-y-0.5 hover:opacity-90"
+                      className="inline-flex min-h-[46px] w-fit items-center gap-3 bg-foreground px-7 py-3 text-base font-medium text-background transition-all duration-200 hover:-translate-y-0.5 hover:opacity-90"
                     >
                       Zamów darmowe demo
                       <span aria-hidden="true">→</span>
@@ -511,24 +517,26 @@ function Index() {
               </Reveal>
             </div>
 
-            <h3 className="display mt-20 mb-3 text-2xl font-semibold md:text-3xl">
+            <h3 className="display mt-14 mb-2 text-xl font-semibold md:text-2xl">
               Usługi pojedynczo
             </h3>
-            <p className="mb-8 max-w-2xl leading-relaxed text-muted-foreground">
+            <p className="mb-5 max-w-2xl leading-relaxed text-muted-foreground">
               Wybierz tylko to, czego naprawdę potrzebujesz. Kliknij, żeby zobaczyć szczegóły.
             </p>
-            <div className="grid gap-px bg-hairline sm:grid-cols-2 lg:grid-cols-3">
+            <div className="border-t border-hairline">
               {SINGLE_SERVICES.map((s) => (
                 <Link
                   key={s.to}
                   to={s.to}
-                  className="group flex min-h-[44px] flex-col justify-between gap-6 bg-background p-8 transition-colors hover:bg-foreground/5"
+                  className="group flex min-h-[56px] flex-col gap-2 border-b border-hairline py-4 transition-colors hover:bg-foreground/5 sm:flex-row sm:items-center sm:justify-between sm:gap-8 sm:py-3.5"
                 >
-                  <div>
-                    <p className="display text-xl font-semibold">{s.name}</p>
-                    <p className="mt-3 leading-relaxed text-muted-foreground">{s.benefit}</p>
-                  </div>
-                  <p className="display flex items-center justify-between gap-4 border-t border-hairline pt-5 text-lg font-bold">
+                  <span className="min-w-0">
+                    <span className="display block text-lg font-semibold">{s.name}</span>
+                    <span className="mt-0.5 block text-[0.95rem] leading-relaxed text-muted-foreground">
+                      {s.benefit}
+                    </span>
+                  </span>
+                  <span className="display flex shrink-0 items-center gap-4 text-lg font-bold">
                     {s.price}
                     <span
                       aria-hidden="true"
@@ -536,13 +544,13 @@ function Index() {
                     >
                       →
                     </span>
-                  </p>
+                  </span>
                 </Link>
               ))}
             </div>
 
-            <h3 className="display mt-20 mb-3 text-2xl font-semibold md:text-3xl">Pakiety</h3>
-            <p className="mb-8 max-w-2xl leading-relaxed text-muted-foreground">
+            <h3 className="display mt-14 mb-2 text-xl font-semibold md:text-2xl">Pakiety</h3>
+            <p className="mb-5 max-w-2xl leading-relaxed text-muted-foreground">
               Kilka usług razem taniej niż osobno.
             </p>
             <div className="grid gap-px bg-hairline sm:grid-cols-2 lg:grid-cols-3">
@@ -550,15 +558,15 @@ function Index() {
                 <Link
                   key={p.to}
                   to={p.to}
-                  className="group flex min-h-[44px] flex-col justify-between gap-6 bg-background p-8 transition-colors hover:bg-foreground/5 md:p-10"
+                  className="group flex min-h-[44px] flex-col justify-between gap-4 bg-background p-6 transition-colors hover:bg-foreground/5"
                 >
                   <div>
                     <p className="display text-xl font-semibold">{p.name}</p>
                     <p className="mt-3 leading-relaxed text-muted-foreground">{p.desc}</p>
                   </div>
-                  <div className="border-t border-hairline pt-5">
+                  <div className="border-t border-hairline pt-4">
                     <p className="text-muted-foreground line-through">osobno {p.separate}</p>
-                    <p className="display mt-2 flex items-center justify-between gap-4 text-[clamp(1.75rem,4vw,2.5rem)] font-bold">
+                    <p className="display mt-1 flex items-center justify-between gap-4 text-[clamp(1.5rem,3vw,2rem)] font-bold">
                       {p.bundle}
                       <span
                         aria-hidden="true"
@@ -572,7 +580,7 @@ function Index() {
               ))}
             </div>
 
-            <p className="mt-12 leading-relaxed text-muted-foreground">
+            <p className="mt-10 leading-relaxed text-muted-foreground">
               Nie wiesz, co wybrać? Zadzwoń — doradzę bez zobowiązań:{" "}
               <a
                 href="tel:+48664013998"
@@ -588,7 +596,7 @@ function Index() {
 
         {/* DLACZEGO */}
         <section className="border-b border-hairline">
-          <div className="mx-auto max-w-[1200px] px-6 py-20 md:px-10 md:py-32">
+          <div className="mx-auto max-w-[1200px] px-6 py-14 md:px-10 md:py-20">
             <SectionHead
               eyebrow="Dlaczego SCS Web"
               title="Cztery powody, żeby zacząć"
@@ -597,9 +605,9 @@ function Index() {
             <div className="grid gap-px bg-hairline sm:grid-cols-2">
               {WHY.map((item, i) => (
                 <Reveal key={item.title} delay={i * 70} className="bg-background">
-                  <div className="h-full p-8 md:p-12">
+                  <div className="h-full p-6 md:p-8">
                     <item.icon strokeWidth={1} className="h-8 w-8" aria-hidden="true" />
-                    <h3 className="display mt-8 text-xl font-semibold md:text-2xl">{item.title}</h3>
+                    <h3 className="display mt-6 text-lg font-semibold md:text-xl">{item.title}</h3>
                     <p className="mt-3 leading-relaxed text-muted-foreground">{item.body}</p>
                   </div>
                 </Reveal>
@@ -610,7 +618,7 @@ function Index() {
 
         {/* FAQ */}
         <section id="faq" className="border-b border-hairline">
-          <div className="mx-auto max-w-[1200px] px-6 py-20 md:px-10 md:py-32">
+          <div className="mx-auto max-w-[1200px] px-6 py-14 md:px-10 md:py-20">
             <SectionHead
               eyebrow="FAQ"
               title="Najczęstsze pytania"
@@ -625,7 +633,7 @@ function Index() {
                       type="button"
                       onClick={() => setOpen(isOpen ? null : i)}
                       aria-expanded={isOpen}
-                      className="flex min-h-[56px] w-full items-center justify-between gap-6 py-7 text-left transition-opacity hover:opacity-60"
+                      className="flex min-h-[56px] w-full items-center justify-between gap-6 py-5 text-left transition-opacity hover:opacity-60"
                     >
                       <span className="display text-xl font-semibold md:text-2xl">{item.q}</span>
                       {isOpen ? (
@@ -639,7 +647,7 @@ function Index() {
                       style={{ gridTemplateRows: isOpen ? "1fr" : "0fr" }}
                     >
                       <div className="overflow-hidden">
-                        <p className="max-w-2xl pb-8 text-lg leading-relaxed text-muted-foreground">
+                        <p className="max-w-2xl pb-6 leading-relaxed text-muted-foreground">
                           {item.a}
                         </p>
                       </div>
@@ -653,11 +661,11 @@ function Index() {
 
         {/* KONTAKT */}
         <section id="kontakt">
-          <div className="mx-auto max-w-[1200px] px-6 py-20 md:px-10 md:py-32">
-            <div className="grid gap-14 md:grid-cols-2 md:gap-24">
+          <div className="mx-auto max-w-[1200px] px-6 py-14 md:px-10 md:py-20">
+            <div className="grid gap-10 md:grid-cols-2 md:gap-16">
               <Reveal>
                 <p className="eyebrow mb-5">Kontakt</p>
-                <h2 className="display text-[clamp(2rem,5vw,3.5rem)] font-semibold">
+                <h2 className="display text-[clamp(1.7rem,3.6vw,2.6rem)] font-semibold">
                   Zamów darmowe demo
                 </h2>
                 <p className="mt-6 max-w-md leading-relaxed text-muted-foreground">

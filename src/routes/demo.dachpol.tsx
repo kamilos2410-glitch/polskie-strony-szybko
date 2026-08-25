@@ -72,8 +72,8 @@ function DachPol() {
             <a href="#materialy">Materiały</a>
             <a href="#kontakt">Kontakt</a>
           </nav>
-          <a href="tel:600000000" className="text-sm font-semibold" style={{ color: TERRA }}>
-            600 000 000
+          <a href="tel:+48664013998" className="text-sm font-semibold" style={{ color: TERRA }}>
+            +48 664 013 998
           </a>
         </div>
       </header>
@@ -208,7 +208,7 @@ function DachPol() {
               </p>
               <div className="mt-8 space-y-2">
                 <p className="text-2xl" style={{ fontFamily: SERIF, color: "#e79a6f" }}>
-                  600 000 000
+                  +48 664 013 998
                 </p>
                 <p className="text-[#c3b6a8]">ul. Przykładowa 1, 20-001 Lublin</p>
                 <p className="text-[#c3b6a8]">Pon–Sob 7:00–17:00</p>
@@ -264,7 +264,7 @@ function DachPol() {
       </main>
 
       <footer className="px-5 py-8 text-center text-sm" style={{ color: "#8a7f76" }}>
-        DachPol · ul. Przykładowa 1, Lublin · 600 000 000 — firma fikcyjna, projekt przykładowy SCS
+        DachPol · ul. Przykładowa 1, Lublin · +48 664 013 998 — firma fikcyjna, projekt przykładowy SCS
         Web
       </footer>
     </div>

@@ -120,10 +120,10 @@ function AutoSerwis() {
                 Umów wizytę
               </a>
               <a
-                href="tel:600000000"
+                href="tel:+48664013998"
                 className="border border-[#4a4a4a] px-8 py-4 text-sm font-extrabold tracking-[0.12em] uppercase"
               >
-                600 000 000
+                +48 664 013 998
               </a>
             </div>
           </div>
@@ -220,7 +220,7 @@ function AutoSerwis() {
               </p>
               <div className="mt-8 space-y-3 text-[#d4d4d4]">
                 <p className="text-2xl font-extrabold" style={{ color: AMBER }}>
-                  600 000 000
+                  +48 664 013 998
                 </p>
                 <p>ul. Przykładowa 1, 26-600 Radom</p>
                 <p>kontakt@autoserwis-kowalski.example</p>
@@ -276,7 +276,7 @@ function AutoSerwis() {
       </main>
 
       <footer className="border-t border-[#262626] px-5 py-8 text-center text-sm text-[#7a7a7a]">
-        AutoSerwis Kowalski · ul. Przykładowa 1, Radom · 600 000 000 — firma fikcyjna, projekt
+        AutoSerwis Kowalski · ul. Przykładowa 1, Radom · +48 664 013 998 — firma fikcyjna, projekt
         przykładowy SCS Web
       </footer>
     </div>
