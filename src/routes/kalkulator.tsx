@@ -47,14 +47,17 @@ function KalkulatorPage() {
   const abonament = sel.pay === "abonament" && sel.items.strona;
 
   const panel = (
-    <div className="border border-hairline bg-secondary/25 p-6">
+    <div className="border border-hairline-strong bg-secondary/25 p-6">
       <p className="eyebrow mb-3">Twoja wycena</p>
       <p className="display text-[clamp(2rem,4.5vw,2.9rem)] font-bold leading-none">
         Płacisz raz: {zl(result.oneTime)}
       </p>
       {result.monthly > 0 && (
         <p className="display mt-2 text-xl font-semibold">
-          + {result.monthly} zł/mies. za stronę
+          Miesięcznie: {result.monthly} zł{" "}
+          <span className="text-base font-medium text-muted-foreground">
+            (domena i hosting w cenie)
+          </span>
         </p>
       )}
 
@@ -69,11 +72,6 @@ function KalkulatorPage() {
         </div>
       )}
 
-      {abonament && (
-        <p className="mt-4 border-t border-hairline pt-4 text-sm text-muted-foreground">
-          Przy abonamencie za stronę rabaty pakietowe nie obowiązują — każdą usługę liczę osobno.
-        </p>
-      )}
 
       <div className="mt-5 border-t border-hairline pt-4">
         <p className="mb-2 font-medium">Koszty cykliczne (nie do nas):</p>
