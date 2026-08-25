@@ -377,7 +377,7 @@ function Index() {
                 <Reveal key={c.name} delay={i * 60}>
                   <Link
                     to={c.to}
-                    className="group block border border-[#262626] bg-secondary/20 transition-colors duration-200 hover:border-foreground/45 hover:bg-secondary/40 focus-visible:border-foreground/45"
+                    className="group block border border-hairline-strong bg-secondary/20 transition-colors duration-200 hover:border-foreground/45 hover:bg-secondary/40 focus-visible:border-foreground/45"
                   >
                     <article className="grid gap-0 md:grid-cols-[1.05fr_0.95fr]">
                       <div className="p-3 md:border-r md:border-hairline md:p-4">
