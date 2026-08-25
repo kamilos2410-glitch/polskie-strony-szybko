@@ -143,6 +143,76 @@ const FAQ = [
   },
 ];
 
+const SINGLE_SERVICES = [
+  {
+    name: "Strona internetowa",
+    benefit: "Wizytówka firmy w sieci, która realnie przynosi telefony.",
+    price: "od 1500 zł",
+    to: "/uslugi/strona-internetowa",
+  },
+  {
+    name: "Poczta firmowa",
+    benefit: "Adres e-mail na Twojej domenie zamiast prywatnej skrzynki.",
+    price: "400 zł",
+    to: "/uslugi/poczta-firmowa",
+  },
+  {
+    name: "Pakiet Start Google",
+    benefit: "Wizytówka w Mapach Google, żeby klienci z okolicy Cię znaleźli.",
+    price: "od 400 zł",
+    to: "/uslugi/pakiet-start-google",
+  },
+  {
+    name: "Projekt wizytówki",
+    benefit: "Wizytówka, którą nie wstyd podać klientowi.",
+    price: "250 zł",
+    to: "/uslugi/projekt-wizytowki",
+  },
+  {
+    name: "Projekt ulotki",
+    benefit: "Ulotka gotowa do druku, czytelna i konkretna.",
+    price: "300 zł",
+    to: "/uslugi/projekt-ulotki",
+  },
+  {
+    name: "Oznakowanie auta",
+    benefit: "Twoje auto pracuje jako reklama na drodze.",
+    price: "od 300 zł",
+    to: "/uslugi/oznakowanie-auta",
+  },
+  {
+    name: "Projekt logo",
+    benefit: "Jeden znak, który zapamiętają klienci.",
+    price: "800 zł",
+    to: "/uslugi/projekt-logo",
+  },
+] as const;
+
+const PACKAGES = [
+  {
+    name: "Start Online",
+    desc: "Strona internetowa i Pakiet Start Google — komplet na dobry początek.",
+    separate: "2300 zł",
+    bundle: "1990 zł",
+    to: "/pakiety/start-online",
+  },
+  {
+    name: "Firma Kompletna",
+    desc: "Strona, firmowa poczta na domenie i Pakiet Start Google.",
+    separate: "2850 zł",
+    bundle: "2390 zł",
+    to: "/pakiety/firma-kompletna",
+  },
+  {
+    name: "Wizerunek",
+    desc: "Projekt logo i materiały firmowe — spójny wygląd wszędzie.",
+    separate: "950 zł",
+    bundle: "820 zł",
+    to: "/pakiety/wizerunek",
+  },
+] as const;
+
+
 function SectionHead({
   eyebrow,
   title,
@@ -358,13 +428,22 @@ function Index() {
                       <span>Żadnego abonamentu za stronę</span>
                     </li>
                   </ul>
-                  <a
-                    href="#kontakt"
-                    className="mt-10 inline-flex min-h-[52px] w-fit items-center gap-3 border border-foreground px-8 py-4 text-base font-medium transition-all duration-200 hover:-translate-y-0.5 hover:bg-foreground hover:text-background"
-                  >
-                    Zamów darmowe demo
-                    <span aria-hidden="true">→</span>
-                  </a>
+                  <div className="mt-10 flex flex-wrap items-center gap-6">
+                    <a
+                      href="#kontakt"
+                      className="inline-flex min-h-[52px] w-fit items-center gap-3 border border-foreground px-8 py-4 text-base font-medium transition-all duration-200 hover:-translate-y-0.5 hover:bg-foreground hover:text-background"
+                    >
+                      Zamów darmowe demo
+                      <span aria-hidden="true">→</span>
+                    </a>
+                    <Link
+                      to="/uslugi/strona-internetowa"
+                      className="inline-flex min-h-[44px] items-center text-base text-muted-foreground underline underline-offset-8 transition-colors hover:text-foreground"
+                    >
+                      Co dokładnie zawiera strona →
+                    </Link>
+                  </div>
+
                 </div>
               </Reveal>
 
@@ -398,46 +477,99 @@ function Index() {
                       <span>Żadnych dodatkowych kosztów — domena i serwer po naszej stronie</span>
                     </li>
                   </ul>
-                  <a
-                    href="#kontakt"
-                    className="mt-10 inline-flex min-h-[52px] w-fit items-center gap-3 bg-foreground px-8 py-4 text-base font-medium text-background transition-all duration-200 hover:-translate-y-0.5 hover:opacity-90"
-                  >
-                    Zamów darmowe demo
-                    <span aria-hidden="true">→</span>
-                  </a>
+                  <div className="mt-10 flex flex-wrap items-center gap-6">
+                    <a
+                      href="#kontakt"
+                      className="inline-flex min-h-[52px] w-fit items-center gap-3 bg-foreground px-8 py-4 text-base font-medium text-background transition-all duration-200 hover:-translate-y-0.5 hover:opacity-90"
+                    >
+                      Zamów darmowe demo
+                      <span aria-hidden="true">→</span>
+                    </a>
+                    <Link
+                      to="/uslugi/strona-internetowa"
+                      className="inline-flex min-h-[44px] items-center text-base text-muted-foreground underline underline-offset-8 transition-colors hover:text-foreground"
+                    >
+                      Co dokładnie zawiera strona →
+                    </Link>
+                  </div>
+
                 </div>
               </Reveal>
             </div>
 
-            <p className="mt-8 leading-relaxed text-muted-foreground">
+            <h3 className="display mt-20 mb-3 text-2xl font-semibold md:text-3xl">
+              Usługi pojedynczo
+            </h3>
+            <p className="mb-8 max-w-2xl leading-relaxed text-muted-foreground">
+              Wybierz tylko to, czego naprawdę potrzebujesz. Kliknij, żeby zobaczyć szczegóły.
+            </p>
+            <div className="grid gap-px bg-hairline sm:grid-cols-2 lg:grid-cols-3">
+              {SINGLE_SERVICES.map((s) => (
+                <Link
+                  key={s.to}
+                  to={s.to}
+                  className="group flex min-h-[44px] flex-col justify-between gap-6 bg-background p-8 transition-colors hover:bg-foreground/5"
+                >
+                  <div>
+                    <p className="display text-xl font-semibold">{s.name}</p>
+                    <p className="mt-3 leading-relaxed text-muted-foreground">{s.benefit}</p>
+                  </div>
+                  <p className="display flex items-center justify-between gap-4 border-t border-hairline pt-5 text-lg font-bold">
+                    {s.price}
+                    <span
+                      aria-hidden="true"
+                      className="transition-transform duration-200 group-hover:translate-x-1"
+                    >
+                      →
+                    </span>
+                  </p>
+                </Link>
+              ))}
+            </div>
+
+            <h3 className="display mt-20 mb-3 text-2xl font-semibold md:text-3xl">Pakiety</h3>
+            <p className="mb-8 max-w-2xl leading-relaxed text-muted-foreground">
+              Kilka usług razem taniej niż osobno.
+            </p>
+            <div className="grid gap-px bg-hairline md:grid-cols-3">
+              {PACKAGES.map((p) => (
+                <Link
+                  key={p.to}
+                  to={p.to}
+                  className="group flex min-h-[44px] flex-col justify-between gap-6 bg-background p-8 transition-colors hover:bg-foreground/5 md:p-10"
+                >
+                  <div>
+                    <p className="display text-xl font-semibold">{p.name}</p>
+                    <p className="mt-3 leading-relaxed text-muted-foreground">{p.desc}</p>
+                  </div>
+                  <div className="border-t border-hairline pt-5">
+                    <p className="text-muted-foreground line-through">osobno {p.separate}</p>
+                    <p className="display mt-2 flex items-center justify-between gap-4 text-[clamp(1.75rem,4vw,2.5rem)] font-bold">
+                      {p.bundle}
+                      <span
+                        aria-hidden="true"
+                        className="text-lg transition-transform duration-200 group-hover:translate-x-1"
+                      >
+                        →
+                      </span>
+                    </p>
+                  </div>
+                </Link>
+              ))}
+            </div>
+
+            <p className="mt-12 leading-relaxed text-muted-foreground">
               Nie wiesz, co wybrać? Zadzwoń — doradzę bez zobowiązań:{" "}
-              <a href="tel:+48664013998" className="font-medium text-foreground underline underline-offset-8">
+              <a
+                href="tel:+48664013998"
+                className="font-medium text-foreground underline underline-offset-8"
+              >
                 +48 664 013 998
               </a>
               .
             </p>
-
-            <Reveal delay={120}>
-              <div className="mt-8 flex flex-col gap-6 border border-hairline p-8 md:flex-row md:items-center md:justify-between md:p-10">
-                <div className="max-w-2xl">
-                  <h3 className="display text-xl font-semibold md:text-2xl">
-                    Pakiet Start Google — 500 zł
-                  </h3>
-                  <p className="mt-3 leading-relaxed text-muted-foreground">
-                    Założenie lub optymalizacja wizytówki Google Maps, podpięcie strony, uzupełnienie
-                    danych i zdjęć oraz instrukcja zbierania opinii od klientów.
-                  </p>
-                </div>
-                <a
-                  href="#kontakt"
-                  className="inline-flex min-h-[52px] w-fit items-center gap-3 border border-foreground px-8 py-4 text-base font-medium transition-all duration-200 hover:-translate-y-0.5 hover:bg-foreground hover:text-background"
-                >
-                  Dopytaj o pakiet
-                  <span aria-hidden="true">→</span>
-                </a>
-              </div>
-            </Reveal>
           </div>
+
         </section>
 
         {/* DLACZEGO */}

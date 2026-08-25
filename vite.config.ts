@@ -23,6 +23,17 @@ export default defineConfig({
       { path: "/demo/hydro-perfekt", prerender: { enabled: true } },
       { path: "/demo/autoserwis-kowalski", prerender: { enabled: true } },
       { path: "/demo/dachpol", prerender: { enabled: true } },
+      { path: "/uslugi/strona-internetowa", prerender: { enabled: true } },
+      { path: "/uslugi/poczta-firmowa", prerender: { enabled: true } },
+      { path: "/uslugi/pakiet-start-google", prerender: { enabled: true } },
+      { path: "/uslugi/projekt-wizytowki", prerender: { enabled: true } },
+      { path: "/uslugi/projekt-ulotki", prerender: { enabled: true } },
+      { path: "/uslugi/oznakowanie-auta", prerender: { enabled: true } },
+      { path: "/uslugi/projekt-logo", prerender: { enabled: true } },
+      { path: "/pakiety/start-online", prerender: { enabled: true } },
+      { path: "/pakiety/firma-kompletna", prerender: { enabled: true } },
+      { path: "/pakiety/wizerunek", prerender: { enabled: true } },
     ],
+
   },
 });
