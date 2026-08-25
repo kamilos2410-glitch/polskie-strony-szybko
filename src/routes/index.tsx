@@ -143,6 +143,76 @@ const FAQ = [
   },
 ];
 
+const SINGLE_SERVICES = [
+  {
+    name: "Strona internetowa",
+    benefit: "Wizytówka firmy w sieci, która realnie przynosi telefony.",
+    price: "od 1500 zł",
+    to: "/uslugi/strona-internetowa",
+  },
+  {
+    name: "Poczta firmowa",
+    benefit: "Adres e-mail na Twojej domenie zamiast prywatnej skrzynki.",
+    price: "400 zł",
+    to: "/uslugi/poczta-firmowa",
+  },
+  {
+    name: "Pakiet Start Google",
+    benefit: "Wizytówka w Mapach Google, żeby klienci z okolicy Cię znaleźli.",
+    price: "od 400 zł",
+    to: "/uslugi/pakiet-start-google",
+  },
+  {
+    name: "Projekt wizytówki",
+    benefit: "Wizytówka, którą nie wstyd podać klientowi.",
+    price: "250 zł",
+    to: "/uslugi/projekt-wizytowki",
+  },
+  {
+    name: "Projekt ulotki",
+    benefit: "Ulotka gotowa do druku, czytelna i konkretna.",
+    price: "300 zł",
+    to: "/uslugi/projekt-ulotki",
+  },
+  {
+    name: "Oznakowanie auta",
+    benefit: "Twoje auto pracuje jako reklama na drodze.",
+    price: "od 300 zł",
+    to: "/uslugi/oznakowanie-auta",
+  },
+  {
+    name: "Projekt logo",
+    benefit: "Jeden znak, który zapamiętają klienci.",
+    price: "800 zł",
+    to: "/uslugi/projekt-logo",
+  },
+] as const;
+
+const PACKAGES = [
+  {
+    name: "Start Online",
+    desc: "Strona internetowa i Pakiet Start Google — komplet na dobry początek.",
+    separate: "2300 zł",
+    bundle: "1990 zł",
+    to: "/pakiety/start-online",
+  },
+  {
+    name: "Firma Kompletna",
+    desc: "Strona, firmowa poczta na domenie i Pakiet Start Google.",
+    separate: "2850 zł",
+    bundle: "2390 zł",
+    to: "/pakiety/firma-kompletna",
+  },
+  {
+    name: "Wizerunek",
+    desc: "Projekt logo i materiały firmowe — spójny wygląd wszędzie.",
+    separate: "950 zł",
+    bundle: "820 zł",
+    to: "/pakiety/wizerunek",
+  },
+] as const;
+
+
 function SectionHead({
   eyebrow,
   title,
