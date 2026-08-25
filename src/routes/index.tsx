@@ -605,9 +605,9 @@ function Index() {
             <div className="grid gap-px bg-hairline sm:grid-cols-2">
               {WHY.map((item, i) => (
                 <Reveal key={item.title} delay={i * 70} className="bg-background">
-                  <div className="h-full p-8 md:p-12">
+                  <div className="h-full p-6 md:p-8">
                     <item.icon strokeWidth={1} className="h-8 w-8" aria-hidden="true" />
-                    <h3 className="display mt-8 text-xl font-semibold md:text-2xl">{item.title}</h3>
+                    <h3 className="display mt-6 text-lg font-semibold md:text-xl">{item.title}</h3>
                     <p className="mt-3 leading-relaxed text-muted-foreground">{item.body}</p>
                   </div>
                 </Reveal>
@@ -633,7 +633,7 @@ function Index() {
                       type="button"
                       onClick={() => setOpen(isOpen ? null : i)}
                       aria-expanded={isOpen}
-                      className="flex min-h-[56px] w-full items-center justify-between gap-6 py-7 text-left transition-opacity hover:opacity-60"
+                      className="flex min-h-[56px] w-full items-center justify-between gap-6 py-5 text-left transition-opacity hover:opacity-60"
                     >
                       <span className="display text-xl font-semibold md:text-2xl">{item.q}</span>
                       {isOpen ? (
@@ -647,7 +647,7 @@ function Index() {
                       style={{ gridTemplateRows: isOpen ? "1fr" : "0fr" }}
                     >
                       <div className="overflow-hidden">
-                        <p className="max-w-2xl pb-8 text-lg leading-relaxed text-muted-foreground">
+                        <p className="max-w-2xl pb-6 leading-relaxed text-muted-foreground">
                           {item.a}
                         </p>
                       </div>
@@ -662,10 +662,10 @@ function Index() {
         {/* KONTAKT */}
         <section id="kontakt">
           <div className="mx-auto max-w-[1200px] px-6 py-14 md:px-10 md:py-20">
-            <div className="grid gap-14 md:grid-cols-2 md:gap-24">
+            <div className="grid gap-10 md:grid-cols-2 md:gap-16">
               <Reveal>
                 <p className="eyebrow mb-5">Kontakt</p>
-                <h2 className="display text-[clamp(2rem,5vw,3.5rem)] font-semibold">
+                <h2 className="display text-[clamp(1.7rem,3.6vw,2.6rem)] font-semibold">
                   Zamów darmowe demo
                 </h2>
                 <p className="mt-6 max-w-md leading-relaxed text-muted-foreground">
