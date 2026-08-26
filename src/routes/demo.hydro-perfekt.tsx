@@ -260,8 +260,18 @@ function HydroPerfekt() {
               </label>
               <input
                 id="hp-phone"
+                type="tel"
                 className="mt-2 w-full rounded-lg border border-[#dde5ef] bg-[#f8fbff] px-4 py-3"
                 placeholder="600 000 000"
+              />
+              <label className="mt-5 block text-sm font-semibold" htmlFor="hp-email">
+                E-mail
+              </label>
+              <input
+                id="hp-email"
+                type="email"
+                className="mt-2 w-full rounded-lg border border-[#dde5ef] bg-[#f8fbff] px-4 py-3"
+                placeholder="jan@twojafirma.pl"
               />
               <label className="mt-5 block text-sm font-semibold" htmlFor="hp-msg">
                 Opis usterki

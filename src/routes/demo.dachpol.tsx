@@ -237,8 +237,18 @@ function DachPol() {
               </label>
               <input
                 id="dp-tel"
+                type="tel"
                 className="mt-2 w-full border border-[#ddcdb9] bg-[#f4ebe0] px-4 py-3"
                 placeholder="600 000 000"
+              />
+              <label className="mt-5 block text-sm font-semibold" htmlFor="dp-email">
+                E-mail
+              </label>
+              <input
+                id="dp-email"
+                type="email"
+                className="mt-2 w-full border border-[#ddcdb9] bg-[#f4ebe0] px-4 py-3"
+                placeholder="jan@twojafirma.pl"
               />
               <label className="mt-5 block text-sm font-semibold" htmlFor="dp-msg">
                 Zakres prac
