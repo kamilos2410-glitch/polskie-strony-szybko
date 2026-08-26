@@ -69,17 +69,34 @@ export function ContactForm({
           <input id="imie" name="Imię" required placeholder="Jan" className={fieldClass} />
         </div>
         <div>
-          <label htmlFor="kontakt" className={labelClass}>
-            Telefon lub e-mail <span aria-hidden="true">*</span>
+          <label htmlFor="telefon" className={labelClass}>
+            Telefon <span aria-hidden="true">*</span>
           </label>
           <input
-            id="kontakt"
-            name="Telefon lub e-mail"
+            id="telefon"
+            name="Telefon"
+            type="tel"
             required
             placeholder="600 000 000"
             className={fieldClass}
           />
         </div>
+      </div>
+
+      <div>
+        <label htmlFor="email" className={labelClass}>
+          E-mail <span className="text-muted-foreground">(opcjonalnie)</span>
+        </label>
+        <p className="mb-2 text-sm italic text-muted-foreground">
+          Na ten adres wyślę link do gotowego projektu.
+        </p>
+        <input
+          id="email"
+          name="E-mail"
+          type="email"
+          placeholder="jan@twojafirma.pl"
+          className={fieldClass}
+        />
       </div>
 
       <div>

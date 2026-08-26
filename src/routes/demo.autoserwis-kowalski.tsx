@@ -246,8 +246,18 @@ function AutoSerwis() {
               </label>
               <input
                 id="ak-tel"
+                type="tel"
                 className="mt-2 w-full border border-[#2e2e2e] bg-[#181818] px-4 py-3 text-[#ededed]"
                 placeholder="600 000 000"
+              />
+              <label className="mt-5 block text-xs font-bold tracking-[0.14em] uppercase" htmlFor="ak-email">
+                E-mail
+              </label>
+              <input
+                id="ak-email"
+                type="email"
+                className="mt-2 w-full border border-[#2e2e2e] bg-[#181818] px-4 py-3 text-[#ededed]"
+                placeholder="jan@twojafirma.pl"
               />
               <label className="mt-5 block text-xs font-bold tracking-[0.14em] uppercase" htmlFor="ak-msg">
                 Opis problemu
