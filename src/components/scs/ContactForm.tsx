@@ -1,7 +1,7 @@
 import { useState, type FormEvent } from "react";
 
-// ⚠️ Wklej tutaj prawdziwy klucz dostępu Web3Forms:
-const WEB3FORMS_ACCESS_KEY = "PLACEHOLDER_KEY";
+// Publiczny klucz dostępu Web3Forms — bezpieczny w kodzie client-side.
+const WEB3FORMS_ACCESS_KEY = "ad7b1b17-08e1-4ac8-8c03-4f81e644d85b";
 
 type Status = "idle" | "sending" | "success" | "error";
 
@@ -12,10 +12,8 @@ const labelClass = "mb-2 block text-[0.95rem] font-medium text-foreground";
 
 export function ContactForm({
   hiddenFields,
-  subject,
 }: {
   hiddenFields?: Record<string, string>;
-  subject?: string;
 } = {}) {
   const [status, setStatus] = useState<Status>("idle");
   const [message, setMessage] = useState("");
@@ -29,7 +27,13 @@ export function ContactForm({
     try {
       const payload = new FormData(form);
       payload.append("access_key", WEB3FORMS_ACCESS_KEY);
-      payload.append("subject", subject ?? "Nowe zgłoszenie — darmowe demo (SCS Web)");
+      payload.append("subject", "Nowe zgłoszenie ze strony SCS Web");
+      payload.append("from_name", "Formularz scsweb.pl");
+
+      const email = (payload.get("E-mail") as string | null) ?? "";
+      if (email.trim()) {
+        payload.append("replyto", email.trim());
+      }
 
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",

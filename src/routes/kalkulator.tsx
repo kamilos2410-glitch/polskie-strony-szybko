@@ -244,10 +244,7 @@ function KalkulatorPage() {
             Twoja konfiguracja dołączy się do wiadomości automatycznie. Odezwę się w 24 godziny.
           </p>
           <div className="mt-8 max-w-2xl">
-            <ContactForm
-              subject="Wycena z kalkulatora (SCS Web)"
-              hiddenFields={{ "Wybrana konfiguracja": result.summary }}
-            />
+            <ContactForm hiddenFields={{ "Wybrana konfiguracja": result.summary }} />
           </div>
         </section>
       </div>
