@@ -1,11 +1,26 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
-import { ShieldCheck, Timer, Ban, UserRound, Minus, Plus, Phone, Check } from "lucide-react";
+import {
+  ShieldCheck,
+  Timer,
+  Ban,
+  UserRound,
+  Minus,
+  Plus,
+  Phone,
+  Check,
+  Eye,
+  Zap,
+  Wallet,
+  KeyRound,
+  ArrowUpRight,
+} from "lucide-react";
 import { Reveal } from "@/components/scs/Reveal";
 import { HeroVisual } from "@/components/scs/HeroVisual";
 import { HydroPreview, AutoPreview, DachPreview } from "@/components/scs/DemoPreviews";
 import { ContactForm } from "@/components/scs/ContactForm";
 import { MobileBar } from "@/components/scs/MobileBar";
+import { TESTIMONIALS } from "@/lib/testimonials";
 
 const TITLE = "Strona internetowa dla firmy w 48h — SCS Web";
 const DESCRIPTION =
@@ -35,7 +50,7 @@ export const Route = createFileRoute("/")({
           description: DESCRIPTION,
           url: "https://scsweb.pl",
           telephone: "+48 664 013 998",
-          email: "kamil.pietraszko@onet.pl",
+          email: "kamil@scsweb.pl",
           founder: { "@type": "Person", name: "Kamil Pietraszko" },
           areaServed: { "@type": "Country", name: "Polska" },
           priceRange: "1500 PLN",
