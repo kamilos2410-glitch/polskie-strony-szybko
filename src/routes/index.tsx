@@ -116,6 +116,29 @@ const CASES = [
   },
 ] as const;
 
+const ADVANTAGES = [
+  {
+    icon: Eye,
+    title: "Zobaczysz stronę, zanim zapłacisz",
+    body: "Projekt przygotowuję jako pierwszy krok, za darmo i bez zobowiązań. Płacisz dopiero, gdy Ci się spodoba.",
+  },
+  {
+    icon: Zap,
+    title: "Gotowe w 48 godzin",
+    body: "Nie tygodnie i nie miesiące. Projekt w 48 godzin, publikacja w 48 godzin od akceptacji.",
+  },
+  {
+    icon: Wallet,
+    title: "Bez abonamentu i ukrytych kosztów",
+    body: "Płacisz raz. Jedyny stały wydatek to domena, około 120 zł rocznie — i to wszystko.",
+  },
+  {
+    icon: KeyRound,
+    title: "Strona i domena są Twoją własnością",
+    body: "Domenę rejestruję na Twoje dane, kod przekazuję. Nikt Cię niczym nie wiąże.",
+  },
+];
+
 const WHY = [
   {
     icon: ShieldCheck,
