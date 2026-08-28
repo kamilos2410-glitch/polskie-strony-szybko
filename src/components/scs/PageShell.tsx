@@ -61,7 +61,7 @@ export function PageShell({ children }: { children: ReactNode }) {
           <div className="space-y-1 md:text-right">
             <p className="text-foreground">Kamil Pietraszko</p>
             <p>tel. +48 664 013 998</p>
-            <p>kamil.pietraszko@onet.pl</p>
+            <p>kamil@scsweb.pl</p>
             <p className="pt-2">© 2026 SCS Web</p>
           </div>
         </div>
