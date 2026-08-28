@@ -1,11 +1,26 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
-import { ShieldCheck, Timer, Ban, UserRound, Minus, Plus, Phone, Check } from "lucide-react";
+import {
+  ShieldCheck,
+  Timer,
+  Ban,
+  UserRound,
+  Minus,
+  Plus,
+  Phone,
+  Check,
+  Eye,
+  Zap,
+  Wallet,
+  KeyRound,
+  ArrowUpRight,
+} from "lucide-react";
 import { Reveal } from "@/components/scs/Reveal";
 import { HeroVisual } from "@/components/scs/HeroVisual";
 import { HydroPreview, AutoPreview, DachPreview } from "@/components/scs/DemoPreviews";
 import { ContactForm } from "@/components/scs/ContactForm";
 import { MobileBar } from "@/components/scs/MobileBar";
+import { TESTIMONIALS } from "@/lib/testimonials";
 
 const TITLE = "Strona internetowa dla firmy w 48h — SCS Web";
 const DESCRIPTION =
@@ -35,7 +50,7 @@ export const Route = createFileRoute("/")({
           description: DESCRIPTION,
           url: "https://scsweb.pl",
           telephone: "+48 664 013 998",
-          email: "kamil.pietraszko@onet.pl",
+          email: "kamil@scsweb.pl",
           founder: { "@type": "Person", name: "Kamil Pietraszko" },
           areaServed: { "@type": "Country", name: "Polska" },
           priceRange: "1500 PLN",
@@ -100,6 +115,29 @@ const CASES = [
     Preview: DachPreview,
   },
 ] as const;
+
+const ADVANTAGES = [
+  {
+    icon: Eye,
+    title: "Zobaczysz stronę, zanim zapłacisz",
+    body: "Projekt przygotowuję jako pierwszy krok, za darmo i bez zobowiązań. Płacisz dopiero, gdy Ci się spodoba.",
+  },
+  {
+    icon: Zap,
+    title: "Gotowe w 48 godzin",
+    body: "Nie tygodnie i nie miesiące. Projekt w 48 godzin, publikacja w 48 godzin od akceptacji.",
+  },
+  {
+    icon: Wallet,
+    title: "Bez abonamentu i ukrytych kosztów",
+    body: "Płacisz raz. Jedyny stały wydatek to domena, około 120 zł rocznie — i to wszystko.",
+  },
+  {
+    icon: KeyRound,
+    title: "Strona i domena są Twoją własnością",
+    body: "Domenę rejestruję na Twoje dane, kod przekazuję. Nikt Cię niczym nie wiąże.",
+  },
+];
 
 const WHY = [
   {
@@ -335,6 +373,27 @@ function Index() {
           </div>
         </section>
 
+        {/* CZTERY ZALETY */}
+        <section aria-label="Najważniejsze zalety" className="border-b border-hairline">
+          <div className="mx-auto max-w-[1200px] px-6 py-12 md:px-10 md:py-16">
+            <div className="grid gap-px bg-hairline sm:grid-cols-2">
+              {ADVANTAGES.map((item, i) => (
+                <Reveal key={item.title} delay={i * 60} className="bg-background">
+                  <div className={i === 0 ? "h-full p-6 md:p-8" : "h-full p-5 md:p-7"}>
+                    <item.icon strokeWidth={1} className={i === 0 ? "h-9 w-9" : "h-7 w-7"} aria-hidden="true" />
+                    <h3 className={`display mt-4 font-semibold ${i === 0 ? "text-xl md:text-2xl" : "text-lg md:text-xl"}`}>
+                      {item.title}
+                    </h3>
+                    <p className="mt-2 text-[0.95rem] leading-relaxed text-muted-foreground">
+                      {item.body}
+                    </p>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* JAK TO DZIAŁA */}
         <section id="jak-to-dziala" className="border-b border-hairline">
           <div className="mx-auto max-w-[1200px] px-6 py-14 md:px-10 md:py-20">
@@ -428,6 +487,44 @@ function Index() {
 
           </div>
         </section>
+
+        {/* PIERWSZE REALIZACJE — renderuje się tylko, gdy są wpisy */}
+        {TESTIMONIALS.length > 0 && (
+          <section id="pierwsze-realizacje" className="border-b border-hairline">
+            <div className="mx-auto max-w-[1200px] px-6 py-14 md:px-10 md:py-20">
+              <SectionHead
+                eyebrow="Opinie"
+                title="Pierwsze realizacje"
+                lead="Prawdziwe firmy, prawdziwe strony."
+              />
+              <div className="grid gap-px bg-hairline md:grid-cols-2">
+                {TESTIMONIALS.map((t, i) => (
+                  <Reveal key={`${t.name}-${t.company}`} delay={i * 60} className="bg-background">
+                    <figure className="flex h-full flex-col p-6 md:p-8">
+                      <blockquote className="display text-xl leading-snug font-medium md:text-2xl">
+                        „{t.quote}”
+                      </blockquote>
+                      <figcaption className="mt-6 border-t border-hairline pt-4">
+                        <p className="font-semibold">
+                          {t.name} — {t.company}, {t.city}
+                        </p>
+                        <a
+                          href={t.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="mt-2 inline-flex min-h-[44px] items-center gap-2 font-medium underline underline-offset-4 transition-opacity hover:opacity-70"
+                        >
+                          Zobacz stronę {t.company}
+                          <ArrowUpRight strokeWidth={1.5} className="h-4 w-4" aria-hidden="true" />
+                        </a>
+                      </figcaption>
+                    </figure>
+                  </Reveal>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
 
         {/* CENNIK */}
         <section id="cennik" className="border-b border-hairline">
@@ -705,20 +802,23 @@ function Index() {
                   Napisz kilka zdań o swojej firmie. W 48 godzin dostaniesz link do gotowego projektu
                   strony — bez zaliczki i bez zobowiązań.
                 </p>
-                <div className="mt-10 space-y-2 text-2xl md:text-3xl">
-                  <p>
-                    <a href="tel:+48664013998" className="display inline-flex min-h-[48px] items-center font-semibold underline underline-offset-8 hover:opacity-70">
-                      +48 664 013 998
-                    </a>
-                  </p>
-                  <p>
-                    <a
-                      href="mailto:kamil.pietraszko@onet.pl"
-                      className="display inline-flex min-h-[48px] items-center break-all font-semibold underline underline-offset-8 hover:opacity-70"
-                    >
-                      kamil.pietraszko@onet.pl
-                    </a>
-                  </p>
+                <div className="mt-10">
+                  <p className="display text-xl font-semibold md:text-2xl">Kamil Pietraszko</p>
+                  <div className="mt-4 space-y-2 text-2xl md:text-3xl">
+                    <p>
+                      <a href="tel:+48664013998" className="display inline-flex min-h-[48px] items-center font-semibold underline underline-offset-8 hover:opacity-70">
+                        +48 664 013 998
+                      </a>
+                    </p>
+                    <p>
+                      <a
+                        href="mailto:kamil@scsweb.pl"
+                        className="display inline-flex min-h-[48px] items-center break-all font-semibold underline underline-offset-8 hover:opacity-70"
+                      >
+                        kamil@scsweb.pl
+                      </a>
+                    </p>
+                  </div>
                 </div>
               </Reveal>
               <Reveal delay={90}>
@@ -738,7 +838,7 @@ function Index() {
           <div className="space-y-1 md:text-right">
             <p className="text-foreground">Kamil Pietraszko</p>
             <p>tel. +48 664 013 998</p>
-            <p>kamil.pietraszko@onet.pl</p>
+            <p>kamil@scsweb.pl</p>
             <p className="pt-2">© 2026 SCS Web</p>
           </div>
         </div>
