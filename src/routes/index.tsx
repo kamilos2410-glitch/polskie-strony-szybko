@@ -373,6 +373,27 @@ function Index() {
           </div>
         </section>
 
+        {/* CZTERY ZALETY */}
+        <section aria-label="Najważniejsze zalety" className="border-b border-hairline">
+          <div className="mx-auto max-w-[1200px] px-6 py-12 md:px-10 md:py-16">
+            <div className="grid gap-px bg-hairline sm:grid-cols-2">
+              {ADVANTAGES.map((item, i) => (
+                <Reveal key={item.title} delay={i * 60} className="bg-background">
+                  <div className={i === 0 ? "h-full p-6 md:p-8" : "h-full p-5 md:p-7"}>
+                    <item.icon strokeWidth={1} className={i === 0 ? "h-9 w-9" : "h-7 w-7"} aria-hidden="true" />
+                    <h3 className={`display mt-4 font-semibold ${i === 0 ? "text-xl md:text-2xl" : "text-lg md:text-xl"}`}>
+                      {item.title}
+                    </h3>
+                    <p className="mt-2 text-[0.95rem] leading-relaxed text-muted-foreground">
+                      {item.body}
+                    </p>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* JAK TO DZIAŁA */}
         <section id="jak-to-dziala" className="border-b border-hairline">
           <div className="mx-auto max-w-[1200px] px-6 py-14 md:px-10 md:py-20">
