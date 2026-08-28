@@ -488,6 +488,44 @@ function Index() {
           </div>
         </section>
 
+        {/* PIERWSZE REALIZACJE — renderuje się tylko, gdy są wpisy */}
+        {TESTIMONIALS.length > 0 && (
+          <section id="pierwsze-realizacje" className="border-b border-hairline">
+            <div className="mx-auto max-w-[1200px] px-6 py-14 md:px-10 md:py-20">
+              <SectionHead
+                eyebrow="Opinie"
+                title="Pierwsze realizacje"
+                lead="Prawdziwe firmy, prawdziwe strony."
+              />
+              <div className="grid gap-px bg-hairline md:grid-cols-2">
+                {TESTIMONIALS.map((t, i) => (
+                  <Reveal key={`${t.name}-${t.company}`} delay={i * 60} className="bg-background">
+                    <figure className="flex h-full flex-col p-6 md:p-8">
+                      <blockquote className="display text-xl leading-snug font-medium md:text-2xl">
+                        „{t.quote}”
+                      </blockquote>
+                      <figcaption className="mt-6 border-t border-hairline pt-4">
+                        <p className="font-semibold">
+                          {t.name} — {t.company}, {t.city}
+                        </p>
+                        <a
+                          href={t.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="mt-2 inline-flex min-h-[44px] items-center gap-2 font-medium underline underline-offset-4 transition-opacity hover:opacity-70"
+                        >
+                          Zobacz stronę {t.company}
+                          <ArrowUpRight strokeWidth={1.5} className="h-4 w-4" aria-hidden="true" />
+                        </a>
+                      </figcaption>
+                    </figure>
+                  </Reveal>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
+
         {/* CENNIK */}
         <section id="cennik" className="border-b border-hairline">
           <div className="mx-auto max-w-[1200px] px-6 py-14 md:px-10 md:py-20">
