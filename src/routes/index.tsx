@@ -52,7 +52,16 @@ export const Route = createFileRoute("/")({
           telephone: "+48 664 013 998",
           email: "kamil@scsweb.pl",
           founder: { "@type": "Person", name: "Kamil Pietraszko" },
-          areaServed: { "@type": "Country", name: "Polska" },
+          address: {
+            "@type": "PostalAddress",
+            addressLocality: "Tarczyn",
+            postalCode: "05-555",
+            addressCountry: "PL",
+          },
+          areaServed: [
+            { "@type": "City", name: "Tarczyn" },
+            { "@type": "Country", name: "Polska" },
+          ],
           priceRange: "1500 PLN",
         }),
       },
