@@ -870,8 +870,19 @@ function Index() {
           </div>
           <div className="space-y-1 md:text-right">
             <p className="text-foreground">Kamil Pietraszko</p>
+            <p>Tarczyn, woj. mazowieckie</p>
             <p>tel. +48 664 013 998</p>
             <p>kamil@scsweb.pl</p>
+            <p>
+              <a
+                href="https://maps.google.com/?cid=11760883947227790812"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline underline-offset-8 transition-colors hover:text-foreground"
+              >
+                Zobacz nas w Google
+              </a>
+            </p>
             <p className="pt-2">© 2026 SCS Web</p>
           </div>
         </div>
