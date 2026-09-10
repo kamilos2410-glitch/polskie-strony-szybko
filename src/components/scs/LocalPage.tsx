@@ -255,13 +255,13 @@ export function LocalPage({ lokalizacja }: { lokalizacja: Lokalizacja }) {
           <ul className="mt-8 grid gap-px bg-hairline sm:grid-cols-2 lg:grid-cols-3">
             {pozostale.map((l) => (
               <li key={l.slug} className="bg-background">
-                <Link
-                  to={`/strony-internetowe/${l.slug}` as string}
+                <a
+                  href={`/strony-internetowe/${l.slug}`}
                   className="flex min-h-[56px] items-center justify-between gap-4 border border-hairline-strong px-5 py-4 text-base transition-colors hover:border-foreground"
                 >
                   <span>{l.nazwa}</span>
                   <span aria-hidden="true">→</span>
-                </Link>
+                </a>
               </li>
             ))}
           </ul>

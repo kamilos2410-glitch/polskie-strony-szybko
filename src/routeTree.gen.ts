@@ -19,6 +19,7 @@ import { Route as PakietyIdentyfikacjaRouteImport } from './routes/pakiety.ident
 import { Route as PakietyMaterialyFirmoweRouteImport } from './routes/pakiety.materialy-firmowe'
 import { Route as PakietyStartOnlineRouteImport } from './routes/pakiety.start-online'
 import { Route as PakietyWizerunekRouteImport } from './routes/pakiety.wizerunek'
+import { Route as StronyInternetoweIndexRouteImport } from './routes/strony-internetowe.index'
 import { Route as StronyInternetoweGoraKalwariaRouteImport } from './routes/strony-internetowe.gora-kalwaria'
 import { Route as StronyInternetoweGrodziskMazowieckiRouteImport } from './routes/strony-internetowe.grodzisk-mazowiecki'
 import { Route as StronyInternetoweGrojecRouteImport } from './routes/strony-internetowe.grojec'
@@ -83,6 +84,11 @@ const PakietyStartOnlineRoute = PakietyStartOnlineRouteImport.update({
 const PakietyWizerunekRoute = PakietyWizerunekRouteImport.update({
   id: '/pakiety/wizerunek',
   path: '/pakiety/wizerunek',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const StronyInternetoweIndexRoute = StronyInternetoweIndexRouteImport.update({
+  id: '/strony-internetowe/',
+  path: '/strony-internetowe/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const StronyInternetoweGoraKalwariaRoute =
@@ -194,6 +200,7 @@ export interface FileRoutesByFullPath {
   '/uslugi/projekt-ulotki': typeof UslugiProjektUlotkiRoute
   '/uslugi/projekt-wizytowki': typeof UslugiProjektWizytowkiRoute
   '/uslugi/strona-internetowa': typeof UslugiStronaInternetowaRoute
+  '/strony-internetowe/': typeof StronyInternetoweIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -221,6 +228,7 @@ export interface FileRoutesByTo {
   '/uslugi/projekt-ulotki': typeof UslugiProjektUlotkiRoute
   '/uslugi/projekt-wizytowki': typeof UslugiProjektWizytowkiRoute
   '/uslugi/strona-internetowa': typeof UslugiStronaInternetowaRoute
+  '/strony-internetowe': typeof StronyInternetoweIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -249,6 +257,7 @@ export interface FileRoutesById {
   '/uslugi/projekt-ulotki': typeof UslugiProjektUlotkiRoute
   '/uslugi/projekt-wizytowki': typeof UslugiProjektWizytowkiRoute
   '/uslugi/strona-internetowa': typeof UslugiStronaInternetowaRoute
+  '/strony-internetowe/': typeof StronyInternetoweIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -278,6 +287,7 @@ export interface FileRouteTypes {
     | '/uslugi/projekt-ulotki'
     | '/uslugi/projekt-wizytowki'
     | '/uslugi/strona-internetowa'
+    | '/strony-internetowe/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -305,6 +315,7 @@ export interface FileRouteTypes {
     | '/uslugi/projekt-ulotki'
     | '/uslugi/projekt-wizytowki'
     | '/uslugi/strona-internetowa'
+    | '/strony-internetowe'
   id:
     | '__root__'
     | '/'
@@ -332,6 +343,7 @@ export interface FileRouteTypes {
     | '/uslugi/projekt-ulotki'
     | '/uslugi/projekt-wizytowki'
     | '/uslugi/strona-internetowa'
+    | '/strony-internetowe/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -360,6 +372,7 @@ export interface RootRouteChildren {
   UslugiProjektUlotkiRoute: typeof UslugiProjektUlotkiRoute
   UslugiProjektWizytowkiRoute: typeof UslugiProjektWizytowkiRoute
   UslugiStronaInternetowaRoute: typeof UslugiStronaInternetowaRoute
+  StronyInternetoweIndexRoute: typeof StronyInternetoweIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -432,6 +445,13 @@ declare module '@tanstack/react-router' {
       path: '/pakiety/wizerunek'
       fullPath: '/pakiety/wizerunek'
       preLoaderRoute: typeof PakietyWizerunekRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/strony-internetowe/': {
+      id: '/strony-internetowe/'
+      path: '/strony-internetowe'
+      fullPath: '/strony-internetowe/'
+      preLoaderRoute: typeof StronyInternetoweIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/strony-internetowe/gora-kalwaria': {
@@ -570,6 +590,7 @@ const rootRouteChildren: RootRouteChildren = {
   UslugiProjektUlotkiRoute: UslugiProjektUlotkiRoute,
   UslugiProjektWizytowkiRoute: UslugiProjektWizytowkiRoute,
   UslugiStronaInternetowaRoute: UslugiStronaInternetowaRoute,
+  StronyInternetoweIndexRoute: StronyInternetoweIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
