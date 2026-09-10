@@ -19,6 +19,14 @@ import { Route as PakietyIdentyfikacjaRouteImport } from './routes/pakiety.ident
 import { Route as PakietyMaterialyFirmoweRouteImport } from './routes/pakiety.materialy-firmowe'
 import { Route as PakietyStartOnlineRouteImport } from './routes/pakiety.start-online'
 import { Route as PakietyWizerunekRouteImport } from './routes/pakiety.wizerunek'
+import { Route as StronyInternetoweGoraKalwariaRouteImport } from './routes/strony-internetowe.gora-kalwaria'
+import { Route as StronyInternetoweGrodziskMazowieckiRouteImport } from './routes/strony-internetowe.grodzisk-mazowiecki'
+import { Route as StronyInternetoweGrojecRouteImport } from './routes/strony-internetowe.grojec'
+import { Route as StronyInternetoweKonstancinJeziornaRouteImport } from './routes/strony-internetowe.konstancin-jeziorna'
+import { Route as StronyInternetoweNadarzynRouteImport } from './routes/strony-internetowe.nadarzyn'
+import { Route as StronyInternetowePiasecznoRouteImport } from './routes/strony-internetowe.piaseczno'
+import { Route as StronyInternetowePruszkowRouteImport } from './routes/strony-internetowe.pruszkow'
+import { Route as StronyInternetoweTarczynRouteImport } from './routes/strony-internetowe.tarczyn'
 import { Route as UslugiOznakowanieAutaRouteImport } from './routes/uslugi.oznakowanie-auta'
 import { Route as UslugiPakietStartGoogleRouteImport } from './routes/uslugi.pakiet-start-google'
 import { Route as UslugiPocztaFirmowaRouteImport } from './routes/uslugi.poczta-firmowa'
@@ -77,6 +85,53 @@ const PakietyWizerunekRoute = PakietyWizerunekRouteImport.update({
   path: '/pakiety/wizerunek',
   getParentRoute: () => rootRouteImport,
 } as any)
+const StronyInternetoweGoraKalwariaRoute =
+  StronyInternetoweGoraKalwariaRouteImport.update({
+    id: '/strony-internetowe/gora-kalwaria',
+    path: '/strony-internetowe/gora-kalwaria',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const StronyInternetoweGrodziskMazowieckiRoute =
+  StronyInternetoweGrodziskMazowieckiRouteImport.update({
+    id: '/strony-internetowe/grodzisk-mazowiecki',
+    path: '/strony-internetowe/grodzisk-mazowiecki',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const StronyInternetoweGrojecRoute = StronyInternetoweGrojecRouteImport.update({
+  id: '/strony-internetowe/grojec',
+  path: '/strony-internetowe/grojec',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const StronyInternetoweKonstancinJeziornaRoute =
+  StronyInternetoweKonstancinJeziornaRouteImport.update({
+    id: '/strony-internetowe/konstancin-jeziorna',
+    path: '/strony-internetowe/konstancin-jeziorna',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const StronyInternetoweNadarzynRoute =
+  StronyInternetoweNadarzynRouteImport.update({
+    id: '/strony-internetowe/nadarzyn',
+    path: '/strony-internetowe/nadarzyn',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const StronyInternetowePiasecznoRoute =
+  StronyInternetowePiasecznoRouteImport.update({
+    id: '/strony-internetowe/piaseczno',
+    path: '/strony-internetowe/piaseczno',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const StronyInternetowePruszkowRoute =
+  StronyInternetowePruszkowRouteImport.update({
+    id: '/strony-internetowe/pruszkow',
+    path: '/strony-internetowe/pruszkow',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const StronyInternetoweTarczynRoute =
+  StronyInternetoweTarczynRouteImport.update({
+    id: '/strony-internetowe/tarczyn',
+    path: '/strony-internetowe/tarczyn',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const UslugiOznakowanieAutaRoute = UslugiOznakowanieAutaRouteImport.update({
   id: '/uslugi/oznakowanie-auta',
   path: '/uslugi/oznakowanie-auta',
@@ -124,6 +179,14 @@ export interface FileRoutesByFullPath {
   '/pakiety/materialy-firmowe': typeof PakietyMaterialyFirmoweRoute
   '/pakiety/start-online': typeof PakietyStartOnlineRoute
   '/pakiety/wizerunek': typeof PakietyWizerunekRoute
+  '/strony-internetowe/gora-kalwaria': typeof StronyInternetoweGoraKalwariaRoute
+  '/strony-internetowe/grodzisk-mazowiecki': typeof StronyInternetoweGrodziskMazowieckiRoute
+  '/strony-internetowe/grojec': typeof StronyInternetoweGrojecRoute
+  '/strony-internetowe/konstancin-jeziorna': typeof StronyInternetoweKonstancinJeziornaRoute
+  '/strony-internetowe/nadarzyn': typeof StronyInternetoweNadarzynRoute
+  '/strony-internetowe/piaseczno': typeof StronyInternetowePiasecznoRoute
+  '/strony-internetowe/pruszkow': typeof StronyInternetowePruszkowRoute
+  '/strony-internetowe/tarczyn': typeof StronyInternetoweTarczynRoute
   '/uslugi/oznakowanie-auta': typeof UslugiOznakowanieAutaRoute
   '/uslugi/pakiet-start-google': typeof UslugiPakietStartGoogleRoute
   '/uslugi/poczta-firmowa': typeof UslugiPocztaFirmowaRoute
@@ -143,6 +206,14 @@ export interface FileRoutesByTo {
   '/pakiety/materialy-firmowe': typeof PakietyMaterialyFirmoweRoute
   '/pakiety/start-online': typeof PakietyStartOnlineRoute
   '/pakiety/wizerunek': typeof PakietyWizerunekRoute
+  '/strony-internetowe/gora-kalwaria': typeof StronyInternetoweGoraKalwariaRoute
+  '/strony-internetowe/grodzisk-mazowiecki': typeof StronyInternetoweGrodziskMazowieckiRoute
+  '/strony-internetowe/grojec': typeof StronyInternetoweGrojecRoute
+  '/strony-internetowe/konstancin-jeziorna': typeof StronyInternetoweKonstancinJeziornaRoute
+  '/strony-internetowe/nadarzyn': typeof StronyInternetoweNadarzynRoute
+  '/strony-internetowe/piaseczno': typeof StronyInternetowePiasecznoRoute
+  '/strony-internetowe/pruszkow': typeof StronyInternetowePruszkowRoute
+  '/strony-internetowe/tarczyn': typeof StronyInternetoweTarczynRoute
   '/uslugi/oznakowanie-auta': typeof UslugiOznakowanieAutaRoute
   '/uslugi/pakiet-start-google': typeof UslugiPakietStartGoogleRoute
   '/uslugi/poczta-firmowa': typeof UslugiPocztaFirmowaRoute
@@ -163,6 +234,14 @@ export interface FileRoutesById {
   '/pakiety/materialy-firmowe': typeof PakietyMaterialyFirmoweRoute
   '/pakiety/start-online': typeof PakietyStartOnlineRoute
   '/pakiety/wizerunek': typeof PakietyWizerunekRoute
+  '/strony-internetowe/gora-kalwaria': typeof StronyInternetoweGoraKalwariaRoute
+  '/strony-internetowe/grodzisk-mazowiecki': typeof StronyInternetoweGrodziskMazowieckiRoute
+  '/strony-internetowe/grojec': typeof StronyInternetoweGrojecRoute
+  '/strony-internetowe/konstancin-jeziorna': typeof StronyInternetoweKonstancinJeziornaRoute
+  '/strony-internetowe/nadarzyn': typeof StronyInternetoweNadarzynRoute
+  '/strony-internetowe/piaseczno': typeof StronyInternetowePiasecznoRoute
+  '/strony-internetowe/pruszkow': typeof StronyInternetowePruszkowRoute
+  '/strony-internetowe/tarczyn': typeof StronyInternetoweTarczynRoute
   '/uslugi/oznakowanie-auta': typeof UslugiOznakowanieAutaRoute
   '/uslugi/pakiet-start-google': typeof UslugiPakietStartGoogleRoute
   '/uslugi/poczta-firmowa': typeof UslugiPocztaFirmowaRoute
@@ -184,6 +263,14 @@ export interface FileRouteTypes {
     | '/pakiety/materialy-firmowe'
     | '/pakiety/start-online'
     | '/pakiety/wizerunek'
+    | '/strony-internetowe/gora-kalwaria'
+    | '/strony-internetowe/grodzisk-mazowiecki'
+    | '/strony-internetowe/grojec'
+    | '/strony-internetowe/konstancin-jeziorna'
+    | '/strony-internetowe/nadarzyn'
+    | '/strony-internetowe/piaseczno'
+    | '/strony-internetowe/pruszkow'
+    | '/strony-internetowe/tarczyn'
     | '/uslugi/oznakowanie-auta'
     | '/uslugi/pakiet-start-google'
     | '/uslugi/poczta-firmowa'
@@ -203,6 +290,14 @@ export interface FileRouteTypes {
     | '/pakiety/materialy-firmowe'
     | '/pakiety/start-online'
     | '/pakiety/wizerunek'
+    | '/strony-internetowe/gora-kalwaria'
+    | '/strony-internetowe/grodzisk-mazowiecki'
+    | '/strony-internetowe/grojec'
+    | '/strony-internetowe/konstancin-jeziorna'
+    | '/strony-internetowe/nadarzyn'
+    | '/strony-internetowe/piaseczno'
+    | '/strony-internetowe/pruszkow'
+    | '/strony-internetowe/tarczyn'
     | '/uslugi/oznakowanie-auta'
     | '/uslugi/pakiet-start-google'
     | '/uslugi/poczta-firmowa'
@@ -222,6 +317,14 @@ export interface FileRouteTypes {
     | '/pakiety/materialy-firmowe'
     | '/pakiety/start-online'
     | '/pakiety/wizerunek'
+    | '/strony-internetowe/gora-kalwaria'
+    | '/strony-internetowe/grodzisk-mazowiecki'
+    | '/strony-internetowe/grojec'
+    | '/strony-internetowe/konstancin-jeziorna'
+    | '/strony-internetowe/nadarzyn'
+    | '/strony-internetowe/piaseczno'
+    | '/strony-internetowe/pruszkow'
+    | '/strony-internetowe/tarczyn'
     | '/uslugi/oznakowanie-auta'
     | '/uslugi/pakiet-start-google'
     | '/uslugi/poczta-firmowa'
@@ -242,6 +345,14 @@ export interface RootRouteChildren {
   PakietyMaterialyFirmoweRoute: typeof PakietyMaterialyFirmoweRoute
   PakietyStartOnlineRoute: typeof PakietyStartOnlineRoute
   PakietyWizerunekRoute: typeof PakietyWizerunekRoute
+  StronyInternetoweGoraKalwariaRoute: typeof StronyInternetoweGoraKalwariaRoute
+  StronyInternetoweGrodziskMazowieckiRoute: typeof StronyInternetoweGrodziskMazowieckiRoute
+  StronyInternetoweGrojecRoute: typeof StronyInternetoweGrojecRoute
+  StronyInternetoweKonstancinJeziornaRoute: typeof StronyInternetoweKonstancinJeziornaRoute
+  StronyInternetoweNadarzynRoute: typeof StronyInternetoweNadarzynRoute
+  StronyInternetowePiasecznoRoute: typeof StronyInternetowePiasecznoRoute
+  StronyInternetowePruszkowRoute: typeof StronyInternetowePruszkowRoute
+  StronyInternetoweTarczynRoute: typeof StronyInternetoweTarczynRoute
   UslugiOznakowanieAutaRoute: typeof UslugiOznakowanieAutaRoute
   UslugiPakietStartGoogleRoute: typeof UslugiPakietStartGoogleRoute
   UslugiPocztaFirmowaRoute: typeof UslugiPocztaFirmowaRoute
@@ -323,6 +434,62 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PakietyWizerunekRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/strony-internetowe/gora-kalwaria': {
+      id: '/strony-internetowe/gora-kalwaria'
+      path: '/strony-internetowe/gora-kalwaria'
+      fullPath: '/strony-internetowe/gora-kalwaria'
+      preLoaderRoute: typeof StronyInternetoweGoraKalwariaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/strony-internetowe/grodzisk-mazowiecki': {
+      id: '/strony-internetowe/grodzisk-mazowiecki'
+      path: '/strony-internetowe/grodzisk-mazowiecki'
+      fullPath: '/strony-internetowe/grodzisk-mazowiecki'
+      preLoaderRoute: typeof StronyInternetoweGrodziskMazowieckiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/strony-internetowe/grojec': {
+      id: '/strony-internetowe/grojec'
+      path: '/strony-internetowe/grojec'
+      fullPath: '/strony-internetowe/grojec'
+      preLoaderRoute: typeof StronyInternetoweGrojecRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/strony-internetowe/konstancin-jeziorna': {
+      id: '/strony-internetowe/konstancin-jeziorna'
+      path: '/strony-internetowe/konstancin-jeziorna'
+      fullPath: '/strony-internetowe/konstancin-jeziorna'
+      preLoaderRoute: typeof StronyInternetoweKonstancinJeziornaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/strony-internetowe/nadarzyn': {
+      id: '/strony-internetowe/nadarzyn'
+      path: '/strony-internetowe/nadarzyn'
+      fullPath: '/strony-internetowe/nadarzyn'
+      preLoaderRoute: typeof StronyInternetoweNadarzynRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/strony-internetowe/piaseczno': {
+      id: '/strony-internetowe/piaseczno'
+      path: '/strony-internetowe/piaseczno'
+      fullPath: '/strony-internetowe/piaseczno'
+      preLoaderRoute: typeof StronyInternetowePiasecznoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/strony-internetowe/pruszkow': {
+      id: '/strony-internetowe/pruszkow'
+      path: '/strony-internetowe/pruszkow'
+      fullPath: '/strony-internetowe/pruszkow'
+      preLoaderRoute: typeof StronyInternetowePruszkowRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/strony-internetowe/tarczyn': {
+      id: '/strony-internetowe/tarczyn'
+      path: '/strony-internetowe/tarczyn'
+      fullPath: '/strony-internetowe/tarczyn'
+      preLoaderRoute: typeof StronyInternetoweTarczynRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/uslugi/oznakowanie-auta': {
       id: '/uslugi/oznakowanie-auta'
       path: '/uslugi/oznakowanie-auta'
@@ -386,6 +553,16 @@ const rootRouteChildren: RootRouteChildren = {
   PakietyMaterialyFirmoweRoute: PakietyMaterialyFirmoweRoute,
   PakietyStartOnlineRoute: PakietyStartOnlineRoute,
   PakietyWizerunekRoute: PakietyWizerunekRoute,
+  StronyInternetoweGoraKalwariaRoute: StronyInternetoweGoraKalwariaRoute,
+  StronyInternetoweGrodziskMazowieckiRoute:
+    StronyInternetoweGrodziskMazowieckiRoute,
+  StronyInternetoweGrojecRoute: StronyInternetoweGrojecRoute,
+  StronyInternetoweKonstancinJeziornaRoute:
+    StronyInternetoweKonstancinJeziornaRoute,
+  StronyInternetoweNadarzynRoute: StronyInternetoweNadarzynRoute,
+  StronyInternetowePiasecznoRoute: StronyInternetowePiasecznoRoute,
+  StronyInternetowePruszkowRoute: StronyInternetowePruszkowRoute,
+  StronyInternetoweTarczynRoute: StronyInternetoweTarczynRoute,
   UslugiOznakowanieAutaRoute: UslugiOznakowanieAutaRoute,
   UslugiPakietStartGoogleRoute: UslugiPakietStartGoogleRoute,
   UslugiPocztaFirmowaRoute: UslugiPocztaFirmowaRoute,
