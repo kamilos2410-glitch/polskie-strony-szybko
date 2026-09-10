@@ -51,6 +51,7 @@ export const Route = createFileRoute("/")({
           url: "https://scsweb.pl",
           telephone: "+48 664 013 998",
           email: "kamil@scsweb.pl",
+          sameAs: ["https://maps.google.com/?cid=11760883947227790812"],
           founder: { "@type": "Person", name: "Kamil Pietraszko" },
           address: {
             "@type": "PostalAddress",
@@ -61,6 +62,14 @@ export const Route = createFileRoute("/")({
           areaServed: [
             { "@type": "City", name: "Tarczyn" },
             { "@type": "Country", name: "Polska" },
+          ],
+          openingHoursSpecification: [
+            {
+              "@type": "OpeningHoursSpecification",
+              dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+              opens: "08:00",
+              closes: "18:00",
+            },
           ],
           priceRange: "1500 PLN",
         }),
@@ -825,6 +834,16 @@ function Index() {
                         className="display inline-flex min-h-[48px] items-center break-all font-semibold underline underline-offset-8 hover:opacity-70"
                       >
                         kamil@scsweb.pl
+                      </a>
+                    </p>
+                    <p>
+                      <a
+                        href="https://maps.google.com/?cid=11760883947227790812"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="display inline-flex min-h-[48px] items-center font-semibold underline underline-offset-8 hover:opacity-70"
+                      >
+                        Zobacz nas w Google
                       </a>
                     </p>
                   </div>
