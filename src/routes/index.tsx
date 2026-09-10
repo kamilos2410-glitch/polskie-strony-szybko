@@ -843,6 +843,11 @@ function Index() {
           <div>
             <p className="display text-base font-bold text-foreground">SCS Web</p>
             <p className="mt-2">Strony internetowe dla lokalnych firm</p>
+            <p className="mt-3">
+              <a href="/strony-internetowe" className="underline underline-offset-8 transition-colors hover:text-foreground">
+                Strony internetowe w Twojej okolicy
+              </a>
+            </p>
           </div>
           <div className="space-y-1 md:text-right">
             <p className="text-foreground">Kamil Pietraszko</p>

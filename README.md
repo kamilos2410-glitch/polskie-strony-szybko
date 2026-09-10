@@ -36,12 +36,12 @@ Sticky minimal top bar: wordmark "SCS Web" (typographic, black) + anchor links (
 
 7. KONTAKT / FORMULARZ — heading "Zamów darmowe demo"; fields: Imię, Telefon lub e-mail, Nazwa firmy i branża, Krótko o Twojej firmie (textarea); black submit button "Wyślij — odezwę się w 24 h"; note under form: "Zero spamu. Odpowiadam osobiście." Web3Forms client-side as specified above.
 
-8. FOOTER — hairline top border: "SCS Web — strony internetowe dla lokalnych firm", Kamil Pietraszko, tel. 664 013 998, kamil.pietraszko@onet.pl, © 2026 SCS Web.
+8. FOOTER — hairline top border: "SCS Web — strony internetowe dla lokalnych firm", Kamil Pietraszko, tel. 664 013 998, kamil@scsweb.pl, © 2026 SCS Web.
 
 === TECHNICAL SEO (must be in the build) ===
 - index.html: lang="pl", title "Strona internetowa dla firmy w 48h — SCS Web", meta description in Polish with local-business phrasing, Open Graph tags.
 - Semantic single H1 (hero headline), H2 per section.
-- JSON-LD ProfessionalService schema in index.html: name "SCS Web", founder "Kamil Pietraszko", telephone "+48 664 013 998", email "kamil.pietraszko@onet.pl", url "https://scsweb.pl", areaServed "Polska".
+- JSON-LD ProfessionalService schema in index.html: name "SCS Web", founder "Kamil Pietraszko", telephone "+48 664 013 998", email "kamil@scsweb.pl", url "https://scsweb.pl", areaServed "Polska".
 - public/robots.txt (allow all, sitemap reference) and public/sitemap.xml with https://scsweb.pl/.
 - Favicon: minimalist black "S" monogram as SVG in the repo (plus .ico), referenced in index.html.
 
