@@ -284,7 +284,7 @@ export function PackagePage({ pkg }: { pkg: Pkg }) {
 }
 
 export function packageHead(pkg: Pkg) {
-  const url = `https://scsweb.pl/pakiety/${pkg.slug}`;
+  const url = `https://scsweb.pl/pakiety/${pkg.slug}/`;
   return {
     meta: [
       { title: pkg.metaTitle },

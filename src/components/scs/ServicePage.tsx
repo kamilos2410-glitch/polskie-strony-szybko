@@ -256,7 +256,7 @@ export function ServicePage({ service }: { service: Service }) {
 }
 
 export function serviceHead(service: Service) {
-  const url = `https://scsweb.pl/uslugi/${service.slug}`;
+  const url = `https://scsweb.pl/uslugi/${service.slug}/`;
   return {
     meta: [
       { title: service.metaTitle },

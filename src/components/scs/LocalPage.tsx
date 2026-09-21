@@ -286,7 +286,7 @@ export function LocalPage({ lokalizacja }: { lokalizacja: Lokalizacja }) {
 }
 
 export function localHead(l: Lokalizacja) {
-  const url = `https://scsweb.pl/strony-internetowe/${l.slug}`;
+  const url = `https://scsweb.pl/strony-internetowe/${l.slug}/`;
   return {
     meta: [
       { title: l.title },
