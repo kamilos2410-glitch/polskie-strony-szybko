@@ -27,10 +27,10 @@ export const Route = createFileRoute("/kalkulator")({
       { property: "og:description", content: DESCRIPTION },
       { property: "og:type", content: "website" },
       { property: "og:locale", content: "pl_PL" },
-      { property: "og:url", content: "https://scsweb.pl/kalkulator" },
+      { property: "og:url", content: "https://scsweb.pl/kalkulator/" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "canonical", href: "https://scsweb.pl/kalkulator" }],
+    links: [{ rel: "canonical", href: "https://scsweb.pl/kalkulator/" }],
   }),
 });
 

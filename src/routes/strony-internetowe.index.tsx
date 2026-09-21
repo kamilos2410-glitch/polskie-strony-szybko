@@ -11,7 +11,7 @@ import { LOKALIZACJE } from "@/lib/lokalizacje";
 const TITLE = "Strony internetowe — Piaseczno, Grójec, Konstancin i okolice | SCS Web";
 const DESCRIPTION =
   "Strony internetowe dla małych firm z powiatu piaseczyńskiego, grójeckiego i pruszkowskiego. Projekt w 48 godzin, płatność po akceptacji. Tel. 664 013 998.";
-const URL = "https://scsweb.pl/strony-internetowe";
+const URL = "https://scsweb.pl/strony-internetowe/";
 
 export const Route = createFileRoute("/strony-internetowe/")({
   head: () => ({
