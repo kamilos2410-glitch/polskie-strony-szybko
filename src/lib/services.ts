@@ -228,7 +228,79 @@ export const SERVICES: Record<string, Service> = {
       },
       {
         q: "Czy pozycjonujecie strony?",
-        a: "Nie sprzedaję SEO. Jeśli potrzebujesz pozycjonowania, polecę sprawdzonego specjalistę zamiast obiecywać coś, czego nie robię.",
+        a: "Stron nie pozycjonuję. Wizytówką Google mogę się natomiast zajmować co miesiąc — to osobna usługa: pozycjonowanie wizytówki Google za 299 zł miesięcznie, bez obietnic konkretnego miejsca w wynikach.",
+      },
+    ],
+  },
+
+  "pozycjonowanie-wizytowki-google": {
+    slug: "pozycjonowanie-wizytowki-google",
+    h1: "Pozycjonowanie wizytówki Google — opieka nad profilem firmy co miesiąc",
+    promise:
+      "Co miesiąc prowadzę Twoją wizytówkę Google: wpisy, zdjęcia, odpowiedzi na opinie i pilnowanie danych. Na koniec miesiąca dostajesz raport z liczbami z Google.",
+    metaTitle: "Pozycjonowanie wizytówki Google — 299 zł/mies. | SCS Web",
+    metaDescription:
+      "Pozycjonowanie i prowadzenie wizytówki Google dla lokalnej firmy: 4 wpisy miesięcznie, nowe zdjęcia, odpowiedzi na opinie i raport z Google. 299 zł miesięcznie, minimum 3 miesiące.",
+    whatIs: [
+      "Wizytówka Google (profil firmy w Mapach) to często pierwsze, co widzi klient szukający fachowca w okolicy. Google chętniej pokazuje profile, które są kompletne, aktualne i aktywne: mają świeże wpisy i zdjęcia, a na opinie ktoś odpowiada.",
+      "Większość firm zakłada profil raz i o nim zapomina. W tej usłudze to ja pilnuję go co miesiąc — według stałej listy czynności, którą możesz rozliczyć. Płacisz za konkretną pracę, nie za obietnicę miejsca w wynikach.",
+    ],
+    forWhom: [
+      "Firmy usługowe działające na konkretnym terenie: hydraulik, elektryk, warsztat, dekarz, firma remontowa, gabinet, salon.",
+      "Firmy, które mają już wizytówkę, ale nie mają czasu jej prowadzić — nie dodają wpisów ani zdjęć i zostawiają opinie bez odpowiedzi.",
+    ],
+    getList: [
+      "4 wpisy miesięcznie ze zdjęciem i przyciskiem „Zadzwoń teraz” albo „Więcej informacji”",
+      "Do 5 nowych zdjęć miesięcznie z Twoich materiałów",
+      "Odpowiedź na każdą nową opinię w ciągu 2 dni roboczych — odpowiedzi na opinie negatywne uzgadniam z Tobą przed publikacją",
+      "Kontrola profilu 2 razy w miesiącu: czy Google albo ktoś obcy nie zmienił godzin, telefonu, adresu strony, i jakie zdjęcia dodali użytkownicy",
+      "Do 3 zmian na Twoje zlecenie miesięcznie: godziny świąteczne, urlop, usługi, ceny, opis",
+      "Raport miesięczny z liczbami z Google: wyświetlenia profilu, kliknięcia w telefon i w stronę, lista wykonanych czynności",
+      "Dostęp jako menedżer profilu — bez Twojego hasła, wizytówka zostaje Twoja",
+    ],
+    duration: [
+      "Umowa na minimum 3 miesiące. Pierwszy miesiąc to w dużej mierze porządki i pierwsze wpisy, a raport z trzeciego miesiąca to pierwszy, z którego da się coś sensownie odczytać.",
+      "Na starcie zapisuję stan Twojego profilu z ostatnich 3 miesięcy — to punkt odniesienia dla wszystkich kolejnych raportów.",
+      "Raport za każdy miesiąc dostajesz do 10. dnia następnego miesiąca.",
+    ],
+    steps: [
+      { n: "01", title: "Sprawdzenie profilu", body: "Sprawdzam, czy Twoja wizytówka jest kompletna. Jeśli wymaga najpierw uporządkowania albo jej nie ma, zaczynamy od Pakietu Start Google." },
+      { n: "02", title: "Dostęp jako menedżer", body: "Dodajesz mnie jako menedżera wizytówki. Nigdy nie proszę o hasło, a profil zawsze zostaje Twoją własnością." },
+      { n: "03", title: "Punkt odniesienia", body: "Zapisuję liczby z Twojego profilu z ostatnich 3 miesięcy, zanim cokolwiek zmienię. Dzięki temu w raportach widać, co się zmieniło." },
+      { n: "04", title: "Praca co miesiąc", body: "Wpisy, zdjęcia, odpowiedzi na opinie, kontrola danych i Twoje zlecenia — według stałej listy." },
+      { n: "05", title: "Raport", body: "Co miesiąc dostajesz liczby z Google i licznik wykonanych czynności, np. „wpisy 4/4, zdjęcia 3/5, opinie 2/2 z odpowiedzią”." },
+    ],
+    priceOnce: [
+      "Nic, jeśli Twoja wizytówka jest uzupełniona.",
+      "Jeśli profil wymaga najpierw uporządkowania: Pakiet Start Google — 400 zł (600 zł, gdy zakładamy wizytówkę od zera).",
+    ],
+    priceRecurring: ["299 zł miesięcznie, minimum 3 miesiące."],
+    notes: [
+      "Nie gwarantuję miejsca w Mapach ani w wynikach wyszukiwania — tego nie może uczciwie obiecać nikt. Liczby w raporcie to informacja o tym, co się dzieje z profilem, nie obietnica.",
+      "Zgodnie z zasadami Google nie nagradzamy klientów za opinie i nie wybieramy, kto ma je wystawić.",
+      "Numeru telefonu nie wpisuję w treść wpisów, bo Google potrafi takie wpisy usuwać — telefon daje przycisk „Zadzwoń teraz”.",
+      "Poza usługą: Google Ads, sesje zdjęciowe i dojazdy, kontakt z Twoimi klientami w sprawie opinii, odbieranie telefonów i wiadomości, zmiany na stronie internetowej.",
+    ],
+    faq: [
+      {
+        q: "Czy gwarantujesz pierwsze miejsce w Mapach Google?",
+        a: "Nie i nikomu tego nie obiecuję — kto obiecuje pozycję, sprzedaje ściemę. Pozycja w Mapach zależy też od odległości klienta od Twojej firmy i od liczby konkurentów w okolicy, a na to nikt nie ma wpływu. Pracuję nad tym, na co wpływ jest: kompletnym, aktualnym i aktywnym profilem.",
+      },
+      {
+        q: "Dlaczego minimum 3 miesiące?",
+        a: "Bo efekty regularnej pracy przy profilu nie pojawiają się z tygodnia na tydzień. Pierwszy miesiąc to porządki i pierwsze wpisy, a dopiero raport z trzeciego miesiąca da się sensownie porównać z punktem wyjścia.",
+      },
+      {
+        q: "Czy muszę dawać hasło do konta Google?",
+        a: "Nie. Dodajesz mnie jako menedżera wizytówki, podając mój adres Gmail. Hasła nigdy nie potrzebuję i nigdy o nie nie poproszę.",
+      },
+      {
+        q: "Co, jeśli nie mam nowych zdjęć?",
+        a: "Raz w miesiącu poproszę Cię o kilka zdjęć z bieżących zleceń — wystarczą zdjęcia z telefonu. Jeśli ich nie będzie, wpisy przygotuję na zdjęciach, które już są w profilu, a w raporcie zapiszę, że nowych zdjęć nie było.",
+      },
+      {
+        q: "Czy obsługujesz firmy spoza Tarczyna?",
+        a: "Tak. Wizytówkę prowadzę zdalnie, więc obsługuję firmy z całej Polski.",
       },
     ],
   },

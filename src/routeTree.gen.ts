@@ -31,6 +31,7 @@ import { Route as StronyInternetoweTarczynRouteImport } from './routes/strony-in
 import { Route as UslugiOznakowanieAutaRouteImport } from './routes/uslugi.oznakowanie-auta'
 import { Route as UslugiPakietStartGoogleRouteImport } from './routes/uslugi.pakiet-start-google'
 import { Route as UslugiPocztaFirmowaRouteImport } from './routes/uslugi.poczta-firmowa'
+import { Route as UslugiPozycjonowanieWizytowkiGoogleRouteImport } from './routes/uslugi.pozycjonowanie-wizytowki-google'
 import { Route as UslugiProjektLogoRouteImport } from './routes/uslugi.projekt-logo'
 import { Route as UslugiProjektUlotkiRouteImport } from './routes/uslugi.projekt-ulotki'
 import { Route as UslugiProjektWizytowkiRouteImport } from './routes/uslugi.projekt-wizytowki'
@@ -153,6 +154,12 @@ const UslugiPocztaFirmowaRoute = UslugiPocztaFirmowaRouteImport.update({
   path: '/uslugi/poczta-firmowa',
   getParentRoute: () => rootRouteImport,
 } as any)
+const UslugiPozycjonowanieWizytowkiGoogleRoute =
+  UslugiPozycjonowanieWizytowkiGoogleRouteImport.update({
+    id: '/uslugi/pozycjonowanie-wizytowki-google',
+    path: '/uslugi/pozycjonowanie-wizytowki-google',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const UslugiProjektLogoRoute = UslugiProjektLogoRouteImport.update({
   id: '/uslugi/projekt-logo',
   path: '/uslugi/projekt-logo',
@@ -196,6 +203,7 @@ export interface FileRoutesByFullPath {
   '/uslugi/oznakowanie-auta': typeof UslugiOznakowanieAutaRoute
   '/uslugi/pakiet-start-google': typeof UslugiPakietStartGoogleRoute
   '/uslugi/poczta-firmowa': typeof UslugiPocztaFirmowaRoute
+  '/uslugi/pozycjonowanie-wizytowki-google': typeof UslugiPozycjonowanieWizytowkiGoogleRoute
   '/uslugi/projekt-logo': typeof UslugiProjektLogoRoute
   '/uslugi/projekt-ulotki': typeof UslugiProjektUlotkiRoute
   '/uslugi/projekt-wizytowki': typeof UslugiProjektWizytowkiRoute
@@ -224,6 +232,7 @@ export interface FileRoutesByTo {
   '/uslugi/oznakowanie-auta': typeof UslugiOznakowanieAutaRoute
   '/uslugi/pakiet-start-google': typeof UslugiPakietStartGoogleRoute
   '/uslugi/poczta-firmowa': typeof UslugiPocztaFirmowaRoute
+  '/uslugi/pozycjonowanie-wizytowki-google': typeof UslugiPozycjonowanieWizytowkiGoogleRoute
   '/uslugi/projekt-logo': typeof UslugiProjektLogoRoute
   '/uslugi/projekt-ulotki': typeof UslugiProjektUlotkiRoute
   '/uslugi/projekt-wizytowki': typeof UslugiProjektWizytowkiRoute
@@ -253,6 +262,7 @@ export interface FileRoutesById {
   '/uslugi/oznakowanie-auta': typeof UslugiOznakowanieAutaRoute
   '/uslugi/pakiet-start-google': typeof UslugiPakietStartGoogleRoute
   '/uslugi/poczta-firmowa': typeof UslugiPocztaFirmowaRoute
+  '/uslugi/pozycjonowanie-wizytowki-google': typeof UslugiPozycjonowanieWizytowkiGoogleRoute
   '/uslugi/projekt-logo': typeof UslugiProjektLogoRoute
   '/uslugi/projekt-ulotki': typeof UslugiProjektUlotkiRoute
   '/uslugi/projekt-wizytowki': typeof UslugiProjektWizytowkiRoute
@@ -283,6 +293,7 @@ export interface FileRouteTypes {
     | '/uslugi/oznakowanie-auta'
     | '/uslugi/pakiet-start-google'
     | '/uslugi/poczta-firmowa'
+    | '/uslugi/pozycjonowanie-wizytowki-google'
     | '/uslugi/projekt-logo'
     | '/uslugi/projekt-ulotki'
     | '/uslugi/projekt-wizytowki'
@@ -311,6 +322,7 @@ export interface FileRouteTypes {
     | '/uslugi/oznakowanie-auta'
     | '/uslugi/pakiet-start-google'
     | '/uslugi/poczta-firmowa'
+    | '/uslugi/pozycjonowanie-wizytowki-google'
     | '/uslugi/projekt-logo'
     | '/uslugi/projekt-ulotki'
     | '/uslugi/projekt-wizytowki'
@@ -339,6 +351,7 @@ export interface FileRouteTypes {
     | '/uslugi/oznakowanie-auta'
     | '/uslugi/pakiet-start-google'
     | '/uslugi/poczta-firmowa'
+    | '/uslugi/pozycjonowanie-wizytowki-google'
     | '/uslugi/projekt-logo'
     | '/uslugi/projekt-ulotki'
     | '/uslugi/projekt-wizytowki'
@@ -368,6 +381,7 @@ export interface RootRouteChildren {
   UslugiOznakowanieAutaRoute: typeof UslugiOznakowanieAutaRoute
   UslugiPakietStartGoogleRoute: typeof UslugiPakietStartGoogleRoute
   UslugiPocztaFirmowaRoute: typeof UslugiPocztaFirmowaRoute
+  UslugiPozycjonowanieWizytowkiGoogleRoute: typeof UslugiPozycjonowanieWizytowkiGoogleRoute
   UslugiProjektLogoRoute: typeof UslugiProjektLogoRoute
   UslugiProjektUlotkiRoute: typeof UslugiProjektUlotkiRoute
   UslugiProjektWizytowkiRoute: typeof UslugiProjektWizytowkiRoute
@@ -531,6 +545,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof UslugiPocztaFirmowaRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/uslugi/pozycjonowanie-wizytowki-google': {
+      id: '/uslugi/pozycjonowanie-wizytowki-google'
+      path: '/uslugi/pozycjonowanie-wizytowki-google'
+      fullPath: '/uslugi/pozycjonowanie-wizytowki-google'
+      preLoaderRoute: typeof UslugiPozycjonowanieWizytowkiGoogleRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/uslugi/projekt-logo': {
       id: '/uslugi/projekt-logo'
       path: '/uslugi/projekt-logo'
@@ -586,6 +607,8 @@ const rootRouteChildren: RootRouteChildren = {
   UslugiOznakowanieAutaRoute: UslugiOznakowanieAutaRoute,
   UslugiPakietStartGoogleRoute: UslugiPakietStartGoogleRoute,
   UslugiPocztaFirmowaRoute: UslugiPocztaFirmowaRoute,
+  UslugiPozycjonowanieWizytowkiGoogleRoute:
+    UslugiPozycjonowanieWizytowkiGoogleRoute,
   UslugiProjektLogoRoute: UslugiProjektLogoRoute,
   UslugiProjektUlotkiRoute: UslugiProjektUlotkiRoute,
   UslugiProjektWizytowkiRoute: UslugiProjektWizytowkiRoute,

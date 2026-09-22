@@ -27,6 +27,7 @@ export default defineConfig({
       { path: "/uslugi/strona-internetowa", prerender: { enabled: true } },
       { path: "/uslugi/poczta-firmowa", prerender: { enabled: true } },
       { path: "/uslugi/pakiet-start-google", prerender: { enabled: true } },
+      { path: "/uslugi/pozycjonowanie-wizytowki-google", prerender: { enabled: true } },
       { path: "/uslugi/projekt-wizytowki", prerender: { enabled: true } },
       { path: "/uslugi/projekt-ulotki", prerender: { enabled: true } },
       { path: "/uslugi/oznakowanie-auta", prerender: { enabled: true } },

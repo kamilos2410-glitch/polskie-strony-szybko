@@ -74,6 +74,18 @@ export const Route = createFileRoute("/")({
           priceRange: "1500 PLN",
         }),
       },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: FAQ.map((f) => ({
+            "@type": "Question",
+            name: f.q,
+            acceptedAnswer: { "@type": "Answer", text: f.a },
+          })),
+        }),
+      },
     ],
   }),
 });
@@ -201,6 +213,18 @@ const FAQ = [
     q: "Czy mogę później coś zmienić na stronie?",
     a: "Tak. W abonamencie drobne zmiany są w cenie. Przy zakupie jednorazowym wyceniam je indywidualnie, zawsze przed rozpoczęciem pracy.",
   },
+  {
+    q: "Czy obsługujecie firmy spoza Tarczyna?",
+    a: "Tak. Pracuję zdalnie i obsługuję firmy z całej Polski — wystarczy rozmowa telefoniczna i kilka zdjęć. Do miejscowości z okolicy, takich jak Piaseczno, Grójec, Góra Kalwaria, Konstancin-Jeziorna, Nadarzyn, Pruszków czy Grodzisk Mazowiecki, mogę też po prostu przyjechać.",
+  },
+  {
+    q: "Czy strona będzie na WordPressie?",
+    a: "Nie. Robię strony statyczne, bez systemu zarządzania treścią. Są dzięki temu szybkie, bezpieczne i nie wymagają aktualizacji wtyczek. Minus jest jeden i mówię o nim wprost: treści nie zmieniasz samodzielnie w panelu. W abonamencie 199 zł/mies. drobne zmiany robię ja, do trzech miesięcznie w cenie; przy wariancie jednorazowym wyceniam je osobno.",
+  },
+  {
+    q: "Czy strona albo wizytówka Google gwarantuje pierwsze miejsce w Google?",
+    a: "Nie i nikomu tego nie obiecuję — kto obiecuje pozycję, sprzedaje ściemę. Strona dostaje przygotowanie techniczne pod wyszukiwarkę i zgłoszenie do Google, a pierwsze efekty na frazy lokalne widać zwykle po 4–12 tygodniach i zależą od tego, ilu masz konkurentów w okolicy. To samo dotyczy wizytówki Google: dbam o to, żeby była kompletna i aktywna, ale miejsca w wynikach nie gwarantuję.",
+  },
 ];
 
 const SINGLE_SERVICES = [
@@ -221,6 +245,12 @@ const SINGLE_SERVICES = [
     benefit: "Wizytówka w Mapach Google, żeby klienci z okolicy Cię znaleźli.",
     price: "od 400 zł",
     to: "/uslugi/pakiet-start-google",
+  },
+  {
+    name: "Pozycjonowanie wizytówki Google",
+    benefit: "Co miesiąc wpisy, zdjęcia, odpowiedzi na opinie i raport z Google.",
+    price: "299 zł/mies.",
+    to: "/uslugi/pozycjonowanie-wizytowki-google",
   },
   {
     name: "Projekt wizytówki",

@@ -269,5 +269,36 @@ export function serviceHead(service: Service) {
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [{ rel: "canonical", href: url }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Service",
+          name: service.h1,
+          description: service.metaDescription,
+          url,
+          provider: {
+            "@type": "ProfessionalService",
+            name: "SCS Web",
+            url: "https://scsweb.pl/",
+            telephone: "+48 664 013 998",
+          },
+          areaServed: { "@type": "Country", name: "Polska" },
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: service.faq.map((f) => ({
+            "@type": "Question",
+            name: f.q,
+            acceptedAnswer: { "@type": "Answer", text: f.a },
+          })),
+        }),
+      },
+    ],
   };
 }
