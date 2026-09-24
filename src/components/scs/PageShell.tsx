@@ -6,6 +6,7 @@ import { MobileBar } from "@/components/scs/MobileBar";
 const NAV = [
   { href: "/#jak-to-dziala", label: "Jak to działa" },
   { href: "/#realizacje", label: "Realizacje" },
+  { href: "/referencje", label: "Referencje" },
   { href: "/#cennik", label: "Cennik" },
   { href: "/#faq", label: "FAQ" },
   { href: "/#kontakt", label: "Kontakt" },

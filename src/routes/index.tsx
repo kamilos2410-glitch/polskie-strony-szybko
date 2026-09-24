@@ -21,6 +21,7 @@ import { HydroPreview, AutoPreview, DachPreview } from "@/components/scs/DemoPre
 import { ContactForm } from "@/components/scs/ContactForm";
 import { MobileBar } from "@/components/scs/MobileBar";
 import { TESTIMONIALS } from "@/lib/testimonials";
+import { REALIZACJE } from "@/lib/realizacje";
 
 const TITLE = "Strona internetowa dla firmy w 48h — SCS Web";
 const DESCRIPTION =
@@ -93,6 +94,7 @@ export const Route = createFileRoute("/")({
 const NAV = [
   { href: "#jak-to-dziala", label: "Jak to działa" },
   { href: "#realizacje", label: "Realizacje" },
+  { href: "/referencje", label: "Referencje" },
   { href: "#cennik", label: "Cennik" },
   { href: "/kalkulator", label: "Kalkulator" },
   { href: "#faq", label: "FAQ" },
@@ -476,8 +478,41 @@ function Index() {
           <div className="mx-auto max-w-[1200px] px-6 py-14 md:px-10 md:py-20">
             <SectionHead
               eyebrow="Realizacje"
-              title="Przykładowe projekty"
-              lead="Kliknij dowolny projekt, żeby zobaczyć przykładową stronę w całości."
+              title="Strony, które działają w sieci"
+              lead="Adresy, pod które możesz wejść teraz i sprawdzić sam."
+            />
+            <div className="grid gap-px bg-hairline md:grid-cols-3">
+              {REALIZACJE.map((r, i) => (
+                <Reveal key={r.href} delay={i * 60} className="bg-background">
+                  <article className="flex h-full flex-col p-6 md:p-8">
+                    <p className="eyebrow mb-3">{r.tag}</p>
+                    <h3 className="display text-xl font-semibold md:text-2xl">{r.name}</h3>
+                    <p className="mt-1 text-sm text-muted-foreground">{r.branch}</p>
+                    <p className="mt-4 flex-1 text-[0.95rem] leading-relaxed text-muted-foreground">
+                      {r.desc}
+                    </p>
+                    <a
+                      href={r.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-6 inline-flex min-h-[44px] items-center gap-2 font-medium underline underline-offset-4 transition-opacity hover:opacity-70"
+                    >
+                      {r.url}
+                      <ArrowUpRight strokeWidth={1.5} className="h-4 w-4" aria-hidden="true" />
+                    </a>
+                  </article>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="projekty-przykladowe" className="border-b border-hairline">
+          <div className="mx-auto max-w-[1200px] px-6 py-14 md:px-10 md:py-20">
+            <SectionHead
+              eyebrow="Projekty przykładowe"
+              title="Zobacz, jak pracuję"
+              lead="Strony zaprojektowane dla fikcyjnych firm. Kliknij dowolną, żeby zobaczyć ją w całości."
             />
             <div className="space-y-8 md:space-y-10">
               {CASES.map((c, i) => (

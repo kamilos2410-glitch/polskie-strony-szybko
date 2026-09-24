@@ -1,0 +1,13 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Pietraszko;Kamil;;;
+FN:Kamil Pietraszko
+ORG:SCS Web
+TITLE:Strony internetowe dla firm
+TEL;TYPE=CELL,VOICE:+48664013998
+EMAIL;TYPE=INTERNET,WORK:kamil@scsweb.pl
+URL:https://scsweb.pl
+ADR;TYPE=WORK:;;;Tarczyn;mazowieckie;;Polska
+NOTE:Strony internetowe dla firm. Tarczyn i zdalnie cala Polska.
+REV:2026-09-24T00:00:00Z
+END:VCARD
