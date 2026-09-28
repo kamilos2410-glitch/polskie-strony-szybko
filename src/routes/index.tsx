@@ -20,7 +20,7 @@ import { HeroVisual } from "@/components/scs/HeroVisual";
 import { HydroPreview, AutoPreview, DachPreview } from "@/components/scs/DemoPreviews";
 import { ContactForm } from "@/components/scs/ContactForm";
 import { MobileBar } from "@/components/scs/MobileBar";
-import { TESTIMONIALS } from "@/lib/testimonials";
+import { TESTIMONIALS, testimonialCaption } from "@/lib/testimonials";
 import { REALIZACJE } from "@/lib/realizacje";
 
 const TITLE = "Strona internetowa dla firmy w 48h — SCS Web";
@@ -589,17 +589,8 @@ function Index() {
                       </blockquote>
                       <figcaption className="mt-6 border-t border-hairline pt-4">
                         <p className="font-semibold">
-                          {t.name} — {t.company}, {t.city}
+                          {testimonialCaption(t)}
                         </p>
-                        <a
-                          href={t.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="mt-2 inline-flex min-h-[44px] items-center gap-2 font-medium underline underline-offset-4 transition-opacity hover:opacity-70"
-                        >
-                          Zobacz stronę {t.company}
-                          <ArrowUpRight strokeWidth={1.5} className="h-4 w-4" aria-hidden="true" />
-                        </a>
                       </figcaption>
                     </figure>
                   </Reveal>
