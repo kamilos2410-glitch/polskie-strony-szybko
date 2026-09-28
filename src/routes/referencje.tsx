@@ -36,7 +36,9 @@ export const Route = createFileRoute("/referencje")({
                 review: TESTIMONIALS.map((t) => ({
                   "@type": "Review",
                   reviewBody: t.quote,
-                  author: { "@type": "Person", name: `${t.name} — ${t.company}` },
+                  author: t.name
+                    ? { "@type": "Person", name: `${t.name} — ${t.company}` }
+                    : { "@type": "Organization", name: t.company },
                 })),
               }),
             },
