@@ -5,17 +5,26 @@
 // i na którego publikację jest zgoda na piśmie. Cytat
 // przepisujemy dosłownie — bez skracania „dla lepszego
 // brzmienia”, bez poprawiania stylu, bez dopisywania słów.
-// Skany podpisanych dokumentów trzymamy na wypadek pytań.
+//
+// Na stronie pokazujemy SKAN podpisanego dokumentu — klikalny,
+// otwiera pełny PDF. Cytat zostaje pod skanem, żeby treść była
+// czytelna dla wyszukiwarek i czytników ekranu.
 //
 // Jak dodać kolejną:
-// 1. Dopisz obiekt do tablicy TESTIMONIALS.
-// 2. quote — dosłowny fragment z podpisanego dokumentu.
+// 1. Wrzuć do `public/referencje/`:
+//    - `referencje-<firma>.pdf` — podpisany skan,
+//    - `referencje-<firma>.jpg` — pierwsza strona, szerokość 900 px
+//      (render: `pdftoppm -jpeg -r 150`, przycięcie pustego marginesu,
+//      zapis JPEG quality 78, progresywny).
+// 2. Dopisz obiekt do tablicy TESTIMONIALS — `scan`, `scanW`, `scanH`
+//    i `pdf` wskazują na te pliki.
+// 3. quote — dosłowny fragment z podpisanego dokumentu.
 //    name — osoba podpisana (pomiń, jeśli dokument jej nie podaje).
 //    company / city — jak w nagłówku dokumentu.
 //    url — adres strony. NA RAZIE NIEUŻYWANY: dopóki referencji
-//    jest mało, karty nie mają linków. Gdy uzbiera się ich
-//    więcej, wracamy do linkowania.
-// 3. Sekcja na stronie głównej i na /referencje pojawia się
+//    jest mało, karty nie linkują do stron klientów. Gdy uzbiera
+//    się ich więcej, wracamy do linkowania.
+// 4. Sekcja na stronie głównej i na /referencje pojawia się
 //    automatycznie. Dopóki tablica jest pusta, sekcja w ogóle
 //    się nie renderuje — nie ma żadnego placeholdera.
 // ============================================================
@@ -26,6 +35,12 @@ export type Testimonial = {
   company: string;
   city?: string;
   url?: string;
+  /** Podgląd pierwszej strony podpisanego skanu. */
+  scan?: string;
+  scanW?: number;
+  scanH?: number;
+  /** Pełny podpisany dokument. */
+  pdf?: string;
 };
 
 /** „Imię Nazwisko — Firma, Miasto”, z pominięciem pustych części. */
@@ -46,6 +61,10 @@ export const TESTIMONIALS: Testimonial[] = [
     company: "SP Trans",
     city: "Kopana k. Tarczyna",
     url: "https://sp-trans-easy-drive.lovable.app",
+    scan: "/referencje/referencje-sp-trans.jpg",
+    scanW: 900,
+    scanH: 817,
+    pdf: "https://scsweb.pl/referencje/referencje-sp-trans.pdf",
   },
   {
     // Referencje podpisane 24.09.2026 przez zarząd Wygodnia.pl
@@ -58,5 +77,9 @@ export const TESTIMONIALS: Testimonial[] = [
     company: "Wygodnia.pl",
     city: "sklep internetowy",
     url: "https://wygodnia.pl",
+    scan: "/referencje/referencje-wygodnia.jpg",
+    scanW: 900,
+    scanH: 899,
+    pdf: "https://scsweb.pl/referencje/referencje-wygodnia.pdf",
   },
 ];
