@@ -2,26 +2,18 @@ import type { ReactNode } from "react";
 import { Link } from "@tanstack/react-router";
 import { Phone } from "lucide-react";
 import { MobileBar } from "@/components/scs/MobileBar";
-
-const NAV = [
-  { href: "/#jak-to-dziala", label: "Jak to działa" },
-  { href: "/#realizacje", label: "Realizacje" },
-  { href: "/referencje", label: "Referencje" },
-  { href: "/#cennik", label: "Cennik" },
-  { href: "/#faq", label: "FAQ" },
-  { href: "/#kontakt", label: "Kontakt" },
-];
+import { NAV_SUBPAGE, GOOGLE_PROFILE_URL } from "@/lib/nav";
 
 export function PageShell({ children }: { children: ReactNode }) {
   return (
     <div className="min-h-screen bg-background pb-24 text-foreground md:pb-0">
       <header className="sticky top-0 z-50 border-b border-hairline bg-background/90 backdrop-blur-sm">
         <div className="mx-auto flex h-16 max-w-[1200px] items-center justify-between px-6 md:px-10">
-          <Link to="/" className="display text-lg font-bold tracking-tight">
+          <Link to="/" className="display shrink-0 text-lg font-bold tracking-tight">
             SCS Web
           </Link>
-          <nav className="hidden items-center gap-7 md:flex">
-            {NAV.map((item) => (
+          <nav className="hidden min-w-0 items-center gap-6 md:flex lg:gap-9">
+            {NAV_SUBPAGE.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
@@ -71,7 +63,7 @@ export function PageShell({ children }: { children: ReactNode }) {
             <p>kamil@scsweb.pl</p>
             <p>
               <a
-                href="https://maps.google.com/?cid=11760883947227790812"
+                href={GOOGLE_PROFILE_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="underline underline-offset-8 transition-colors hover:text-foreground"
