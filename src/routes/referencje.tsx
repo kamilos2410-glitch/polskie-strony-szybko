@@ -1,7 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowUpRight } from "lucide-react";
 import { PageShell } from "@/components/scs/PageShell";
-import { TESTIMONIALS, testimonialCaption } from "@/lib/testimonials";
+import { TESTIMONIALS } from "@/lib/testimonials";
+import { TestimonialCard } from "@/components/scs/TestimonialCard";
 import { REALIZACJE } from "@/lib/realizacje";
 
 const TITLE = "Referencje i opinie klientów — SCS Web";
@@ -69,16 +70,9 @@ function ReferencjePage() {
           {TESTIMONIALS.length > 0 ? (
             <div className="grid gap-px bg-hairline md:grid-cols-2">
               {TESTIMONIALS.map((t) => (
-                <figure key={`${t.name}-${t.company}`} className="flex h-full flex-col bg-background p-6 md:p-8">
-                  <blockquote className="display text-xl leading-snug font-medium md:text-2xl">
-                    „{t.quote}”
-                  </blockquote>
-                  <figcaption className="mt-6 border-t border-hairline pt-4">
-                    <p className="font-semibold">
-                      {testimonialCaption(t)}
-                    </p>
-                  </figcaption>
-                </figure>
+                <div key={`${t.name}-${t.company}`} className="bg-background">
+                  <TestimonialCard t={t} />
+                </div>
               ))}
             </div>
           ) : (
