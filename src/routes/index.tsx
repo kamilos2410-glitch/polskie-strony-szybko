@@ -334,18 +334,18 @@ function Index() {
   const [open, setOpen] = useState<number | null>(0);
 
   return (
-    <div className="min-h-screen bg-background pb-24 text-foreground md:pb-0">
+    <div className="min-h-screen bg-background pb-24 text-foreground lg:pb-0">
       <header className="sticky top-0 z-50 border-b border-hairline bg-background/90 backdrop-blur-sm">
         <div className="mx-auto flex h-16 max-w-[1200px] items-center justify-between px-6 md:px-10">
           <a href="#top" className="display shrink-0 text-lg font-bold tracking-tight">
             SCS Web
           </a>
-          <nav className="hidden min-w-0 items-center gap-6 md:flex lg:gap-9">
+          <nav className="hidden min-w-0 items-center gap-6 lg:flex xl:gap-9">
             {NAV.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
-                className="text-base text-muted-foreground transition-colors hover:text-foreground"
+                className="text-sm text-muted-foreground transition-colors hover:text-foreground xl:text-base"
               >
                 {item.label}
               </a>
