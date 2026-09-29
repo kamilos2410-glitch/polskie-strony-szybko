@@ -1,9 +1,15 @@
 import { Phone, ArrowRight } from "lucide-react";
 
-/** Slim fixed bottom action bar, mobile only. */
+/**
+ * Pasek akcji przyklejony do dołu ekranu.
+ * Widoczny poniżej `lg` — dokładnie tam, gdzie chowa się menu w nagłówku
+ * (przy 6 pozycjach menu nie mieści się poniżej 1024 px). Te dwa progi
+ * muszą być zawsze takie same, inaczej powstaje okno szerokości, w którym
+ * nie ma ani menu, ani paska.
+ */
 export function MobileBar() {
   return (
-    <div className="fixed inset-x-0 bottom-0 z-50 border-t border-hairline bg-background/95 backdrop-blur-sm md:hidden">
+    <div className="fixed inset-x-0 bottom-0 z-50 border-t border-hairline bg-background/95 backdrop-blur-sm lg:hidden">
       <div className="grid grid-cols-2 gap-3 px-4 py-3">
         <a
           href="tel:+48664013998"
