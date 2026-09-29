@@ -21,6 +21,7 @@ import { HydroPreview, AutoPreview, DachPreview } from "@/components/scs/DemoPre
 import { ContactForm } from "@/components/scs/ContactForm";
 import { MobileBar } from "@/components/scs/MobileBar";
 import { TESTIMONIALS } from "@/lib/testimonials";
+import { NAV, GOOGLE_PROFILE_URL } from "@/lib/nav";
 import { TestimonialCard } from "@/components/scs/TestimonialCard";
 import { REALIZACJE } from "@/lib/realizacje";
 
@@ -53,7 +54,7 @@ export const Route = createFileRoute("/")({
           url: "https://scsweb.pl",
           telephone: "+48 664 013 998",
           email: "kamil@scsweb.pl",
-          sameAs: ["https://maps.google.com/?cid=11760883947227790812"],
+          sameAs: [GOOGLE_PROFILE_URL],
           founder: { "@type": "Person", name: "Kamil Pietraszko" },
           address: {
             "@type": "PostalAddress",
@@ -91,16 +92,6 @@ export const Route = createFileRoute("/")({
     ],
   }),
 });
-
-const NAV = [
-  { href: "#jak-to-dziala", label: "Jak to działa" },
-  { href: "#realizacje", label: "Realizacje" },
-  { href: "/referencje", label: "Referencje" },
-  { href: "#cennik", label: "Cennik" },
-  { href: "/kalkulator", label: "Kalkulator" },
-  { href: "#faq", label: "FAQ" },
-  { href: "#kontakt", label: "Kontakt" },
-];
 
 const STEPS = [
   {
@@ -346,10 +337,10 @@ function Index() {
     <div className="min-h-screen bg-background pb-24 text-foreground md:pb-0">
       <header className="sticky top-0 z-50 border-b border-hairline bg-background/90 backdrop-blur-sm">
         <div className="mx-auto flex h-16 max-w-[1200px] items-center justify-between px-6 md:px-10">
-          <a href="#top" className="display text-lg font-bold tracking-tight">
+          <a href="#top" className="display shrink-0 text-lg font-bold tracking-tight">
             SCS Web
           </a>
-          <nav className="hidden items-center gap-9 md:flex">
+          <nav className="hidden min-w-0 items-center gap-6 md:flex lg:gap-9">
             {NAV.map((item) => (
               <a
                 key={item.href}
@@ -505,6 +496,36 @@ function Index() {
                 </Reveal>
               ))}
             </div>
+
+            {/* Podpisane referencje — świadomie TUTAJ, a nie w osobnej zakładce.
+                Decyzja Kamila 29.09: menu było przeładowane, referencje mają
+                siedzieć pod „Realizacje”. Osobna strona /referencje zostaje
+                (jest w sitemapie i zgłoszona do indeksacji), ale bez pozycji w menu. */}
+            {TESTIMONIALS.length > 0 && (
+              <div className="mt-14 border-t border-hairline pt-14 md:mt-20 md:pt-20">
+                <h3 className="display text-[clamp(1.5rem,3.2vw,2.2rem)] leading-tight font-bold">
+                  Podpisane referencje
+                </h3>
+                <p className="mt-4 max-w-2xl leading-relaxed text-muted-foreground">
+                  Skany dokumentów podpisanych przez klientów. Kliknij dowolny, żeby otworzyć
+                  pełny plik PDF.
+                </p>
+                <div className="mt-8 grid gap-px bg-hairline md:grid-cols-2">
+                  {TESTIMONIALS.map((t, i) => (
+                    <Reveal key={`${t.name}-${t.company}`} delay={i * 60} className="bg-background">
+                      <TestimonialCard t={t} />
+                    </Reveal>
+                  ))}
+                </div>
+                <Link
+                  to="/referencje"
+                  className="mt-8 inline-flex min-h-[44px] items-center gap-2 font-medium underline underline-offset-4 transition-opacity hover:opacity-70"
+                >
+                  Referencje na osobnej stronie
+                  <ArrowUpRight strokeWidth={1.5} className="h-4 w-4" aria-hidden="true" />
+                </Link>
+              </div>
+            )}
           </div>
         </section>
 
@@ -513,7 +534,7 @@ function Index() {
             <SectionHead
               eyebrow="Projekty przykładowe"
               title="Zobacz, jak pracuję"
-              lead="Strony zaprojektowane dla fikcyjnych firm. Kliknij dowolną, żeby zobaczyć ją w całości."
+              lead="Przykładowe strony, które zaprojektowałem od zera. Kliknij dowolną, żeby zobaczyć ją w całości."
             />
             <div className="space-y-8 md:space-y-10">
               {CASES.map((c, i) => (
@@ -565,32 +586,12 @@ function Index() {
               ))}
             </div>
             <p className="mt-10 border-t border-hairline pt-5 text-sm text-muted-foreground">
-              Projekty przykładowe dla fikcyjnych firm, zaprojektowane od zera — Twoja strona
-              powstanie tak samo, pod Twoją branżę i Twoich klientów.
+              Projekty przykładowe, zaprojektowane od zera — Twoja strona powstanie tak samo,
+              pod Twoją branżę i Twoich klientów.
             </p>
 
           </div>
         </section>
-
-        {/* PIERWSZE REALIZACJE — renderuje się tylko, gdy są wpisy */}
-        {TESTIMONIALS.length > 0 && (
-          <section id="pierwsze-realizacje" className="border-b border-hairline">
-            <div className="mx-auto max-w-[1200px] px-6 py-14 md:px-10 md:py-20">
-              <SectionHead
-                eyebrow="Opinie"
-                title="Pierwsze realizacje"
-                lead="Prawdziwe firmy, prawdziwe strony."
-              />
-              <div className="grid gap-px bg-hairline md:grid-cols-2">
-                {TESTIMONIALS.map((t, i) => (
-                  <Reveal key={`${t.name}-${t.company}`} delay={i * 60} className="bg-background">
-                    <TestimonialCard t={t} />
-                  </Reveal>
-                ))}
-              </div>
-            </div>
-          </section>
-        )}
 
         {/* CENNIK */}
         <section id="cennik" className="border-b border-hairline">
@@ -886,7 +887,7 @@ function Index() {
                     </p>
                     <p>
                       <a
-                        href="https://maps.google.com/?cid=11760883947227790812"
+                        href={GOOGLE_PROFILE_URL}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="display inline-flex min-h-[48px] items-center font-semibold underline underline-offset-8 hover:opacity-70"
@@ -923,7 +924,7 @@ function Index() {
             <p>kamil@scsweb.pl</p>
             <p>
               <a
-                href="https://maps.google.com/?cid=11760883947227790812"
+                href={GOOGLE_PROFILE_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="underline underline-offset-8 transition-colors hover:text-foreground"
