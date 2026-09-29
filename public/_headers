@@ -1,3 +1,19 @@
 /kamil/kamil.vcf
   Content-Type: text/vcard; charset=utf-8
   Cache-Control: public, max-age=3600
+
+# Podpisane referencje — nazwa pliku widoczna przy pobieraniu.
+# UWAGA: w `testimonials.ts` te pliki są linkowane ABSOLUTNYM adresem
+# (https://scsweb.pl/...). To nie jest przeoczenie — prerender ma
+# `crawlLinks: true`, więc link względny do PDF-a zostaje pobrany przez
+# crawlera i nadpisany jako tekst UTF-8 (262 kB -> 471 kB, plik nie otwiera
+# się). Adres absolutny crawler pomija. Szczegóły: claude/referencje-pdf-29-09.md
+/referencje/referencje-sp-trans.pdf
+  Content-Type: application/pdf
+  Content-Disposition: inline; filename="Referencje-SP-Trans-dla-SCS-Web.pdf"
+  Cache-Control: public, max-age=86400
+
+/referencje/referencje-wygodnia.pdf
+  Content-Type: application/pdf
+  Content-Disposition: inline; filename="Referencje-Wygodnia-pl-dla-SCS-Web.pdf"
+  Cache-Control: public, max-age=86400
