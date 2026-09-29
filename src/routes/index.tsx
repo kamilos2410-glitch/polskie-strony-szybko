@@ -20,7 +20,8 @@ import { HeroVisual } from "@/components/scs/HeroVisual";
 import { HydroPreview, AutoPreview, DachPreview } from "@/components/scs/DemoPreviews";
 import { ContactForm } from "@/components/scs/ContactForm";
 import { MobileBar } from "@/components/scs/MobileBar";
-import { TESTIMONIALS, testimonialCaption } from "@/lib/testimonials";
+import { TESTIMONIALS } from "@/lib/testimonials";
+import { TestimonialCard } from "@/components/scs/TestimonialCard";
 import { REALIZACJE } from "@/lib/realizacje";
 
 const TITLE = "Strona internetowa dla firmy w 48h — SCS Web";
@@ -583,16 +584,7 @@ function Index() {
               <div className="grid gap-px bg-hairline md:grid-cols-2">
                 {TESTIMONIALS.map((t, i) => (
                   <Reveal key={`${t.name}-${t.company}`} delay={i * 60} className="bg-background">
-                    <figure className="flex h-full flex-col p-6 md:p-8">
-                      <blockquote className="display text-xl leading-snug font-medium md:text-2xl">
-                        „{t.quote}”
-                      </blockquote>
-                      <figcaption className="mt-6 border-t border-hairline pt-4">
-                        <p className="font-semibold">
-                          {testimonialCaption(t)}
-                        </p>
-                      </figcaption>
-                    </figure>
+                    <TestimonialCard t={t} />
                   </Reveal>
                 ))}
               </div>
