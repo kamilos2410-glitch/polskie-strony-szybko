@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as KalkulatorRouteImport } from './routes/kalkulator'
 import { Route as ReferencjeRouteImport } from './routes/referencje'
+import { Route as BranzeFirmyBudowlaneRouteImport } from './routes/branze.firmy-budowlane'
 import { Route as DemoAutoserwisKowalskiRouteImport } from './routes/demo.autoserwis-kowalski'
 import { Route as DemoDachpolRouteImport } from './routes/demo.dachpol'
 import { Route as DemoHydroPerfektRouteImport } from './routes/demo.hydro-perfekt'
@@ -51,6 +52,11 @@ const KalkulatorRoute = KalkulatorRouteImport.update({
 const ReferencjeRoute = ReferencjeRouteImport.update({
   id: '/referencje',
   path: '/referencje',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BranzeFirmyBudowlaneRoute = BranzeFirmyBudowlaneRouteImport.update({
+  id: '/branze/firmy-budowlane',
+  path: '/branze/firmy-budowlane',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DemoAutoserwisKowalskiRoute = DemoAutoserwisKowalskiRouteImport.update({
@@ -191,6 +197,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/kalkulator': typeof KalkulatorRoute
   '/referencje': typeof ReferencjeRoute
+  '/branze/firmy-budowlane': typeof BranzeFirmyBudowlaneRoute
   '/demo/autoserwis-kowalski': typeof DemoAutoserwisKowalskiRoute
   '/demo/dachpol': typeof DemoDachpolRoute
   '/demo/hydro-perfekt': typeof DemoHydroPerfektRoute
@@ -221,6 +228,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/kalkulator': typeof KalkulatorRoute
   '/referencje': typeof ReferencjeRoute
+  '/branze/firmy-budowlane': typeof BranzeFirmyBudowlaneRoute
   '/demo/autoserwis-kowalski': typeof DemoAutoserwisKowalskiRoute
   '/demo/dachpol': typeof DemoDachpolRoute
   '/demo/hydro-perfekt': typeof DemoHydroPerfektRoute
@@ -252,6 +260,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/kalkulator': typeof KalkulatorRoute
   '/referencje': typeof ReferencjeRoute
+  '/branze/firmy-budowlane': typeof BranzeFirmyBudowlaneRoute
   '/demo/autoserwis-kowalski': typeof DemoAutoserwisKowalskiRoute
   '/demo/dachpol': typeof DemoDachpolRoute
   '/demo/hydro-perfekt': typeof DemoHydroPerfektRoute
@@ -284,6 +293,7 @@ export interface FileRouteTypes {
     | '/'
     | '/kalkulator'
     | '/referencje'
+    | '/branze/firmy-budowlane'
     | '/demo/autoserwis-kowalski'
     | '/demo/dachpol'
     | '/demo/hydro-perfekt'
@@ -314,6 +324,7 @@ export interface FileRouteTypes {
     | '/'
     | '/kalkulator'
     | '/referencje'
+    | '/branze/firmy-budowlane'
     | '/demo/autoserwis-kowalski'
     | '/demo/dachpol'
     | '/demo/hydro-perfekt'
@@ -344,6 +355,7 @@ export interface FileRouteTypes {
     | '/'
     | '/kalkulator'
     | '/referencje'
+    | '/branze/firmy-budowlane'
     | '/demo/autoserwis-kowalski'
     | '/demo/dachpol'
     | '/demo/hydro-perfekt'
@@ -375,6 +387,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   KalkulatorRoute: typeof KalkulatorRoute
   ReferencjeRoute: typeof ReferencjeRoute
+  BranzeFirmyBudowlaneRoute: typeof BranzeFirmyBudowlaneRoute
   DemoAutoserwisKowalskiRoute: typeof DemoAutoserwisKowalskiRoute
   DemoDachpolRoute: typeof DemoDachpolRoute
   DemoHydroPerfektRoute: typeof DemoHydroPerfektRoute
@@ -423,6 +436,13 @@ declare module '@tanstack/react-router' {
       path: '/referencje'
       fullPath: '/referencje'
       preLoaderRoute: typeof ReferencjeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/branze/firmy-budowlane': {
+      id: '/branze/firmy-budowlane'
+      path: '/branze/firmy-budowlane'
+      fullPath: '/branze/firmy-budowlane'
+      preLoaderRoute: typeof BranzeFirmyBudowlaneRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/demo/autoserwis-kowalski': {
@@ -607,6 +627,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   KalkulatorRoute: KalkulatorRoute,
   ReferencjeRoute: ReferencjeRoute,
+  BranzeFirmyBudowlaneRoute: BranzeFirmyBudowlaneRoute,
   DemoAutoserwisKowalskiRoute: DemoAutoserwisKowalskiRoute,
   DemoDachpolRoute: DemoDachpolRoute,
   DemoHydroPerfektRoute: DemoHydroPerfektRoute,
