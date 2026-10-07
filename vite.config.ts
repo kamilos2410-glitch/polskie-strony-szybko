@@ -22,6 +22,7 @@ export default defineConfig({
       { path: "/", prerender: { enabled: true } },
       { path: "/kalkulator", prerender: { enabled: true } },
       { path: "/referencje", prerender: { enabled: true } },
+      { path: "/branze/firmy-budowlane", prerender: { enabled: true } },
       { path: "/demo/hydro-perfekt", prerender: { enabled: true } },
       { path: "/demo/autoserwis-kowalski", prerender: { enabled: true } },
       { path: "/demo/dachpol", prerender: { enabled: true } },
