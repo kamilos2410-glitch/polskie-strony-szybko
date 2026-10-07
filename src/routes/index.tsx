@@ -22,6 +22,7 @@ import { ContactForm } from "@/components/scs/ContactForm";
 import { MobileBar } from "@/components/scs/MobileBar";
 import { TESTIMONIALS } from "@/lib/testimonials";
 import { NAV, GOOGLE_PROFILE_URL } from "@/lib/nav";
+import { BRANZE } from "@/lib/branze";
 import { TestimonialCard } from "@/components/scs/TestimonialCard";
 import { REALIZACJE } from "@/lib/realizacje";
 
@@ -723,6 +724,35 @@ function Index() {
                     >
                       →
                     </span>
+                  </span>
+                </Link>
+              ))}
+            </div>
+
+            <h3 className="display mt-14 mb-2 text-xl font-semibold md:text-2xl">
+              Strony pod branżę
+            </h3>
+            <p className="mb-5 max-w-2xl leading-relaxed text-muted-foreground">
+              Co powinna mieć strona w Twojej branży i czego klienci na niej szukają.
+            </p>
+            <div className="border-t border-hairline">
+              {Object.values(BRANZE).map((b) => (
+                <Link
+                  key={b.slug}
+                  to={`/branze/${b.slug}`}
+                  className="group flex min-h-[56px] flex-col gap-2 border-b border-hairline py-4 transition-colors hover:bg-foreground/5 sm:flex-row sm:items-center sm:justify-between sm:gap-8 sm:py-3.5"
+                >
+                  <span className="min-w-0">
+                    <span className="display block text-lg font-semibold">{b.listName}</span>
+                    <span className="mt-0.5 block text-[0.95rem] leading-relaxed text-muted-foreground">
+                      {b.listBenefit}
+                    </span>
+                  </span>
+                  <span
+                    aria-hidden="true"
+                    className="display shrink-0 text-lg font-bold transition-transform duration-200 group-hover:translate-x-1"
+                  >
+                    →
                   </span>
                 </Link>
               ))}
