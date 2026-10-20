@@ -12,7 +12,11 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as KalkulatorRouteImport } from './routes/kalkulator'
 import { Route as ReferencjeRouteImport } from './routes/referencje'
+import { Route as BranzeDekarzRouteImport } from './routes/branze.dekarz'
+import { Route as BranzeElektrykRouteImport } from './routes/branze.elektryk'
 import { Route as BranzeFirmyBudowlaneRouteImport } from './routes/branze.firmy-budowlane'
+import { Route as BranzeHydraulikRouteImport } from './routes/branze.hydraulik'
+import { Route as BranzeWarsztatSamochodowyRouteImport } from './routes/branze.warsztat-samochodowy'
 import { Route as DemoAutoserwisKowalskiRouteImport } from './routes/demo.autoserwis-kowalski'
 import { Route as DemoDachpolRouteImport } from './routes/demo.dachpol'
 import { Route as DemoHydroPerfektRouteImport } from './routes/demo.hydro-perfekt'
@@ -54,11 +58,32 @@ const ReferencjeRoute = ReferencjeRouteImport.update({
   path: '/referencje',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BranzeDekarzRoute = BranzeDekarzRouteImport.update({
+  id: '/branze/dekarz',
+  path: '/branze/dekarz',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BranzeElektrykRoute = BranzeElektrykRouteImport.update({
+  id: '/branze/elektryk',
+  path: '/branze/elektryk',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const BranzeFirmyBudowlaneRoute = BranzeFirmyBudowlaneRouteImport.update({
   id: '/branze/firmy-budowlane',
   path: '/branze/firmy-budowlane',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BranzeHydraulikRoute = BranzeHydraulikRouteImport.update({
+  id: '/branze/hydraulik',
+  path: '/branze/hydraulik',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BranzeWarsztatSamochodowyRoute =
+  BranzeWarsztatSamochodowyRouteImport.update({
+    id: '/branze/warsztat-samochodowy',
+    path: '/branze/warsztat-samochodowy',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const DemoAutoserwisKowalskiRoute = DemoAutoserwisKowalskiRouteImport.update({
   id: '/demo/autoserwis-kowalski',
   path: '/demo/autoserwis-kowalski',
@@ -197,7 +222,11 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/kalkulator': typeof KalkulatorRoute
   '/referencje': typeof ReferencjeRoute
+  '/branze/dekarz': typeof BranzeDekarzRoute
+  '/branze/elektryk': typeof BranzeElektrykRoute
   '/branze/firmy-budowlane': typeof BranzeFirmyBudowlaneRoute
+  '/branze/hydraulik': typeof BranzeHydraulikRoute
+  '/branze/warsztat-samochodowy': typeof BranzeWarsztatSamochodowyRoute
   '/demo/autoserwis-kowalski': typeof DemoAutoserwisKowalskiRoute
   '/demo/dachpol': typeof DemoDachpolRoute
   '/demo/hydro-perfekt': typeof DemoHydroPerfektRoute
@@ -228,7 +257,11 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/kalkulator': typeof KalkulatorRoute
   '/referencje': typeof ReferencjeRoute
+  '/branze/dekarz': typeof BranzeDekarzRoute
+  '/branze/elektryk': typeof BranzeElektrykRoute
   '/branze/firmy-budowlane': typeof BranzeFirmyBudowlaneRoute
+  '/branze/hydraulik': typeof BranzeHydraulikRoute
+  '/branze/warsztat-samochodowy': typeof BranzeWarsztatSamochodowyRoute
   '/demo/autoserwis-kowalski': typeof DemoAutoserwisKowalskiRoute
   '/demo/dachpol': typeof DemoDachpolRoute
   '/demo/hydro-perfekt': typeof DemoHydroPerfektRoute
@@ -260,7 +293,11 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/kalkulator': typeof KalkulatorRoute
   '/referencje': typeof ReferencjeRoute
+  '/branze/dekarz': typeof BranzeDekarzRoute
+  '/branze/elektryk': typeof BranzeElektrykRoute
   '/branze/firmy-budowlane': typeof BranzeFirmyBudowlaneRoute
+  '/branze/hydraulik': typeof BranzeHydraulikRoute
+  '/branze/warsztat-samochodowy': typeof BranzeWarsztatSamochodowyRoute
   '/demo/autoserwis-kowalski': typeof DemoAutoserwisKowalskiRoute
   '/demo/dachpol': typeof DemoDachpolRoute
   '/demo/hydro-perfekt': typeof DemoHydroPerfektRoute
@@ -293,7 +330,11 @@ export interface FileRouteTypes {
     | '/'
     | '/kalkulator'
     | '/referencje'
+    | '/branze/dekarz'
+    | '/branze/elektryk'
     | '/branze/firmy-budowlane'
+    | '/branze/hydraulik'
+    | '/branze/warsztat-samochodowy'
     | '/demo/autoserwis-kowalski'
     | '/demo/dachpol'
     | '/demo/hydro-perfekt'
@@ -324,7 +365,11 @@ export interface FileRouteTypes {
     | '/'
     | '/kalkulator'
     | '/referencje'
+    | '/branze/dekarz'
+    | '/branze/elektryk'
     | '/branze/firmy-budowlane'
+    | '/branze/hydraulik'
+    | '/branze/warsztat-samochodowy'
     | '/demo/autoserwis-kowalski'
     | '/demo/dachpol'
     | '/demo/hydro-perfekt'
@@ -355,7 +400,11 @@ export interface FileRouteTypes {
     | '/'
     | '/kalkulator'
     | '/referencje'
+    | '/branze/dekarz'
+    | '/branze/elektryk'
     | '/branze/firmy-budowlane'
+    | '/branze/hydraulik'
+    | '/branze/warsztat-samochodowy'
     | '/demo/autoserwis-kowalski'
     | '/demo/dachpol'
     | '/demo/hydro-perfekt'
@@ -387,7 +436,11 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   KalkulatorRoute: typeof KalkulatorRoute
   ReferencjeRoute: typeof ReferencjeRoute
+  BranzeDekarzRoute: typeof BranzeDekarzRoute
+  BranzeElektrykRoute: typeof BranzeElektrykRoute
   BranzeFirmyBudowlaneRoute: typeof BranzeFirmyBudowlaneRoute
+  BranzeHydraulikRoute: typeof BranzeHydraulikRoute
+  BranzeWarsztatSamochodowyRoute: typeof BranzeWarsztatSamochodowyRoute
   DemoAutoserwisKowalskiRoute: typeof DemoAutoserwisKowalskiRoute
   DemoDachpolRoute: typeof DemoDachpolRoute
   DemoHydroPerfektRoute: typeof DemoHydroPerfektRoute
@@ -438,11 +491,39 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ReferencjeRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/branze/dekarz': {
+      id: '/branze/dekarz'
+      path: '/branze/dekarz'
+      fullPath: '/branze/dekarz'
+      preLoaderRoute: typeof BranzeDekarzRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/branze/elektryk': {
+      id: '/branze/elektryk'
+      path: '/branze/elektryk'
+      fullPath: '/branze/elektryk'
+      preLoaderRoute: typeof BranzeElektrykRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/branze/firmy-budowlane': {
       id: '/branze/firmy-budowlane'
       path: '/branze/firmy-budowlane'
       fullPath: '/branze/firmy-budowlane'
       preLoaderRoute: typeof BranzeFirmyBudowlaneRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/branze/hydraulik': {
+      id: '/branze/hydraulik'
+      path: '/branze/hydraulik'
+      fullPath: '/branze/hydraulik'
+      preLoaderRoute: typeof BranzeHydraulikRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/branze/warsztat-samochodowy': {
+      id: '/branze/warsztat-samochodowy'
+      path: '/branze/warsztat-samochodowy'
+      fullPath: '/branze/warsztat-samochodowy'
+      preLoaderRoute: typeof BranzeWarsztatSamochodowyRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/demo/autoserwis-kowalski': {
@@ -627,7 +708,11 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   KalkulatorRoute: KalkulatorRoute,
   ReferencjeRoute: ReferencjeRoute,
+  BranzeDekarzRoute: BranzeDekarzRoute,
+  BranzeElektrykRoute: BranzeElektrykRoute,
   BranzeFirmyBudowlaneRoute: BranzeFirmyBudowlaneRoute,
+  BranzeHydraulikRoute: BranzeHydraulikRoute,
+  BranzeWarsztatSamochodowyRoute: BranzeWarsztatSamochodowyRoute,
   DemoAutoserwisKowalskiRoute: DemoAutoserwisKowalskiRoute,
   DemoDachpolRoute: DemoDachpolRoute,
   DemoHydroPerfektRoute: DemoHydroPerfektRoute,
