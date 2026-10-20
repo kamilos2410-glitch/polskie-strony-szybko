@@ -24,27 +24,14 @@ export const Route = createFileRoute("/referencje")({
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [{ rel: "canonical", href: URL }],
-    scripts:
-      TESTIMONIALS.length > 0
-        ? [
-            {
-              type: "application/ld+json",
-              children: JSON.stringify({
-                "@context": "https://schema.org",
-                "@type": "ProfessionalService",
-                name: "SCS Web",
-                url: "https://scsweb.pl/",
-                review: TESTIMONIALS.map((t) => ({
-                  "@type": "Review",
-                  reviewBody: t.quote,
-                  author: t.name
-                    ? { "@type": "Person", name: `${t.name} — ${t.company}` }
-                    : { "@type": "Organization", name: t.company },
-                })),
-              }),
-            },
-          ]
-        : [],
+    // Bez JSON-LD `Review`. Google zgłosił 30.09 błąd „Wiele weryfikacji bez
+    // obiektu aggregateRating". Nie dodajemy aggregateRating, bo nasze
+    // referencje nie mają ocen liczbowych — wymyślona średnia byłaby
+    // nieprawdą. Poza tym od 2019 r. Google i tak nie pokazuje gwiazdek dla
+    // opinii o firmie umieszczonych na jej własnej stronie („self-serving
+    // reviews"), więc ta schema nic tu nie dawała poza błędem w GSC.
+    // Widoczne karty referencji i skany PDF zostają bez zmian.
+    // Szczegóły: claude/gsc-fragmenty-opinii-30-09.md
   }),
 });
 
