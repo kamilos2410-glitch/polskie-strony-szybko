@@ -18,8 +18,16 @@ import type { Faq, Step } from "@/lib/services";
 // w słabej pozycji (claude/zasada-bez-slabych-stwierdzen.md).
 // ============================================================
 
+/** Strony branżowe, które faktycznie mają trasę w /branze/*. */
+export type BranzaSlug =
+  | "firmy-budowlane"
+  | "hydraulik"
+  | "warsztat-samochodowy"
+  | "dekarz"
+  | "elektryk";
+
 export type Branza = {
-  slug: string;
+  slug: BranzaSlug;
   h1: string;
   promise: string;
   metaTitle: string;
@@ -41,7 +49,7 @@ export type Branza = {
   faq: Faq[];
 };
 
-export const BRANZE: Record<string, Branza> = {
+export const BRANZE: Record<BranzaSlug, Branza> = {
   "firmy-budowlane": {
     slug: "firmy-budowlane",
     h1: "Strona internetowa dla firmy budowlanej",
