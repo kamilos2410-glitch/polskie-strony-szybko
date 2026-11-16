@@ -51,10 +51,9 @@ export function testimonialCaption(t: Testimonial): string {
 
 export const TESTIMONIALS: Testimonial[] = [
   {
-    // Referencje podpisane 24.09.2026 przez Sławomira Pietraszko,
-    // właściciela SP TRANS, Al. Krakowska 11, Kopana, 05-555 Tarczyn,
-    // NIP 5422354450. Dokument zawiera zgodę na publikację nazwy firmy
-    // na scsweb.pl. Cytat przepisany dosłownie z dokumentu.
+    // Referencje podpisane 24.09.2026 przez właściciela SP Trans.
+    // Dokument zawiera zgodę na publikację nazwy firmy na scsweb.pl.
+    // Cytat przepisany dosłownie z dokumentu.
     quote:
       "Prace zostały wykonane terminowo i zgodnie z ustaleniami. Zgłaszane przez nas uwagi były wprowadzane na bieżąco, a kontakt z wykonawcą na każdym etapie prac był szybki i rzeczowy.",
     name: "Sławomir Pietraszko",
